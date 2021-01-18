@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965990A725B44B46002A23BD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965990A625B44B46002A23BD /* BaseViewController.swift */; };
+		965990C425B615BE002A23BD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965990C325B615BE002A23BD /* BaseView.swift */; };
 		96C5E41525A5BD6B00E374B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5E41425A5BD6B00E374B7 /* AppDelegate.swift */; };
-		96C5E41925A5BD6B00E374B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5E41825A5BD6B00E374B7 /* ViewController.swift */; };
 		96C5E41E25A5BD6C00E374B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C5E41D25A5BD6C00E374B7 /* Assets.xcassets */; };
 		96C5E42125A5BD6C00E374B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C5E41F25A5BD6C00E374B7 /* LaunchScreen.storyboard */; };
 		B84D0A6F0F874A7BA1770CE5 /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655B31EEA48C2F26B86A21C7 /* Pods_MoneyKeeper.framework */; };
@@ -17,9 +18,10 @@
 /* Begin PBXFileReference section */
 		000B42E85F7F77B09B44A082 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		655B31EEA48C2F26B86A21C7 /* Pods_MoneyKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		965990A625B44B46002A23BD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		965990C325B615BE002A23BD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		96C5E41125A5BD6B00E374B7 /* MoneyKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C5E41425A5BD6B00E374B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96C5E41825A5BD6B00E374B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96C5E41D25A5BD6C00E374B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96C5E42025A5BD6C00E374B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96C5E42225A5BD6C00E374B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +57,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		961B5E5025A890C500C7BADE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				965990A525B44B36002A23BD /* BaseViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		965990A525B44B36002A23BD /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				965990A625B44B46002A23BD /* BaseViewController.swift */,
+				965990C325B615BE002A23BD /* BaseView.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
 		96C5E40825A5BD6B00E374B7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +98,9 @@
 				96C5E42E25A5BE1E00E374B7 /* Application */,
 				96C5E43225A5BE7700E374B7 /* Business logic */,
 				96C5E43125A5BE6F00E374B7 /* Presentation */,
+				96C5E45025A5C27B00E374B7 /* Utils */,
+				96C5E44525A5C10A00E374B7 /* Extensions */,
 				96C5E43025A5BE5A00E374B7 /* Resources */,
-				96C5E41825A5BD6B00E374B7 /* ViewController.swift */,
 			);
 			path = MoneyKeeper;
 			sourceTree = "<group>";
@@ -106,6 +126,7 @@
 		96C5E43125A5BE6F00E374B7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				961B5E5025A890C500C7BADE /* Controllers */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -114,16 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				96C5E43425A5BE8C00E374B7 /* Service */,
-				96C5E43325A5BE8100E374B7 /* Protocol */,
 			);
 			path = "Business logic";
-			sourceTree = "<group>";
-		};
-		96C5E43325A5BE8100E374B7 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		96C5E43425A5BE8C00E374B7 /* Service */ = {
@@ -131,6 +144,20 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		96C5E44525A5C10A00E374B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		96C5E45025A5C27B00E374B7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C5E41925A5BD6B00E374B7 /* ViewController.swift in Sources */,
+				965990A725B44B46002A23BD /* BaseViewController.swift in Sources */,
 				96C5E41525A5BD6B00E374B7 /* AppDelegate.swift in Sources */,
+				965990C425B615BE002A23BD /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
