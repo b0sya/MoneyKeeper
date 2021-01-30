@@ -11,28 +11,55 @@ import TableKit
 typealias DefaultCell = DefaultCellContainer<DefaultCellView>
 
 protocol MainBuilderDataSource {
+    var addAccountViewModel: TappableCellViewModel { get }
     var accountsCellsViewModels: [DefaultCellViewModel] { get }
 
     var serviceCellsViewModel: [DefaultCellViewModel] { get }
 }
 
 final class MainBuilder {
+
+    typealias AddAccountCell = DefaultCellContainer<AddAccountView>
+
     func buildSections(from dataSource: MainBuilderDataSource) -> [TableSection] {
         [
-            buildSection(from: dataSource.accountsCellsViewModels),
-            buildSection(from: dataSource.serviceCellsViewModel),
+            buildAccountsSection(from: dataSource),
+            buildServicesSection(from: dataSource),
         ]
 
     }
 
-    private func buildSection(from viewModels: [DefaultCellViewModel]) -> TableSection {
-        let rows = viewModels.compactMap { item -> TableRow<DefaultCell>? in
-            TableRow<DefaultCell>(item: item)
+    private func buildAccountsSection(from dataSource: MainBuilderDataSource) -> TableSection {
+        var rows: [Row] = dataSource.accountsCellsViewModels
+            .compactMap { item -> TableRow<DefaultCell>? in
+                TableRow<DefaultCell>(item: item).on(.click) { _ in
+                    item.onTap?()
+                }
+            }
+        let addAccountRow = TableRow<AddAccountCell>(item: dataSource.addAccountViewModel)
+            .on(.click) { _ in
+                dataSource.addAccountViewModel.onTap?()
+            }
+
+        rows.append(addAccountRow)
+
+        return .init(onlyRows: rows)
+    }
+
+    private func buildServicesSection(from dataSource: MainBuilderDataSource) -> TableSection {
+        let rows = dataSource.serviceCellsViewModel
+            .compactMap { item -> TableRow<DefaultCell>? in
+                TableRow<DefaultCell>(item: item).on(.click) { _ in
+                    item.onTap?()
+                }
         }
-        let section = TableSection(headerView: nil, footerView: nil, rows: rows)
+
+        let section = TableSection(rows: rows)
+
         section.headerView = UIView()
         section.headerHeight = 30
         section.footerHeight = .leastNonzeroMagnitude
+        
         return section
     }
 }

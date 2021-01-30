@@ -18,21 +18,23 @@ final class MainViewModel: RxViewModel {
 }
 
 extension MainViewModel: MainBuilderDataSource {
+    var addAccountViewModel: TappableCellViewModel {
+        .init {
+            print("Added")
+        }
+    }
+
     var accountsCellsViewModels: [DefaultCellViewModel] {
         [
-            DefaultCellViewModel(title: "Счет 1", value: "0", icon: nil),
-            DefaultCellViewModel(title: "Счет 2", value: "100", icon: nil),
+            DefaultCellViewModel(title: "Счет 1", value: nil, icon: nil, tapAction: { 
+                print("Счет 1 tapped")
+            }),
+            DefaultCellViewModel(title: "Счет 1", value: nil, icon: nil, tapAction: nil)
         ]
     }
 
     var serviceCellsViewModel: [DefaultCellViewModel] {
-        [
-            DefaultCellViewModel(title: "Бюджеты", value: nil, icon: nil),
-            DefaultCellViewModel(title: "Запланированные", value: nil, icon: nil),
-            DefaultCellViewModel(title: "Планы", value: nil, icon: nil),
-            DefaultCellViewModel(title: "Отчеты", value: nil, icon: nil),
-            DefaultCellViewModel(title: "Настройки", value: nil, icon: nil),
-        ]
+        []
     }
 
 

@@ -22,7 +22,9 @@ final class MainViewController: BaseTableController<MainViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Отчеты"
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+        title = .mainScreenTitle
         viewModel.viewDidLoaded()
         
     }

@@ -15,8 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow()
-        let navigation = UINavigationController(rootViewController: ModuleFactory().makeMainModule())
-        navigation.navigationBar.prefersLargeTitles = true
         window?.rootViewController = UINavigationController(rootViewController: ModuleFactory().makeMainModule())
         window?.makeKeyAndVisible()
         

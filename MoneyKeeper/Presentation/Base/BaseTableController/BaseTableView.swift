@@ -29,5 +29,8 @@ class BaseTableView: BaseView {
         super.configureAppearance()
 
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+
+        backgroundColor = .background
     }
 }
