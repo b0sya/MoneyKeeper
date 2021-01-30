@@ -9,7 +9,7 @@ import UIKit
 
 class BaseView: UIView {
     
-    init() {
+    required init() {
         super.init(frame: .zero)
         addSubviews()
         configureAppearance()
