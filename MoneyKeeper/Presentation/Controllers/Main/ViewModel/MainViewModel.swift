@@ -37,7 +37,7 @@ extension MainViewModel {
 
     var accountsCellsViewModels: [AccountCellViewModel] {
         let viewModels = accounts?.map({
-            return AccountCellViewModel(title: $0.name,
+            return AccountCellViewModel(title: $0.name ?? "No name",
                                         value: $0.currency,
                                         icon: nil,
                                         tapAction: nil)

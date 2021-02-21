@@ -2,7 +2,7 @@
 //  Account+CoreDataClass.swift
 //  
 //
-//  Created by Maxim Shalashnikov on 06.02.2021.
+//  Created by Максим Шалашников on 21.02.2021.
 //
 //
 

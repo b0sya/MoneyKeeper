@@ -2,7 +2,7 @@
 //  Transaction+CoreDataProperties.swift
 //  
 //
-//  Created by Maxim Shalashnikov on 31.01.2021.
+//  Created by Максим Шалашников on 21.02.2021.
 //
 //
 

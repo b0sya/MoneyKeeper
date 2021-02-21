@@ -1,8 +1,8 @@
 //
-//  Category+CoreDataProperties.swift
+//  Account+CoreDataProperties.swift
 //  
 //
-//  Created by Maxim Shalashnikov on 31.01.2021.
+//  Created by Максим Шалашников on 21.02.2021.
 //
 //
 
@@ -10,22 +10,22 @@ import Foundation
 import CoreData
 
 
-extension Category {
+extension Account {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
-        return NSFetchRequest<Category>(entityName: "Category")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Account> {
+        return NSFetchRequest<Account>(entityName: "Account")
     }
 
+    @NSManaged public var currency: Double
     @NSManaged public var icon: Data?
+    @NSManaged public var id: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var type: Int16
-    @NSManaged public var uid: UUID?
     @NSManaged public var relatedTransactions: NSOrderedSet?
 
 }
 
 // MARK: Generated accessors for relatedTransactions
-extension Category {
+extension Account {
 
     @objc(insertObject:inRelatedTransactionsAtIndex:)
     @NSManaged public func insertIntoRelatedTransactions(_ value: Transaction, at idx: Int)

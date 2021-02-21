@@ -2,7 +2,7 @@
 //  Account+CoreDataProperties.swift
 //  
 //
-//  Created by Maxim Shalashnikov on 06.02.2021.
+//  Created by Максим Шалашников on 21.02.2021.
 //
 //
 
@@ -19,7 +19,7 @@ extension Account {
     @NSManaged public var currency: Double
     @NSManaged public var icon: Data?
     @NSManaged public var id: UUID?
-    @NSManaged public var name: String
+    @NSManaged public var name: String?
     @NSManaged public var relatedTransactions: NSOrderedSet?
 
 }
