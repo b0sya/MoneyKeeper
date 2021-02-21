@@ -38,6 +38,8 @@ class ContainerTableCell<View: UIView>: BaseTableViewCell,
     }
 
     override func configureAppearance() {
+        super.configureAppearance()
+        
         backgroundColor = .clear
 
         contentView.backgroundColor = contentViewBackgroundColor

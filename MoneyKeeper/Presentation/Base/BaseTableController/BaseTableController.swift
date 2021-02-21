@@ -15,12 +15,27 @@ class BaseTableController<ViewModel>: BaseViewController<BaseTableView, ViewMode
         baseView.tableView
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        refreshData()
+    }
+
     func buildSections() -> [TableSection] {
         []
     }
 
-    func configureTable() {
-        
+    override func configureAppearance() {
+        super.configureAppearance()
+
+        tableView.keyboardDismissMode = .onDrag
+    }
+    
+
+    func fillTable() {
+        tableDirector.clear()
+        tableDirector.append(sections: buildSections())
+        tableDirector.reload()
     }
     
     func refreshData() {}

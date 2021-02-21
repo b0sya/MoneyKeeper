@@ -13,6 +13,7 @@ class BaseView: UIView {
         super.init(frame: .zero)
         addSubviews()
         configureAppearance()
+        addTargets()
         configureLayout()
         localize()
     }
@@ -37,6 +38,9 @@ class BaseView: UIView {
     func configureLayout() {
 
     }
-    
+
+    func addTargets() {
+
+    }
     
 }

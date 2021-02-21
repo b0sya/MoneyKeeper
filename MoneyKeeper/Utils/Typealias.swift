@@ -7,4 +7,10 @@
 
 import Foundation
 
+typealias ParameterClosure<T> = (T) -> ()
 typealias VoidClosure = () -> ()
+
+typealias SelectTextFieldCell = DefaultCellContainer<SelectCellView>
+typealias TextFieldCell = DefaultCellContainer<TextFieldCellView>
+typealias ButtonCell = DefaultCellContainer<ButtonCellView>
+typealias DatePickerCell = DefaultCellContainer<DatePickerCellView>

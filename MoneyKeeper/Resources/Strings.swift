@@ -8,6 +8,29 @@ import Foundation
 
 extension String {
 
-/// Счета
+    /// Счета
     static let mainScreenTitle = "Счета"
+
+    static let addAccountTitle = "Новый счет"
+
+    ///Обязательное
+    static let requiredFieldPlaceholder = "Обязательное"
+
+    ///Необязательное
+    static let notRequiredFieldPlaceholder = "Необязательное"
+
+    ///Новая транзакция
+    static let addransactionScreenTitle = "Новая транзакция"
+
+    ///Отмена
+    static let cancelButtonTitle = "Отмена"
+
+    ///Готово
+    static let doneButtonTitle = "Готово"
+
+    ///Ошибка
+    static let errorTitle = "Ошибка"
+
+    ///Ok
+    static let okButtonTitle = "Ok"
 }

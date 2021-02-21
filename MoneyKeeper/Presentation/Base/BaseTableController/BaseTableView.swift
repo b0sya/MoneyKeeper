@@ -30,6 +30,7 @@ class BaseTableView: BaseView {
 
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        tableView.keyboardDismissMode = .interactive
 
         backgroundColor = .background
     }

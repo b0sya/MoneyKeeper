@@ -9,5 +9,5 @@ import Foundation
 
 protocol BaseContentInput {
     func refreshData()
-    func configureTable()
+    func fillTable()
 }

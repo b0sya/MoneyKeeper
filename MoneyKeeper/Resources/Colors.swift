@@ -20,4 +20,8 @@ extension UIColor {
     static var background: UIColor {
         resourceColor(named: "background")
     }
+
+    static var backgroundButton: UIColor {
+        resourceColor(named: "buttonBackgroun")
+    }
 }

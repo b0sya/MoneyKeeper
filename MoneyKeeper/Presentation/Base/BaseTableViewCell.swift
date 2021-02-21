@@ -32,18 +32,16 @@ public class BaseTableViewCell: UITableViewCell {
         disposeBag = DisposeBag()
     }
 
-    // MARK: - InitializableView
+    func addViews() {}
 
-    public func addViews() {}
+    func bindViews() {}
 
-    public func bindViews() {}
+    func configureLayout() {}
 
-    public func configureLayout() {}
-
-    public func configureAppearance() {
+    func configureAppearance() {
         selectionStyle = .none
     }
 
-    public func localize() {}
+    func localize() {}
 }
 

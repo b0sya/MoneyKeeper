@@ -23,4 +23,8 @@ extension UIImage {
     static var addIcon: UIImage {
         return resourceImage(named: "add")
     }
+
+    static var removeIcon: UIImage {
+        return resourceImage(named: "remove")
+    }
 }
