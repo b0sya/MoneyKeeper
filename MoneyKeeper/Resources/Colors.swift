@@ -17,11 +17,11 @@ extension UIColor {
 
         return color
     }
-    static var background: UIColor {
-        resourceColor(named: "background")
+    static var backgroundGray: UIColor {
+        resourceColor(named: "backgroundGray")
     }
 
-    static var backgroundButton: UIColor {
-        resourceColor(named: "buttonBackgroun")
+    static var MKGreen: UIColor {
+        resourceColor(named: "MKGreen")
     }
 }

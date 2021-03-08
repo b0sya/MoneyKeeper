@@ -31,7 +31,8 @@ final class ButtonCellView: BaseView {
     override func configureAppearance() {
         super.configureAppearance()
 
-        button.backgroundColor = .backgroundButton
+        button.setBackgroundColor(.MKGreen, for: .normal)
+        button.setBackgroundColor(UIColor.MKGreen.withAlphaComponent(0.3), for: .disabled)
         button.layer.cornerRadius = 8
     }
 
@@ -49,7 +50,10 @@ final class ButtonCellView: BaseView {
 extension ButtonCellView: ConfigurableView {
     func configure(with viewModel: ButtonCellViewModel) {
         button.setTitle(viewModel.buttonTitle, for: .normal)
+        button.isEnabled = viewModel.isEnabled
 
         onButtonTap = viewModel.buttonAction
+        
+        viewModel.view = self
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName="Account" syncable="YES">
-        <attribute name="currency" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="currency" attributeType="Double" usesScalarValueType="YES"/>
         <attribute name="icon" optional="YES" attributeType="Binary"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
@@ -10,22 +10,21 @@
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="icon" optional="YES" attributeType="Binary"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="type" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="uid" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="relatedTransactions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Transaction" inverseName="relatedCategory" inverseEntity="Transaction"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="direction" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="note" optional="YES" attributeType="String"/>
-        <attribute name="type" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="relatedAccount" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="relatedTransactions" inverseEntity="Account"/>
         <relationship name="relatedCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="relatedTransactions" inverseEntity="Category"/>
     </entity>
     <elements>
         <element name="Account" positionX="-12.029541015625" positionY="-255.4365844726562" width="128" height="104"/>
-        <element name="Category" positionX="371.125" positionY="-208.6100921630859" width="128" height="104"/>
-        <element name="Transaction" positionX="170.281494140625" positionY="-238.734130859375" width="128" height="148"/>
+        <element name="Category" positionX="371.125" positionY="-208.6100921630859" width="128" height="89"/>
+        <element name="Transaction" positionX="170.281494140625" positionY="-238.734130859375" width="128" height="134"/>
     </elements>
 </model>

@@ -1,0 +1,39 @@
+/* 
+  File.strings
+  MoneyKeeper
+
+  Created by Максим Шалашников on 27.02.2021.
+  
+*/
+"accounts" = "Счета";
+"account" = "Счет";
+"newAccount" = "Новый счет";
+"required" = "Обязательное";
+"notRequired" = "Необязательное";
+"newTransaction" = "Новая транзакция";
+"cancel" = "Отмена";
+"done" = "Готово";
+"error" = "Ошибка";
+"ok" = "Ok";
+"title" = "Название";
+"balance" = "Баланс";
+"date" = "Дата";
+"sum" = "Сумма";
+"description" = "Описание";
+"category" = "Категория";
+"categories" = "Категории";
+
+//MARK: - Categories
+"clothesShoes" = "Одежда и обувь";
+"computers" = "Техника";
+"drinks" = "Напитки";
+"entertaiment" = "Entertaiment";
+"gifts" = "Подарки";
+"groceries" = "Продукты";
+"health" = "Здоровье";
+"household" = "Семья";
+"rent" = "Аренда";
+"restaurantsCafes" = "Кафе и рестораны";
+"taxes" = "Налоги";
+"taxi" = "Такси";
+"transport" = "Транспорт";

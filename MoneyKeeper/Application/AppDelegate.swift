@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow? {
         didSet {
-            window?.rootViewController = UINavigationController()
+            window?.rootViewController = MKNavigationController()
         }
     }
 
@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow()
+        
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
 
         applicationCoordinator = makeCoordinator()
         applicationCoordinator?.start()

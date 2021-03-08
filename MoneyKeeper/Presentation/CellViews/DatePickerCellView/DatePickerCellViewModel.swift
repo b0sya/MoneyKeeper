@@ -8,5 +8,5 @@
 import Foundation
 
 final class DatePickerCellViewModel: TextFieldCellViewModel {
-    var onDatePickerValueChanged: VoidClosure?
+    var onDatePickerDonePressed: ParameterClosure<Date>?
 }

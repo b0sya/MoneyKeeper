@@ -17,7 +17,7 @@ protocol MainBuilderDataSource {
     var serviceCellsViewModel: [DefaultCellViewModel] { get }
 }
 
-struct MainBuilder {
+struct MainBuilder: BaseTableBuilder {
 
     typealias AddAccountCell = DefaultCellContainer<CenterIconCellView>
     typealias AccountCell = DefaultCellContainer<AccountCellView>
@@ -54,13 +54,7 @@ struct MainBuilder {
                     item.onTap?()
                 }
         }
-
-        let section = TableSection(rows: rows)
-
-        section.headerView = UIView()
-        section.headerHeight = 30
-        section.footerHeight = .leastNonzeroMagnitude
         
-        return section
+        return .init(withEmptyHeader: rows)
     }
 }

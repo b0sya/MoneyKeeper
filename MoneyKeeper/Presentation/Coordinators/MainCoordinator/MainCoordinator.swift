@@ -44,16 +44,23 @@ final class MainCoordinator: BaseCoordinator {
         }
 
         module.onAddTransaction = { [weak self] in
-            self?.showAddTransaction()
+            self?.runAddTransactionFlow { [weak module] in
+                module?.refreshData()
+            }
         }
 
         router.setRootModule(module)
     }
 
-    private func showAddTransaction() {
-        let module = factory.makeAddTransactionModule()
-
-        router.push(module)
+    private func runAddTransactionFlow(onFinish: @escaping VoidClosure) {
+        let coordinator = coordinatorFactory.makeAddTransactionCoordinator(router: router)
+        coordinator.finishFlow = { [weak self] in
+            onFinish()
+            self?.router.popModule()
+            self?.removeDependency(coordinator)
+        }
+        addDependency(coordinator)
+        coordinator.start()
     }
 
     private func runAddAccountFlow(onFinish: @escaping VoidClosure) {

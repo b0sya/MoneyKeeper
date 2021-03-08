@@ -7,13 +7,13 @@
 
 import Foundation
 import TableKit
+import os.log
 
 protocol AddAccountModule: Presentable {
     var onFinish: ParameterClosure<Account>? { get set }
 }
-final class AddAccountViewController: BaseTableController<AddAccountViewModel>, AddAccountModule {
 
-    private let builder = AddAccountBuilder()
+final class AddAccountViewController: BaseTableController<AddAccountViewModel, AddAccountBuilder>, AddAccountModule {
 
     private var accountName: String?
     private var accountBalance: Double?
@@ -33,15 +33,6 @@ final class AddAccountViewController: BaseTableController<AddAccountViewModel>, 
     }
 
     override func localize() {
-        title = .addAccountTitle
+        title = .newAccount
     }
-
-    func showError(message: String) {
-        let alertController = UIAlertController(title: .errorTitle,
-                                                message: message,
-                                                preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: .okButtonTitle, style: .default, handler: nil))
-        present(alertController, animated: true, completion: nil)
-    }
-
 }

@@ -32,6 +32,6 @@ class BaseTableView: BaseView {
         tableView.backgroundColor = .clear
         tableView.keyboardDismissMode = .interactive
 
-        backgroundColor = .background
+        backgroundColor = .backgroundGray
     }
 }

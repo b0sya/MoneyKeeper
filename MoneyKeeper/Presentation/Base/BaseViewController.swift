@@ -40,4 +40,11 @@ class BaseViewController<View: BaseView, ViewModel>: UIViewController {
 
     }
     
+	func showError(message: String) {
+		let alertController = UIAlertController(title: .error,
+												message: message,
+												preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: .okButtonTitle, style: .default, handler: nil))
+		present(alertController, animated: true, completion: nil)
+	}
 }

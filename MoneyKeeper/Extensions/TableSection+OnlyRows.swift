@@ -16,4 +16,12 @@ extension TableSection {
         self.headerHeight = .leastNonzeroMagnitude
         self.footerHeight = .leastNonzeroMagnitude
     }
+    
+    convenience init(withEmptyHeader rows: [Row]) {
+        self.init(rows: rows)
+        
+        self.footerHeight = .leastNonzeroMagnitude
+        self.headerView = UIView()
+        self.headerHeight = 30
+    }
 }

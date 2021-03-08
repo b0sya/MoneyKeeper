@@ -7,60 +7,18 @@
 
 import Foundation
 
-final class AddAccountViewModel: AddAccountBuilderDataSource {
-
+final class AddAccountViewModel {
     weak var view: AddAccountViewController?
-
-    var accountName: String?
-    var accountBalance: Double?
-
-    var onAccountNameEntered: ParameterClosure<String?>?
-    var onAccountBalanceEntered: ParameterClosure<String?>?
-
-    var textFieldViewModels: [TextFieldCellViewModel] = []
-
-    var buttonCellViewModel = ButtonCellViewModel(buttonTitle: "Готово", buttonAction: nil)
-
+    
+    var buttonCellViewModel = ButtonCellViewModel(buttonTitle: .done)
+    
+    private let validator = AddAccountFormValidator()
+    
     init() {
-        onAccountNameEntered = { [weak self] text in
-            self?.accountName = text
-        }
-
-        onAccountBalanceEntered = { [weak self] text in
-            guard let value = text else {
-                return
-            }
-            self?.accountBalance = Double(value)
-        }
-
-        createTextFieldViewModels()
-    }
-
-    private func createTextFieldViewModels() {
-        textFieldViewModels = [
-            TextFieldCellViewModel(title: "Название",
-                               isRequired: true,
-                               isNumericField: false,
-                               onTextFieldEdited: onAccountNameEntered),
-            TextFieldCellViewModel(title: "Баланс",
-                               isRequired: false,
-                               isNumericField: true,
-                               onTextFieldEdited: onAccountBalanceEntered)
-
-        ]
-
-        buttonCellViewModel.buttonAction = { [weak self] in
-            guard let name = self?.accountName,
-                  !name.isEmpty else {
-                self?.view?.showError(message: "Заполнены не все обязательные поля")
-                return
-            }
-            var currency: Double?
-            if let balance = self?.accountBalance {
-                currency = Double(balance)
-            }
-
-            StorageProvider.shared.isertAccount(name: name, currency: currency, icon: nil) { [weak self] result in
+        validator.delegate = self
+        
+        buttonCellViewModel.buttonAction = { [weak validator] in
+            validator?.save { [weak self] result in
                 switch result {
                 case .success(let result):
                     self?.view?.onFinish?(result)
@@ -68,9 +26,32 @@ final class AddAccountViewModel: AddAccountBuilderDataSource {
                     self?.view?.showError(message: error.localizedDescription)
                 }
             }
-
         }
-
     }
+    
+}
 
+extension AddAccountViewModel: AddAccountBuilderDataSource {
+    var textFieldViewModels: [TextFieldCellViewModel] {
+        [
+            .accountName(onTextFieldEdited: { [weak validator] text in
+                validator?.accountName = text
+            }),
+            .balance(onTextFieldEdited: { [weak validator] text in
+                validator?.accountBalance = Double(text ?? "")
+            })
+        ]
+    }
+}
+
+extension AddAccountViewModel: FormValidatorDelegate {
+    func wasSuccessed() {
+        buttonCellViewModel.isEnabled = true
+    }
+    
+    func wasFailed() {
+        buttonCellViewModel.isEnabled = false
+    }
+    
+    
 }

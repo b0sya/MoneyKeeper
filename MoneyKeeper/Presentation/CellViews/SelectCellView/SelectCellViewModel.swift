@@ -8,17 +8,26 @@
 import Foundation
 
 final class SelectCellViewModel: TappableCellViewModel {
+    weak var cell: SelectCellView?
+    
     let title: String
     let isRequired: Bool
-
+    
+    var value: String? {
+        didSet {
+            cell?.textField.text = value
+        }
+    }
     var placeholder: String {
-        isRequired ? .requiredFieldPlaceholder : .notRequiredFieldPlaceholder
+        isRequired ? .required : .notRequired
     }
 
     init(title: String,
+         value: String?,
          isRequired: Bool,
-         tapAction: VoidClosure?) {
+         tapAction: VoidClosure? = nil) {
         self.title = title
+        self.value = value
         self.isRequired = isRequired
 
         super.init(tapAction: tapAction)

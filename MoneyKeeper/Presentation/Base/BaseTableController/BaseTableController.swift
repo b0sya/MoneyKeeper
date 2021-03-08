@@ -8,8 +8,10 @@
 import Foundation
 import TableKit
 
-class BaseTableController<ViewModel>: BaseViewController<BaseTableView, ViewModel>, BaseContentInput {
+class BaseTableController<ViewModel, TableBuilder: BaseTableBuilder>: BaseViewController<BaseTableView, ViewModel>, BaseContentInput {
     private(set) lazy var tableDirector = TableDirector(tableView: baseView.tableView)
+	
+	let builder = TableBuilder()
 
     var tableView: UITableView {
         baseView.tableView
@@ -28,7 +30,7 @@ class BaseTableController<ViewModel>: BaseViewController<BaseTableView, ViewMode
     override func configureAppearance() {
         super.configureAppearance()
 
-        tableView.keyboardDismissMode = .onDrag
+		tableView.keyboardDismissMode = .onDrag
     }
     
 

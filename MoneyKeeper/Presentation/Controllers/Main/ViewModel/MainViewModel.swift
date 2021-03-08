@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-final class MainViewModel: RxViewModel, MainBuilderDataSource {
+final class MainViewModel: MainBuilderDataSource {
 
     weak var view: MainViewController?
 

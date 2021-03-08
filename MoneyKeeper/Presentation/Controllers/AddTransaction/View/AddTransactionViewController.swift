@@ -7,9 +7,19 @@
 
 import Foundation
 import TableKit
+import os.log
 
-final class AddTransactionViewController: BaseTableController<AddTransactionViewModel> {
-    private let builder = AddTransactionBuilder()
+protocol AddTransactionModule: Presentable {
+    var onFinish: VoidClosure? { get set }
+    var onCategoryTap: ParameterClosure<ParameterClosure<Category>>? { get set }
+    var onAccountTap: ParameterClosure<ParameterClosure<Account>>? { get set }
+}
+
+final class AddTransactionViewController: BaseTableController<AddTransactionViewModel, AddTransactionBuilder>, AddTransactionModule {
+    
+    var onFinish: VoidClosure?
+    var onCategoryTap: ParameterClosure<ParameterClosure<Category>>?
+    var onAccountTap: ParameterClosure<ParameterClosure<Account>>? 
 
     override func buildSections() -> [TableSection] {
         builder.buildSections(from: viewModel)
@@ -22,6 +32,6 @@ final class AddTransactionViewController: BaseTableController<AddTransactionView
     }
 
     override func configureAppearance() {
-        title = .addransactionScreenTitle
+        title = .newTransaction
     }
 }

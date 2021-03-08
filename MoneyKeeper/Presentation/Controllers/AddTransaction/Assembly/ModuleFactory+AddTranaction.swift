@@ -8,11 +8,11 @@
 import Foundation
 
 protocol AddTransactionModuleFactory {
-    func makeAddTransactionModule() -> AddTransactionViewController
+    func makeAddTransactionModule() -> AddTransactionModule
 }
 
 extension ModuleFactoryImp: AddTransactionModuleFactory {
-    func makeAddTransactionModule() -> AddTransactionViewController {
+    func makeAddTransactionModule() -> AddTransactionModule {
         let viewModel = AddTransactionViewModel()
         let viewController = AddTransactionViewController(viewModel: viewModel)
 

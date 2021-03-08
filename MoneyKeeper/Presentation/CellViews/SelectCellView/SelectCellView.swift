@@ -11,6 +11,8 @@ final class SelectCellView: RoundedContainerCellView {
     let titleLabel = UILabel()
     let textField = UITextField()
     let arrowImageView = UIImageView(image: .arrowRight)
+    
+    var onTap: VoidClosure?
 
     override func addSubviews() {
         super.addSubviews()
@@ -43,6 +45,20 @@ final class SelectCellView: RoundedContainerCellView {
             $0.width.equalTo(arrowImageView.snp.height)
         }
     }
+    
+    override func addTargets() {
+//        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(wasTapped)))
+    }
+    
+    override func configureAppearance() {
+        super.configureAppearance()
+        
+        textField.isUserInteractionEnabled = false
+    }
+    
+    @objc private func wasTapped() {
+        onTap?()
+    }
 }
 
 extension SelectCellView: ConfigurableView {
@@ -52,6 +68,10 @@ extension SelectCellView: ConfigurableView {
         textField.placeholder = viewModel.placeholder
 
         arrowImageView.isHidden = viewModel.onTap == nil
+        
+        onTap = viewModel.onTap
+        
+        viewModel.cell = self
 
     }
 }

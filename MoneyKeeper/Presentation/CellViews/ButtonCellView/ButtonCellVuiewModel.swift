@@ -7,8 +7,21 @@
 
 import Foundation
 
-struct ButtonCellViewModel {
+final class ButtonCellViewModel {
+    weak var view: ButtonCellView?
+    
+    var isEnabled: Bool = false {
+        didSet {
+            view?.button.isEnabled = isEnabled
+        }
+    }
+    
     let buttonTitle: String
     var buttonAction: VoidClosure?
-
+    
+    init(buttonTitle: String,
+         buttonAction: VoidClosure? = nil) {
+        self.buttonTitle = buttonTitle
+        self.buttonAction = buttonAction
+    }
 }

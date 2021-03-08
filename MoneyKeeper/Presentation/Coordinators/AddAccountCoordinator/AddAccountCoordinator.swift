@@ -30,10 +30,10 @@ final class AddAccountCoordinator: BaseCoordinator, AddAccountCoordinatorOutput 
     }
 
     override func start() {
-        showAddCard()
+        showAddAccount()
     }
 
-    private func showAddCard() {
+    private func showAddAccount() {
         let module = factory.makeAddAccountModule()
 
         module.onFinish = { [weak self] account in

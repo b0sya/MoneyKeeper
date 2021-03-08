@@ -15,9 +15,8 @@ protocol MainModule: Presentable {
     func refreshData()
 }
 
-final class MainViewController: BaseTableController<MainViewModel>, MainModule {
-    private let builder = MainBuilder()
-
+final class MainViewController: BaseTableController<MainViewModel, MainBuilder>, MainModule {
+	
     var onAddAccount: VoidClosure?
     var onAddTransaction: VoidClosure?
 
@@ -32,7 +31,6 @@ final class MainViewController: BaseTableController<MainViewModel>, MainModule {
     override func configureAppearance() {
         super.configureAppearance()
 
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(addTransactionTapped))
@@ -41,7 +39,7 @@ final class MainViewController: BaseTableController<MainViewModel>, MainModule {
     override func localize() {
         super.localize()
 
-        title = .mainScreenTitle
+        title = .accounts
     }
 
     @objc private func addTransactionTapped() {

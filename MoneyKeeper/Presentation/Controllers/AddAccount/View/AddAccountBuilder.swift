@@ -12,7 +12,7 @@ protocol AddAccountBuilderDataSource {
     var buttonCellViewModel: ButtonCellViewModel { get }
 }
 
-struct AddAccountBuilder {
+struct AddAccountBuilder: BaseTableBuilder {
 
     func buildSections(from dataSource: AddAccountBuilderDataSource) -> [TableSection] {
         [
@@ -27,17 +27,12 @@ struct AddAccountBuilder {
                 TableRow<TextFieldCell>(item: item)
         }
 
-        return TableSection(onlyRows: rows)
+        return .init(onlyRows: rows)
     }
 
     private func buildButtonSection(from dataSource: AddAccountBuilderDataSource) -> TableSection {
         let row = TableRow<ButtonCell>(item: dataSource.buttonCellViewModel)
 
-        let section = TableSection(rows: [row])
-        section.footerHeight = .leastNonzeroMagnitude
-        section.headerView = UIView()
-        section.headerHeight = 30
-
-        return section
+        return .init(withEmptyHeader: [row])
     }
 }

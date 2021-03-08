@@ -14,3 +14,5 @@ typealias SelectTextFieldCell = DefaultCellContainer<SelectCellView>
 typealias TextFieldCell = DefaultCellContainer<TextFieldCellView>
 typealias ButtonCell = DefaultCellContainer<ButtonCellView>
 typealias DatePickerCell = DefaultCellContainer<DatePickerCellView>
+typealias TitleCell = DefaultCellContainer<TitleCellView>
+typealias SegmentedControlCell = DefaultCellContainer<SegmentedControlCellView>
