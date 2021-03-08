@@ -27,6 +27,7 @@
 		0690798525F51734008B38DB /* CategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690798425F51734008B38DB /* CategoriesListViewModel.swift */; };
 		0690798C25F53AEB008B38DB /* CategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */; };
 		0690799325F53B87008B38DB /* AccountsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690799225F53B87008B38DB /* AccountsListViewController.swift */; };
+		069079A225F62883008B38DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 069079A125F62883008B38DB /* GoogleService-Info.plist */; };
 		0698E97925E26CC5000ED813 /* MKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E97825E26CC5000ED813 /* MKNavigationController.swift */; };
 		0698E97F25E26FFA000ED813 /* AddAccountFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E97E25E26FFA000ED813 /* AddAccountFormValidator.swift */; };
 		0698E98325E270A8000ED813 /* BaseFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E98225E270A8000ED813 /* BaseFormValidator.swift */; };
@@ -122,6 +123,7 @@
 		0690798425F51734008B38DB /* CategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewModel.swift; sourceTree = "<group>"; };
 		0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewController.swift; sourceTree = "<group>"; };
 		0690799225F53B87008B38DB /* AccountsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsListViewController.swift; sourceTree = "<group>"; };
+		069079A125F62883008B38DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0698E97825E26CC5000ED813 /* MKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKNavigationController.swift; sourceTree = "<group>"; };
 		0698E97E25E26FFA000ED813 /* AddAccountFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountFormValidator.swift; sourceTree = "<group>"; };
 		0698E98225E270A8000ED813 /* BaseFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormValidator.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 			children = (
 				96504A0C25C5A7A600F4D960 /* Localization */,
 				965049DF25C5999B00F4D960 /* Strings.swift */,
+				069079A125F62883008B38DB /* GoogleService-Info.plist */,
 				965049D825C5969500F4D960 /* Colors.swift */,
 				965049D325C5960100F4D960 /* Images.swift */,
 				96C5E41D25A5BD6C00E374B7 /* Assets.xcassets */,
@@ -850,6 +853,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C5E41E25A5BD6C00E374B7 /* Assets.xcassets in Resources */,
+				069079A225F62883008B38DB /* GoogleService-Info.plist in Resources */,
 				0690791225EA72FA008B38DB /* categoriesInitial.plist in Resources */,
 				0690791925EA73EE008B38DB /* Localizable.strings in Resources */,
 			);
@@ -1140,7 +1144,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = b0sya.MoneyKeeper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.b0sya.MoneyKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1161,7 +1165,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = b0sya.MoneyKeeper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.b0sya.MoneyKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
