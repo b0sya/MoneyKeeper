@@ -10,8 +10,7 @@ target 'MoneyKeeper' do
 
   # Pods for MoneyKeeper
   pod 'SnapKit', '~> 5.0.0'
-  pod 'RxSwift'
-  pod 'RxCocoa'
   pod 'TableKit'
+  pod 'Firebase/Analytics'
 
 end

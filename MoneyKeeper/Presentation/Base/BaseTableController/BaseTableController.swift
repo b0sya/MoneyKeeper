@@ -31,6 +31,7 @@ class BaseTableController<ViewModel, TableBuilder: BaseTableBuilder>: BaseViewCo
         super.configureAppearance()
 
 		tableView.keyboardDismissMode = .onDrag
+        tableView.contentInset.bottom = 100
     }
     
 

@@ -48,7 +48,7 @@ final class AddTransactionFormValidator: BaseFormValidator {
         guard let amount = self.amount,
               let category = self.category,
               let account = self.account,
-              let direction = self.direction?.rawValue else {
+              let direction = self.direction else {
             completion?(.failure(.saveContextError))
             return
         }

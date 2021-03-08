@@ -104,7 +104,7 @@ extension StorageProvider {
                            date: Date,
                            description: String?,
                            account: Account,
-                           direction: Int16,
+                           direction: DirectionType,
                            completion: ParameterClosure<Result<Transaction, CoreDataError>>?) {
         let transaction = Transaction(context: context)
         
@@ -114,7 +114,15 @@ extension StorageProvider {
         transaction.note = description
         transaction.relatedCategory = category
         transaction.relatedAccount = account
-        transaction.direction = direction
+        transaction.direction = direction.rawValue
+        
+        if direction == .cost {
+            account.currency -= transaction.amount
+        }
+        else {
+            account.currency += transaction.amount
+        }
+        
         
         do {
             try self.context.save()
