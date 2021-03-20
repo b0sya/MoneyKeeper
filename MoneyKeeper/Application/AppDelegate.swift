@@ -8,10 +8,12 @@
 import CoreData
 import UIKit
 import Firebase
+import GoogleSignIn
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow? {
         didSet {
             window?.rootViewController = MKNavigationController()
@@ -26,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        
         UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
 
         applicationCoordinator = makeCoordinator()
@@ -33,9 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        StorageProvider.shared.saveContext()
+        CoreDataStorage.shared.saveContext()
     }
 
     private func makeCoordinator() -> Coordinator? {

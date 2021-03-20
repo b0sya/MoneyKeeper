@@ -20,8 +20,20 @@ extension UIColor {
     static var backgroundGray: UIColor {
         resourceColor(named: "backgroundGray")
     }
+    
+    static var backgroundWhite: UIColor {
+        resourceColor(named: "backgroundWhite")
+    }
 
     static var MKGreen: UIColor {
         resourceColor(named: "MKGreen")
+    }
+    
+    static var blackWhite: UIColor {
+        resourceColor(named: "blackWhite")
+    }
+    
+    static var whiteBackgoundGray: UIColor {
+        resourceColor(named: "whiteBackgoundGray")
     }
 }

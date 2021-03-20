@@ -8,6 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */; };
+		068B884C25FCFA19004E81F2 /* FirestoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B884B25FCFA19004E81F2 /* FirestoreModel.swift */; };
+		068B885325FCFB08004E81F2 /* FAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B885225FCFB08004E81F2 /* FAccount.swift */; };
+		068B885625FCFD67004E81F2 /* FTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B885525FCFD67004E81F2 /* FTransaction.swift */; };
+		068B885925FD010B004E81F2 /* FCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B885825FD010B004E81F2 /* FCategory.swift */; };
+		068B885E25FD0335004E81F2 /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B885D25FD0335004E81F2 /* FirebaseStorage.swift */; };
+		068B886225FD0357004E81F2 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B886125FD0357004E81F2 /* StorageProvider.swift */; };
+		068B886E25FE2CAB004E81F2 /* ModuleFactory+AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B886D25FE2CAB004E81F2 /* ModuleFactory+AccountInfo.swift */; };
+		068B887125FE2CBA004E81F2 /* AccuntInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B887025FE2CBA004E81F2 /* AccuntInfoViewModel.swift */; };
+		068B887425FE2CCD004E81F2 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B887325FE2CCD004E81F2 /* AccountInfoViewController.swift */; };
+		068B887825FE2D91004E81F2 /* AcountInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B887725FE2D91004E81F2 /* AcountInfoCellView.swift */; };
+		068B887B25FE2F12004E81F2 /* AccountInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B887A25FE2F12004E81F2 /* AccountInfoCellViewModel.swift */; };
+		068B888125FE2FAA004E81F2 /* TransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B888025FE2FAA004E81F2 /* TransactionCellView.swift */; };
+		068B888525FE2FCD004E81F2 /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B888425FE2FCD004E81F2 /* TransactionCellViewModel.swift */; };
+		068B888825FE331E004E81F2 /* AccountInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B888725FE331E004E81F2 /* AccountInfoBuilder.swift */; };
+		068B888B25FE4D15004E81F2 /* CACornerMask+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B888A25FE4D15004E81F2 /* CACornerMask+RoundedCorners.swift */; };
+		068B888E26049A30004E81F2 /* TransactionsListCellContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B888D26049A30004E81F2 /* TransactionsListCellContainer.swift */; };
+		068B88942604A604004E81F2 /* Date+CompareDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88932604A604004E81F2 /* Date+CompareDates.swift */; };
+		068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */; };
+		068B889C2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B889B2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift */; };
+		068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */; };
+		068B88AC2606162A004E81F2 /* ModuleFactory+CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */; };
 		0690791225EA72FA008B38DB /* categoriesInitial.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0690791125EA72FA008B38DB /* categoriesInitial.plist */; };
 		0690791925EA73EE008B38DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0690791B25EA73EE008B38DB /* Localizable.strings */; };
 		0690792E25EA7F61008B38DB /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690792D25EA7F61008B38DB /* Keys.swift */; };
@@ -28,6 +49,15 @@
 		0690798C25F53AEB008B38DB /* CategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */; };
 		0690799325F53B87008B38DB /* AccountsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690799225F53B87008B38DB /* AccountsListViewController.swift */; };
 		069079A225F62883008B38DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 069079A125F62883008B38DB /* GoogleService-Info.plist */; };
+		069079B425F64717008B38DB /* CategoryListInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079B325F64717008B38DB /* CategoryListInput.swift */; };
+		069079BB25F651F2008B38DB /* ModuleFactory+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079BA25F651F2008B38DB /* ModuleFactory+Login.swift */; };
+		069079BF25F6523A008B38DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079BE25F6523A008B38DB /* LoginViewController.swift */; };
+		069079C325F65274008B38DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079C225F65274008B38DB /* LoginView.swift */; };
+		069079C625F652AA008B38DB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079C525F652AA008B38DB /* LoginViewModel.swift */; };
+		06907A1225F65A4A008B38DB /* AuthProviderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06907A1125F65A4A008B38DB /* AuthProviderButton.swift */; };
+		06907A1725F65CE9008B38DB /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06907A1625F65CE9008B38DB /* AuthCoordinator.swift */; };
+		06907A2325F938C9008B38DB /* GoogleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06907A2225F938C9008B38DB /* GoogleAuthProvider.swift */; };
+		06907A2D25FA860E008B38DB /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06907A2C25FA860E008B38DB /* AuthProvider.swift */; };
 		0698E97925E26CC5000ED813 /* MKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E97825E26CC5000ED813 /* MKNavigationController.swift */; };
 		0698E97F25E26FFA000ED813 /* AddAccountFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E97E25E26FFA000ED813 /* AddAccountFormValidator.swift */; };
 		0698E98325E270A8000ED813 /* BaseFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E98225E270A8000ED813 /* BaseFormValidator.swift */; };
@@ -60,14 +90,14 @@
 		961CF26525CD649100ED1BD3 /* RouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961CF26425CD649100ED1BD3 /* RouterImp.swift */; };
 		961CF26825CD698B00ED1BD3 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961CF26725CD698B00ED1BD3 /* ApplicationCoordinator.swift */; };
 		9621808B25CDF6E4001A386D /* AddAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621808A25CDF6E4001A386D /* AddAccountCoordinator.swift */; };
-		965049CC25C566EC00F4D960 /* TableSection+OnlyRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965049CB25C566EC00F4D960 /* TableSection+OnlyRows.swift */; };
+		965049CC25C566EC00F4D960 /* TableSection+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965049CB25C566EC00F4D960 /* TableSection+Init.swift */; };
 		965049D425C5960200F4D960 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965049D325C5960100F4D960 /* Images.swift */; };
 		965049D925C5969500F4D960 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965049D825C5969500F4D960 /* Colors.swift */; };
 		965049E025C5999B00F4D960 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965049DF25C5999B00F4D960 /* Strings.swift */; };
 		96504A2325C5A9BB00F4D960 /* CenterIconCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96504A2225C5A9BB00F4D960 /* CenterIconCellView.swift */; };
 		96504A2725C5AC2300F4D960 /* TappableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96504A2625C5AC2300F4D960 /* TappableCellViewModel.swift */; };
 		96504A2A25C5AD9200F4D960 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96504A2925C5AD9200F4D960 /* Typealias.swift */; };
-		96504A5725C5FB4600F4D960 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96504A5625C5FB4600F4D960 /* StorageProvider.swift */; };
+		96504A5725C5FB4600F4D960 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96504A5625C5FB4600F4D960 /* CoreDataStorage.swift */; };
 		965990A725B44B46002A23BD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965990A625B44B46002A23BD /* BaseViewController.swift */; };
 		965990C425B615BE002A23BD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965990C325B615BE002A23BD /* BaseView.swift */; };
 		9659912625B898DC002A23BD /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659912525B898DC002A23BD /* ModuleFactory.swift */; };
@@ -103,6 +133,27 @@
 /* Begin PBXFileReference section */
 		000B42E85F7F77B09B44A082 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableBuilder.swift; sourceTree = "<group>"; };
+		068B884B25FCFA19004E81F2 /* FirestoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreModel.swift; sourceTree = "<group>"; };
+		068B885225FCFB08004E81F2 /* FAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAccount.swift; sourceTree = "<group>"; };
+		068B885525FCFD67004E81F2 /* FTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTransaction.swift; sourceTree = "<group>"; };
+		068B885825FD010B004E81F2 /* FCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCategory.swift; sourceTree = "<group>"; };
+		068B885D25FD0335004E81F2 /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
+		068B886125FD0357004E81F2 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
+		068B886D25FE2CAB004E81F2 /* ModuleFactory+AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+AccountInfo.swift"; sourceTree = "<group>"; };
+		068B887025FE2CBA004E81F2 /* AccuntInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccuntInfoViewModel.swift; path = MoneyKeeper/Controllers/AccountInfo/Assembly/AccuntInfoViewModel.swift; sourceTree = SOURCE_ROOT; };
+		068B887325FE2CCD004E81F2 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
+		068B887725FE2D91004E81F2 /* AcountInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountInfoCellView.swift; sourceTree = "<group>"; };
+		068B887A25FE2F12004E81F2 /* AccountInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoCellViewModel.swift; sourceTree = "<group>"; };
+		068B888025FE2FAA004E81F2 /* TransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellView.swift; sourceTree = "<group>"; };
+		068B888425FE2FCD004E81F2 /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
+		068B888725FE331E004E81F2 /* AccountInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoBuilder.swift; sourceTree = "<group>"; };
+		068B888A25FE4D15004E81F2 /* CACornerMask+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CACornerMask+RoundedCorners.swift"; sourceTree = "<group>"; };
+		068B888D26049A30004E81F2 /* TransactionsListCellContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListCellContainer.swift; sourceTree = "<group>"; };
+		068B88932604A604004E81F2 /* Date+CompareDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CompareDates.swift"; sourceTree = "<group>"; };
+		068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
+		068B889B2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderViewModel.swift; sourceTree = "<group>"; };
+		068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+RUB.swift"; sourceTree = "<group>"; };
+		068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+CategoriesList.swift"; sourceTree = "<group>"; };
 		0690791125EA72FA008B38DB /* categoriesInitial.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = categoriesInitial.plist; sourceTree = "<group>"; };
 		0690791A25EA73EE008B38DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0690791C25EA73F2008B38DB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -124,6 +175,15 @@
 		0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewController.swift; sourceTree = "<group>"; };
 		0690799225F53B87008B38DB /* AccountsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsListViewController.swift; sourceTree = "<group>"; };
 		069079A125F62883008B38DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		069079B325F64717008B38DB /* CategoryListInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListInput.swift; sourceTree = "<group>"; };
+		069079BA25F651F2008B38DB /* ModuleFactory+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+Login.swift"; sourceTree = "<group>"; };
+		069079BE25F6523A008B38DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		069079C225F65274008B38DB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		069079C525F652AA008B38DB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		06907A1125F65A4A008B38DB /* AuthProviderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderButton.swift; sourceTree = "<group>"; };
+		06907A1625F65CE9008B38DB /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		06907A2225F938C9008B38DB /* GoogleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthProvider.swift; sourceTree = "<group>"; };
+		06907A2C25FA860E008B38DB /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		0698E97825E26CC5000ED813 /* MKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKNavigationController.swift; sourceTree = "<group>"; };
 		0698E97E25E26FFA000ED813 /* AddAccountFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountFormValidator.swift; sourceTree = "<group>"; };
 		0698E98225E270A8000ED813 /* BaseFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormValidator.swift; sourceTree = "<group>"; };
@@ -157,14 +217,14 @@
 		961CF26425CD649100ED1BD3 /* RouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImp.swift; sourceTree = "<group>"; };
 		961CF26725CD698B00ED1BD3 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		9621808A25CDF6E4001A386D /* AddAccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountCoordinator.swift; sourceTree = "<group>"; };
-		965049CB25C566EC00F4D960 /* TableSection+OnlyRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableSection+OnlyRows.swift"; sourceTree = "<group>"; };
+		965049CB25C566EC00F4D960 /* TableSection+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableSection+Init.swift"; sourceTree = "<group>"; };
 		965049D325C5960100F4D960 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		965049D825C5969500F4D960 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		965049DF25C5999B00F4D960 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		96504A2225C5A9BB00F4D960 /* CenterIconCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterIconCellView.swift; sourceTree = "<group>"; };
 		96504A2625C5AC2300F4D960 /* TappableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableCellViewModel.swift; sourceTree = "<group>"; };
 		96504A2925C5AD9200F4D960 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
-		96504A5625C5FB4600F4D960 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
+		96504A5625C5FB4600F4D960 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		965990A625B44B46002A23BD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		965990C325B615BE002A23BD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9659912525B898DC002A23BD /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
@@ -211,6 +271,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		068B884A25FCFA05004E81F2 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				068B884B25FCFA19004E81F2 /* FirestoreModel.swift */,
+				068B885225FCFB08004E81F2 /* FAccount.swift */,
+				068B885525FCFD67004E81F2 /* FTransaction.swift */,
+				068B885825FD010B004E81F2 /* FCategory.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		068B886925FE2C6B004E81F2 /* AccountInfo */ = {
+			isa = PBXGroup;
+			children = (
+				068B886A25FE2C75004E81F2 /* Assembly */,
+				068B886B25FE2C7A004E81F2 /* ViewModel */,
+				068B886C25FE2C81004E81F2 /* View */,
+			);
+			path = AccountInfo;
+			sourceTree = "<group>";
+		};
+		068B886A25FE2C75004E81F2 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				068B886D25FE2CAB004E81F2 /* ModuleFactory+AccountInfo.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		068B886B25FE2C7A004E81F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				068B887025FE2CBA004E81F2 /* AccuntInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		068B886C25FE2C81004E81F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				068B887325FE2CCD004E81F2 /* AccountInfoViewController.swift */,
+				068B888725FE331E004E81F2 /* AccountInfoBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		068B887625FE2D51004E81F2 /* AccountInfoCellView */ = {
+			isa = PBXGroup;
+			children = (
+				068B887725FE2D91004E81F2 /* AcountInfoCellView.swift */,
+				068B887A25FE2F12004E81F2 /* AccountInfoCellViewModel.swift */,
+			);
+			path = AccountInfoCellView;
+			sourceTree = "<group>";
+		};
+		068B887E25FE2F84004E81F2 /* TransactionCellView */ = {
+			isa = PBXGroup;
+			children = (
+				068B888025FE2FAA004E81F2 /* TransactionCellView.swift */,
+				068B888425FE2FCD004E81F2 /* TransactionCellViewModel.swift */,
+			);
+			path = TransactionCellView;
+			sourceTree = "<group>";
+		};
+		068B88922604A5F1004E81F2 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				068B88932604A604004E81F2 /* Date+CompareDates.swift */,
+				068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		068B88962604A9BF004E81F2 /* TableSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */,
+				068B889B2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift */,
+			);
+			path = TableSectionHeader;
+			sourceTree = "<group>";
+		};
+		068B88A926061611004E81F2 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		0690793025EA84CE008B38DB /* SegmentedControllCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,17 +370,10 @@
 			path = SegmentedControllCell;
 			sourceTree = "<group>";
 		};
-		0690797325F4FABE008B38DB /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				0690797425F4FACF008B38DB /* Transactions+DirectionType.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		0690798A25F53AAE008B38DB /* CategoriesList */ = {
 			isa = PBXGroup;
 			children = (
+				068B88A926061611004E81F2 /* Assembly */,
 				0690799F25F61416008B38DB /* View */,
 				0690799E25F6140F008B38DB /* ViewModel */,
 			);
@@ -276,6 +419,115 @@
 				0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		069079B625F651A5008B38DB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				069079B725F651B8008B38DB /* Assembly */,
+				069079B925F651C3008B38DB /* ViewModel */,
+				069079B825F651BE008B38DB /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		069079B725F651B8008B38DB /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				069079BA25F651F2008B38DB /* ModuleFactory+Login.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		069079B825F651BE008B38DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				069079BE25F6523A008B38DB /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		069079B925F651C3008B38DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				069079C525F652AA008B38DB /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		069079C125F65267008B38DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				068B88962604A9BF004E81F2 /* TableSectionHeader */,
+				965990C325B615BE002A23BD /* BaseView.swift */,
+				069079C225F65274008B38DB /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		06907A1425F65CD2008B38DB /* AuthCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				06907A1625F65CE9008B38DB /* AuthCoordinator.swift */,
+			);
+			path = AuthCoordinator;
+			sourceTree = "<group>";
+		};
+		06907A1A25F677B8008B38DB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				96504A5625C5FB4600F4D960 /* CoreDataStorage.swift */,
+				06907A2125F938B3008B38DB /* AuthProviders */,
+				0698E98125E27093000ED813 /* BaseFormValidator */,
+				068B885D25FD0335004E81F2 /* FirebaseStorage.swift */,
+				068B886125FD0357004E81F2 /* StorageProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		06907A2125F938B3008B38DB /* AuthProviders */ = {
+			isa = PBXGroup;
+			children = (
+				06907A2C25FA860E008B38DB /* AuthProvider.swift */,
+				06907A2225F938C9008B38DB /* GoogleAuthProvider.swift */,
+			);
+			path = AuthProviders;
+			sourceTree = "<group>";
+		};
+		06907A3425FA9C51008B38DB /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				0690796725F4FA36008B38DB /* Category+CoreDataClass copy.swift */,
+				0690796825F4FA36008B38DB /* Account+CoreDataProperties copy.swift */,
+				0690796925F4FA36008B38DB /* Transaction+CoreDataClass copy.swift */,
+				0690796A25F4FA37008B38DB /* Account+CoreDataClass copy.swift */,
+				0690796B25F4FA37008B38DB /* Category+CoreDataProperties copy.swift */,
+				96E067BE25C6A1DE00DB7C35 /* MoneyKeeper.xcdatamodeld */,
+				0690796625F4FA36008B38DB /* Transaction+CoreDataProperties copy.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		06907A3925FA9D7A008B38DB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0698E99525E27AB7000ED813 /* TextFieldVIewModel+Fabric.swift */,
+				965049CB25C566EC00F4D960 /* TableSection+Init.swift */,
+				96F1973625CD8B5300B0B634 /* CGFloat+IconSize.swift */,
+				9699EE0325D009FB00EF316E /* DateFormatter+Extension.swift */,
+				9699EE0625D0102E00EF316E /* UITextField+ToolBarDatePicker.swift */,
+				06EAB25F25E2872600E05FAB /* UIButton+BackgoundColorForState.swift */,
+				068B888A25FE4D15004E81F2 /* CACornerMask+RoundedCorners.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		06907A3A25FA9D7F008B38DB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0690797425F4FACF008B38DB /* Transactions+DirectionType.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		0698E98125E27093000ED813 /* BaseFormValidator */ = {
@@ -358,6 +610,10 @@
 		961B5E5025A890C500C7BADE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				965990A625B44B46002A23BD /* BaseViewController.swift */,
+				068B886925FE2C6B004E81F2 /* AccountInfo */,
+				965991F825BD7D2D002A23BD /* BaseTableController */,
+				069079B625F651A5008B38DB /* Login */,
 				06EAB26225E2901C00E05FAB /* BaseList */,
 				0690799025F53B4C008B38DB /* AccountsList */,
 				0690798A25F53AAE008B38DB /* CategoriesList */,
@@ -461,9 +717,10 @@
 		961CF25025CD5D5700ED1BD3 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				961CF25D25CD600C00ED1BD3 /* Factory */,
 				961CF26D25CD7A6A00ED1BD3 /* Base */,
+				06907A1425F65CD2008B38DB /* AuthCoordinator */,
 				961CF26A25CD7A0800ED1BD3 /* MainCoordinator */,
+				961CF25D25CD600C00ED1BD3 /* Factory */,
 				9621808925CDF6D6001A386D /* AddAccountCoordinator */,
 				06EAB27925E2959800E05FAB /* AddTransactionCoordinator */,
 			);
@@ -575,13 +832,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		9659915825B8A56D002A23BD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		965991F825BD7D2D002A23BD /* BaseTableController */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +845,8 @@
 		9659920825BD836F002A23BD /* CellViews */ = {
 			isa = PBXGroup;
 			children = (
+				068B887E25FE2F84004E81F2 /* TransactionCellView */,
+				068B887625FE2D51004E81F2 /* AccountInfoCellView */,
 				0690793025EA84CE008B38DB /* SegmentedControllCell */,
 				06EAB26F25E290EC00E05FAB /* TitleCellView */,
 				96F1972A25CD800100B0B634 /* RoundedContainerView */,
@@ -640,8 +892,13 @@
 			isa = PBXGroup;
 			children = (
 				96C5E42E25A5BE1E00E374B7 /* Application */,
-				96C5E43225A5BE7700E374B7 /* Business logic */,
-				96C5E43125A5BE6F00E374B7 /* Presentation */,
+				96C5E43125A5BE6F00E374B7 /* Base */,
+				96E067BC25C6A1DE00DB7C35 /* Models */,
+				06907A1A25F677B8008B38DB /* Services */,
+				961CF25025CD5D5700ED1BD3 /* Coordinators */,
+				961B5E5025A890C500C7BADE /* Controllers */,
+				96F4B0DA25C41CC800E8339E /* Cells */,
+				069079C125F65267008B38DB /* Views */,
 				96C5E45025A5C27B00E374B7 /* Utils */,
 				96C5E44525A5C10A00E374B7 /* Extensions */,
 				96C5E43025A5BE5A00E374B7 /* Resources */,
@@ -674,39 +931,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		96C5E43125A5BE6F00E374B7 /* Presentation */ = {
+		96C5E43125A5BE6F00E374B7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				96F4B0DF25C41E5600E8339E /* Base */,
-				961CF25025CD5D5700ED1BD3 /* Coordinators */,
-				96F4B0DA25C41CC800E8339E /* Cells */,
 				96F4B0D925C41CAA00E8339E /* Protocols */,
-				9659915825B8A56D002A23BD /* Models */,
-				961B5E5025A890C500C7BADE /* Controllers */,
-				9659920825BD836F002A23BD /* CellViews */,
 			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		96C5E43225A5BE7700E374B7 /* Business logic */ = {
-			isa = PBXGroup;
-			children = (
-				96504A5625C5FB4600F4D960 /* StorageProvider.swift */,
-				0690797325F4FABE008B38DB /* Extensions */,
-				96E067BC25C6A1DE00DB7C35 /* Models */,
-			);
-			path = "Business logic";
+			path = Base;
 			sourceTree = "<group>";
 		};
 		96C5E44525A5C10A00E374B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0698E99525E27AB7000ED813 /* TextFieldVIewModel+Fabric.swift */,
-				965049CB25C566EC00F4D960 /* TableSection+OnlyRows.swift */,
-				96F1973625CD8B5300B0B634 /* CGFloat+IconSize.swift */,
-				9699EE0325D009FB00EF316E /* DateFormatter+Extension.swift */,
-				9699EE0625D0102E00EF316E /* UITextField+ToolBarDatePicker.swift */,
-				06EAB25F25E2872600E05FAB /* UIButton+BackgoundColorForState.swift */,
+				068B88922604A5F1004E81F2 /* Foundation */,
+				06907A3A25FA9D7F008B38DB /* CoreData */,
+				06907A3925FA9D7A008B38DB /* UI */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -717,6 +955,7 @@
 				96504A2925C5AD9200F4D960 /* Typealias.swift */,
 				0698E97825E26CC5000ED813 /* MKNavigationController.swift */,
 				0690794325F4D359008B38DB /* StringConverter.swift */,
+				06907A1125F65A4A008B38DB /* AuthProviderButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -724,13 +963,9 @@
 		96E067BC25C6A1DE00DB7C35 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0690796625F4FA36008B38DB /* Transaction+CoreDataProperties copy.swift */,
-				0690796725F4FA36008B38DB /* Category+CoreDataClass copy.swift */,
-				0690796825F4FA36008B38DB /* Account+CoreDataProperties copy.swift */,
-				0690796925F4FA36008B38DB /* Transaction+CoreDataClass copy.swift */,
-				0690796A25F4FA37008B38DB /* Account+CoreDataClass copy.swift */,
-				0690796B25F4FA37008B38DB /* Category+CoreDataProperties copy.swift */,
-				96E067BE25C6A1DE00DB7C35 /* MoneyKeeper.xcdatamodeld */,
+				069079B325F64717008B38DB /* CategoryListInput.swift */,
+				068B884A25FCFA05004E81F2 /* Firestore */,
+				06907A3425FA9C51008B38DB /* Core Data */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -774,22 +1009,13 @@
 		96F4B0DA25C41CC800E8339E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				96F4B0E125C41E9100E8339E /* BaseTableViewCell.swift */,
 				96F4B0DB25C41DCF00E8339E /* ContainerTableCell.swift */,
+				068B888D26049A30004E81F2 /* TransactionsListCellContainer.swift */,
 				96F4B0E625C420CC00E8339E /* DefaultCellContainer.swift */,
+				9659920825BD836F002A23BD /* CellViews */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		96F4B0DF25C41E5600E8339E /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				0698E98125E27093000ED813 /* BaseFormValidator */,
-				965990C325B615BE002A23BD /* BaseView.swift */,
-				965990A625B44B46002A23BD /* BaseViewController.swift */,
-				96F4B0E125C41E9100E8339E /* BaseTableViewCell.swift */,
-				965991F825BD7D2D002A23BD /* BaseTableController */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -804,6 +1030,7 @@
 				96C5E40E25A5BD6B00E374B7 /* Frameworks */,
 				96C5E40F25A5BD6B00E374B7 /* Resources */,
 				0A7631C2F633A3B01D996DD5 /* [CP] Embed Pods Frameworks */,
+				6B81B6C1648A0BC289DE6144 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -879,6 +1106,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6B81B6C1648A0BC289DE6144 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F8EDBF068F87B21ABB37DCBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -908,18 +1152,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068B886225FD0357004E81F2 /* StorageProvider.swift in Sources */,
 				9659920225BD80ED002A23BD /* MainViewController.swift in Sources */,
+				06907A2325F938C9008B38DB /* GoogleAuthProvider.swift in Sources */,
 				96504A2A25C5AD9200F4D960 /* Typealias.swift in Sources */,
 				0690798525F51734008B38DB /* CategoriesListViewModel.swift in Sources */,
 				06EAB26725E2904E00E05FAB /* DataListViewController.swift in Sources */,
 				961CF26525CD649100ED1BD3 /* RouterImp.swift in Sources */,
 				96F4B0E225C41E9100E8339E /* BaseTableViewCell.swift in Sources */,
+				068B88AC2606162A004E81F2 /* ModuleFactory+CategoriesList.swift in Sources */,
 				961C081C25CEC7AD00C8E300 /* AddTransactionViewModel.swift in Sources */,
 				961CF21C25CAAA7C00ED1BD3 /* AddAccountViewModel.swift in Sources */,
 				06EAB26D25E2909700E05FAB /* DataListBuilder.swift in Sources */,
 				96504A2325C5A9BB00F4D960 /* CenterIconCellView.swift in Sources */,
 				0690793B25F4D098008B38DB /* AddTransactionFormValidator.swift in Sources */,
 				961CF25225CD5D6100ED1BD3 /* MainCoordinator.swift in Sources */,
+				068B889C2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift in Sources */,
 				96F1974125CDA93100B0B634 /* ButtonCellVuiewModel.swift in Sources */,
 				96504A2725C5AC2300F4D960 /* TappableCellViewModel.swift in Sources */,
 				0690796D25F4FA37008B38DB /* Category+CoreDataClass copy.swift in Sources */,
@@ -934,13 +1182,26 @@
 				965049D425C5960200F4D960 /* Images.swift in Sources */,
 				961C082325CEC9F700C8E300 /* SelectCellViewModel.swift in Sources */,
 				961CF21F25CAAAB000ED1BD3 /* AddAccountBuilder.swift in Sources */,
+				069079B425F64717008B38DB /* CategoryListInput.swift in Sources */,
+				068B888B25FE4D15004E81F2 /* CACornerMask+RoundedCorners.swift in Sources */,
 				961CF24B25CD5CDF00ED1BD3 /* Router.swift in Sources */,
+				068B885925FD010B004E81F2 /* FCategory.swift in Sources */,
+				068B887125FE2CBA004E81F2 /* AccuntInfoViewModel.swift in Sources */,
+				068B888E26049A30004E81F2 /* TransactionsListCellContainer.swift in Sources */,
+				068B885E25FD0335004E81F2 /* FirebaseStorage.swift in Sources */,
 				965990A725B44B46002A23BD /* BaseViewController.swift in Sources */,
+				068B888125FE2FAA004E81F2 /* TransactionCellView.swift in Sources */,
+				069079BF25F6523A008B38DB /* LoginViewController.swift in Sources */,
 				96F1973D25CDA73800B0B634 /* ButtonCellView.swift in Sources */,
+				06907A2D25FA860E008B38DB /* AuthProvider.swift in Sources */,
 				9699EE0725D0102E00EF316E /* UITextField+ToolBarDatePicker.swift in Sources */,
+				068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */,
 				96C5E41525A5BD6B00E374B7 /* AppDelegate.swift in Sources */,
 				0690797C25F51553008B38DB /* DataListViewModel.swift in Sources */,
+				069079C625F652AA008B38DB /* LoginViewModel.swift in Sources */,
+				068B888825FE331E004E81F2 /* AccountInfoBuilder.swift in Sources */,
 				0690797025F4FA37008B38DB /* Account+CoreDataClass copy.swift in Sources */,
+				068B888525FE2FCD004E81F2 /* TransactionCellViewModel.swift in Sources */,
 				961CF21925CAA9CA00ED1BD3 /* AddAccountViewController.swift in Sources */,
 				965991FE25BD7F4A002A23BD /* BaseTableView.swift in Sources */,
 				0690798C25F53AEB008B38DB /* CategoriesListViewController.swift in Sources */,
@@ -953,28 +1214,37 @@
 				9699EDFB25CFFA6B00EF316E /* DatePickerCellView.swift in Sources */,
 				0698E97F25E26FFA000ED813 /* AddAccountFormValidator.swift in Sources */,
 				96F4B0DC25C41DCF00E8339E /* ContainerTableCell.swift in Sources */,
+				069079BB25F651F2008B38DB /* ModuleFactory+Login.swift in Sources */,
+				069079C325F65274008B38DB /* LoginView.swift in Sources */,
 				961C081825CEC79800C8E300 /* AddTransactionBuilder.swift in Sources */,
 				961CF22225CAAD3F00ED1BD3 /* ModuleFactory+AddAccountModule.swift in Sources */,
 				0690792E25EA7F61008B38DB /* Keys.swift in Sources */,
 				965049E025C5999B00F4D960 /* Strings.swift in Sources */,
 				0690797525F4FACF008B38DB /* Transactions+DirectionType.swift in Sources */,
+				068B886E25FE2CAB004E81F2 /* ModuleFactory+AccountInfo.swift in Sources */,
+				06907A1725F65CE9008B38DB /* AuthCoordinator.swift in Sources */,
 				96F4B0CF25C41A5B00E8339E /* DefaultCellViewModel.swift in Sources */,
 				96F1972C25CD801400B0B634 /* RoundedContainerCellView.swift in Sources */,
 				96F4B0E725C420CC00E8339E /* DefaultCellContainer.swift in Sources */,
+				068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */,
 				961CF24E25CD5CEF00ED1BD3 /* Presentable.swift in Sources */,
 				961CF25925CD5F3900ED1BD3 /* CoordinatorFactory.swift in Sources */,
 				965049D925C5969500F4D960 /* Colors.swift in Sources */,
+				068B885325FCFB08004E81F2 /* FAccount.swift in Sources */,
 				96F1973725CD8B5300B0B634 /* CGFloat+IconSize.swift in Sources */,
 				0698E98325E270A8000ED813 /* BaseFormValidator.swift in Sources */,
 				965991FA25BD7D50002A23BD /* BaseTableController.swift in Sources */,
 				06EAB27B25E295B500E05FAB /* AddTransactionCoordinator.swift in Sources */,
 				0690799325F53B87008B38DB /* AccountsListViewController.swift in Sources */,
 				0698E99625E27AB7000ED813 /* TextFieldVIewModel+Fabric.swift in Sources */,
+				068B885625FCFD67004E81F2 /* FTransaction.swift in Sources */,
 				965990C425B615BE002A23BD /* BaseView.swift in Sources */,
 				0690796C25F4FA37008B38DB /* Transaction+CoreDataProperties copy.swift in Sources */,
 				961CF24725CD5CA400ED1BD3 /* BaseCoordinator.swift in Sources */,
 				065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */,
 				961CF26825CD698B00ED1BD3 /* ApplicationCoordinator.swift in Sources */,
+				068B887425FE2CCD004E81F2 /* AccountInfoViewController.swift in Sources */,
+				068B887B25FE2F12004E81F2 /* AccountInfoCellViewModel.swift in Sources */,
 				96E067C625C6A1DE00DB7C35 /* MoneyKeeper.xcdatamodeld in Sources */,
 				961C082025CEC9EA00C8E300 /* SelectCellView.swift in Sources */,
 				961CF24325CD5B8400ED1BD3 /* Coordinator.swift in Sources */,
@@ -983,17 +1253,21 @@
 				96F4B0D725C41C7600E8339E /* ConfigurableView.swift in Sources */,
 				9659920F25BD84AD002A23BD /* DefaultCellView.swift in Sources */,
 				9659912925B8990C002A23BD /* ModuleFactory+MainModule.swift in Sources */,
+				068B884C25FCFA19004E81F2 /* FirestoreModel.swift in Sources */,
 				961C082625CEDC4C00C8E300 /* ModuleFactory+AddTranaction.swift in Sources */,
+				068B88942604A604004E81F2 /* Date+CompareDates.swift in Sources */,
 				9699EE0425D009FB00EF316E /* DateFormatter+Extension.swift in Sources */,
 				06EAB27125E2910200E05FAB /* TitleCellView.swift in Sources */,
 				0690796E25F4FA37008B38DB /* Account+CoreDataProperties copy.swift in Sources */,
 				0698E97925E26CC5000ED813 /* MKNavigationController.swift in Sources */,
-				96504A5725C5FB4600F4D960 /* StorageProvider.swift in Sources */,
+				96504A5725C5FB4600F4D960 /* CoreDataStorage.swift in Sources */,
 				0690797125F4FA37008B38DB /* Category+CoreDataProperties copy.swift in Sources */,
 				96F4B0EA25C427DE00E8339E /* BaseContentInput.swift in Sources */,
-				965049CC25C566EC00F4D960 /* TableSection+OnlyRows.swift in Sources */,
+				06907A1225F65A4A008B38DB /* AuthProviderButton.swift in Sources */,
+				965049CC25C566EC00F4D960 /* TableSection+Init.swift in Sources */,
 				0690798225F51647008B38DB /* AccountsListViewModel.swift in Sources */,
 				0690796F25F4FA37008B38DB /* Transaction+CoreDataClass copy.swift in Sources */,
+				068B887825FE2D91004E81F2 /* AcountInfoCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

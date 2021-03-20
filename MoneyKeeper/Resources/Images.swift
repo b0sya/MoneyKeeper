@@ -27,4 +27,10 @@ extension UIImage {
     static var removeIcon: UIImage {
         return resourceImage(named: "remove")
     }
+    
+    static var googleLogo: UIImage {
+        return resourceImage(named: "googleLogo")
+    }
+    
+    
 }

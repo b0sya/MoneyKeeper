@@ -12,5 +12,8 @@ target 'MoneyKeeper' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'TableKit'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
 end

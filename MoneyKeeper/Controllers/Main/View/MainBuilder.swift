@@ -1,0 +1,71 @@
+//
+//  MainBuilder.swift
+//  MoneyKeeper
+//
+//  Created by Maxim Shalashnikov on 24.01.2021.
+//
+
+import Foundation
+import TableKit
+
+typealias DefaultCell = DefaultCellContainer<DefaultCellView>
+
+protocol MainBuilderDataSource {
+    var overalBalanceViewModel: AccountInfoCellViewModel? { get }
+    var addAccountViewModel: TappableCellViewModel { get }
+    var accountsCellsViewModels: [AccountCellViewModel] { get }
+
+    var serviceCellsViewModel: [DefaultCellViewModel] { get }
+}
+
+struct MainBuilder: BaseTableBuilder {
+
+    typealias AddAccountCell = DefaultCellContainer<CenterIconCellView>
+    typealias AccountCell = DefaultCellContainer<AccountCellView>
+
+    func buildSections(from dataSource: MainBuilderDataSource) -> [TableSection] {
+        [
+            buildOveralBalanceSection(from: dataSource),
+            buildAccountsSection(from: dataSource),
+            buildServicesSection(from: dataSource),
+        ]
+
+    }
+
+    func buildAccountsSection(from dataSource: MainBuilderDataSource) -> TableSection {
+        var rows: [Row] = dataSource.accountsCellsViewModels
+            .compactMap { item -> TableRow<AccountCell>? in
+                TableRow<AccountCell>(item: item).on(.click) { _ in
+                    item.onTap?()
+                }
+            }
+        let addAccountRow = TableRow<AddAccountCell>(item: dataSource.addAccountViewModel)
+            .on(.click) { _ in
+                dataSource.addAccountViewModel.onTap?()
+            }
+
+        rows.append(addAccountRow)
+
+        return .init(onlyRows: rows)
+    }
+
+    private func buildServicesSection(from dataSource: MainBuilderDataSource) -> TableSection {
+        let rows = dataSource.serviceCellsViewModel
+            .compactMap { item -> TableRow<DefaultCell>? in
+                TableRow<DefaultCell>(item: item).on(.click) { _ in
+                    item.onTap?()
+                }
+        }
+        
+        return .init(withEmptyHeader: rows)
+    }
+    
+    func buildOveralBalanceSection(from dataSource: MainBuilderDataSource) -> TableSection {
+        guard let viewModel = dataSource.overalBalanceViewModel else {
+            return TableSection()
+        }
+        let row = TableRow<AccountInfoCell>(item: viewModel)
+        
+        return .init(onlyRows: [row])
+    }
+}

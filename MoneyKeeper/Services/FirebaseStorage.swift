@@ -1,0 +1,164 @@
+//
+//  FirebaseStorage.swift
+//  MoneyKeeper
+//
+//  Created by Максим Шалашников on 13.03.2021.
+//
+
+import Foundation
+import FirebaseFirestore
+
+final class FirebaseStorage: StorageProvider {
+    static let instance = FirebaseStorage()
+    
+    private let db = Firestore.firestore()
+    
+    private init() {
+        loadInitialCategoriesIfNeeded()
+    }
+    
+    private func loadInitialCategoriesIfNeeded() {
+        guard !UserDefaults.standard.bool(forKey: Keys.initialCategoriesWasLoaded) else {
+            return
+        }
+        
+        UserDefaults.standard.setValue(true, forKey: Keys.initialCategoriesWasLoaded)
+        
+        guard let pathToFile = Bundle.main.path(forResource: "categoriesInitial", ofType: "plist") else { return }
+        
+        guard let dataArray = NSArray(contentsOfFile: pathToFile) else { return }
+        for dictionary in dataArray {
+            
+            let carDictionary = dictionary as! NSDictionary
+            
+            guard let name = carDictionary["name"] as? String else {
+                fatalError("Invalid categories initial plist file")
+            }
+            
+            addCategory(name: name, direction: .cost, completion: nil)
+        }
+        
+    }
+    
+    //MARK: Fetch methods
+    func fetchAccounts(completion: ParameterClosure<FetchAccountsOutput>?) {
+        db.collection(FAccount.collectionKey).getDocuments { snapshot, error in
+            if let error = error {
+                completion?(.failure(.fetchDataError("Fetch accounts failed: \(error.localizedDescription)")))
+                return
+            }
+            guard let accounts = snapshot?.documents.compactMap({ FAccount(from: $0) }) else {
+                completion?(.failure(.parseDataError("Parse accounts data failed")))
+                return
+            }
+            
+            completion?(.success(accounts))
+        }
+    }
+    
+    func fetchCategories(direction: DirectionType, completion: ParameterClosure<FetchCategoriesOutput>?) {
+        let query = db.collection(FCategory.collectionKey).whereField(FCategory.Keys.directionId, in: [direction.rawValue])
+        
+        query.getDocuments { snapshot, error in
+            if let error = error {
+                completion?(.failure(.fetchDataError("Fetch categories failed: \(error.localizedDescription)")))
+                return
+            }
+            
+            guard let accounts = snapshot?.documents.compactMap({ FCategory(from: $0) }) else {
+                completion?(.failure(.parseDataError("Parse categories data failed")))
+                return
+            }
+            
+            completion?(.success(accounts))
+        }
+    }
+    
+    func fetchTransactions(for account: FAccount, completion: ParameterClosure<FetchTransactionsOutput>?) {
+        guard !account.relatedTransactionIds.isEmpty else {
+            completion?(.success([]))
+            return
+        }
+        
+        let query = db.collection(FTransaction.collectionKey).whereField(FTransaction.Keys.uid, in: account.relatedTransactionIds)
+        
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                completion?(.failure(.fetchDataError("Failed to load transactions for account \(account.name): \(error.localizedDescription)")))
+                return
+            }
+            
+            guard let transactions = snapshot?.documents.compactMap({ FTransaction(from: $0) }) else {
+                completion?(.failure(.parseDataError("Parse accounts data failed")))
+                return
+            }
+            
+            completion?(.success(transactions))
+            
+        }
+    }
+
+    
+    //MARK: Save methods
+    func addAccount(
+        uid: String,
+        name: String,
+        balance: Double,
+        completion: ParameterClosure<SeveAccountOutput>?
+    ) {
+        let newAccount = FAccount(uid: uid, name: name, balance: balance)
+        db.collection(FAccount.collectionKey).addDocument(data: newAccount.dictionaryRepresentation) { error in
+            if let error = error {
+                completion?(.failure(.saveDataError("Failed to add new account: \(error.localizedDescription)")))
+                return
+            }
+            
+            completion?(.success(newAccount))
+        }
+    }
+    
+    func addTransaction(data: AddTransactionFormData, completion: ParameterClosure<SaveTransactionOutput>?) {
+        guard let accountReference = data.account.reference else {
+            completion?(.failure(.saveDataError("Account reference is nil")))
+            return
+        }
+
+        let transaction = FTransaction(uid: data.uid,
+                                       amount: data.amount,
+                                       date: data.date,
+                                       note: data.description,
+                                       direction: data.direction,
+                                       relatedAccount: accountReference)
+        
+        db.collection(FTransaction.collectionKey).addDocument(data: transaction.dictionaryRepresentation) { error in
+            if let error = error {
+                completion?(.failure(.saveDataError("Faild to add new transaction: \(error.localizedDescription)")))
+                return
+            }
+            
+            if transaction.direction == .cost {
+                accountReference.updateData([FAccount.Keys.balance: FieldValue.increment(-transaction.amount)])
+            }
+            else {
+                accountReference.updateData([FAccount.Keys.balance: FieldValue.increment(transaction.amount)])
+            }
+            
+            accountReference.updateData([FAccount.Keys.relatedTransactionIds: FieldValue.arrayUnion([transaction.uid])])
+            completion?(.success(transaction))
+        }
+    }
+    
+    func addCategory(name: String, direction: DirectionType, completion: ParameterClosure<SaveCategoryOutput>?) {
+        let category = FCategory(uid: UUID().uuidString,
+                                 name: name,
+                                 direction: direction)
+        
+        db.collection(FCategory.collectionKey).addDocument(data: category.dictionaryRepresentation) { error in
+            if let error = error {
+                completion?(.failure(.saveDataError("Faild to add new category: \(error.localizedDescription)")))
+            }
+            
+            completion?(.success(category))
+        }
+    }
+}

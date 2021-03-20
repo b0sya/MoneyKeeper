@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 final class ApplicationCoordinator: BaseCoordinator {
     private let coordinatorFactory: CoordinatorFactory
@@ -17,11 +18,21 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
 
     override func start() {
+        guard GoogleAuth.isAuthorized else {
+            runAuthFlow()
+            return
+        }
         runMainFlow()
     }
 
     private func runMainFlow() {
         let coordinator = coordinatorFactory.makeMainCoordinator(router: router)
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func runAuthFlow() {
+        let coordinator = coordinatorFactory.makeAuthCoordinator(router: router)
         addDependency(coordinator)
         coordinator.start()
     }

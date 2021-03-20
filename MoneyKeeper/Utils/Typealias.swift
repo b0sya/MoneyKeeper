@@ -16,3 +16,5 @@ typealias ButtonCell = DefaultCellContainer<ButtonCellView>
 typealias DatePickerCell = DefaultCellContainer<DatePickerCellView>
 typealias TitleCell = DefaultCellContainer<TitleCellView>
 typealias SegmentedControlCell = DefaultCellContainer<SegmentedControlCellView>
+typealias AccountInfoCell = DefaultCellContainer<AccountInfoCellView>
+typealias TransactionCell = TransactionsListCellContainer<TransactionCellView>
