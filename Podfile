@@ -15,5 +15,6 @@ target 'MoneyKeeper' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Charts'
 
 end
