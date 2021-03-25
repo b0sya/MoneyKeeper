@@ -37,3 +37,7 @@
 "taxes" = "Taxes";
 "taxi" = "Taxi";
 "transport" = "Transport";
+"expense" = "expense";
+"income" = "income";
+"currentBalance" = "Current balance";
+"generalBalance" = "General balance";

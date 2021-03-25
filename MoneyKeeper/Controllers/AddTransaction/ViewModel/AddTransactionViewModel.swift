@@ -11,7 +11,7 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
     weak var view: AddTransactionViewController?
     
     private let validator = AddTransactionFormValidator()
-    private let transactionTypeTitles = ["Расход", "Доход"]
+    private let transactionTypeTitles: [String] = [.expense, .income]
     private let firebaseStorage = FirebaseStorage.instance
     
     let currencyCellViewModel: TextFieldCellViewModel = .value()

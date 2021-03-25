@@ -12,8 +12,6 @@ protocol FirestoreModel {
     static var collectionKey: String { get }
     
     var dictionaryRepresentation: [String: Any] { get }
-    
-    var reference: DocumentReference? { get }
-    
-    init?(from snapshot: DocumentSnapshot)
+        
+    init?(from data: [String: Any])
 }

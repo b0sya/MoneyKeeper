@@ -81,10 +81,10 @@ final class AccountInfoViewModel {
 extension AccountInfoViewModel: AccountInfoBuilderInput {
     var accountInfoCellViewModel: AccountInfoCellViewModel {
         guard let balance = NumberFormatter.rubFormatter.string(from: NSNumber(value: account.balance)) else  {
-            return .init(titleLabelText: "Текущий баланс", valueLabelText: "!ERROR!")
+            return .init(titleLabelText: .currentBalance, valueLabelText: "!ERROR!")
 
         }
-        return .init(titleLabelText: "Текущий баланс", valueLabelText: balance)
+        return .init(titleLabelText: .currentBalance, valueLabelText: balance)
     }
     
     var transactionCellViewModels: [(String, [TransactionCellViewModel])]? {

@@ -100,4 +100,16 @@ extension String {
     /// Транспорт / Transport
     static let transport = NSLocalizedString("transport", comment: "");
     
+    /// Расход / expense
+    static let expense = NSLocalizedString("expense", comment: "");
+    
+    /// Доход / income
+    static let income = NSLocalizedString("income", comment: "");
+    
+    /// Текущий баланс / Current balance
+    static let currentBalance = NSLocalizedString("currentBalance", comment: "");
+    
+    /// Общий баланс / General balance
+    static let generalBalance = NSLocalizedString("generalBalance", comment: "");
+    
 }

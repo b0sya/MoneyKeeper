@@ -29,9 +29,9 @@ final class FirebaseStorage: StorageProvider {
         guard let dataArray = NSArray(contentsOfFile: pathToFile) else { return }
         for dictionary in dataArray {
             
-            let carDictionary = dictionary as! NSDictionary
+            let dict = dictionary as! NSDictionary
             
-            guard let name = carDictionary["name"] as? String else {
+            guard let name = dict["name"] as? String else {
                 fatalError("Invalid categories initial plist file")
             }
             
@@ -47,7 +47,7 @@ final class FirebaseStorage: StorageProvider {
                 completion?(.failure(.fetchDataError("Fetch accounts failed: \(error.localizedDescription)")))
                 return
             }
-            guard let accounts = snapshot?.documents.compactMap({ FAccount(from: $0) }) else {
+            guard let accounts = snapshot?.documents.compactMap({ FAccount(from: $0.data()) }) else {
                 completion?(.failure(.parseDataError("Parse accounts data failed")))
                 return
             }
@@ -65,7 +65,7 @@ final class FirebaseStorage: StorageProvider {
                 return
             }
             
-            guard let accounts = snapshot?.documents.compactMap({ FCategory(from: $0) }) else {
+            guard let accounts = snapshot?.documents.compactMap({ FCategory(from: $0.data()) }) else {
                 completion?(.failure(.parseDataError("Parse categories data failed")))
                 return
             }
@@ -75,12 +75,7 @@ final class FirebaseStorage: StorageProvider {
     }
     
     func fetchTransactions(for account: FAccount, completion: ParameterClosure<FetchTransactionsOutput>?) {
-        guard !account.relatedTransactionIds.isEmpty else {
-            completion?(.success([]))
-            return
-        }
-        
-        let query = db.collection(FTransaction.collectionKey).whereField(FTransaction.Keys.uid, in: account.relatedTransactionIds)
+        let query = db.collection(FTransaction.collectionKey).whereField(FTransaction.Keys.relatedAccountId, in: [account.uid])
         
         query.getDocuments { (snapshot, error) in
             if let error = error {
@@ -88,7 +83,7 @@ final class FirebaseStorage: StorageProvider {
                 return
             }
             
-            guard let transactions = snapshot?.documents.compactMap({ FTransaction(from: $0) }) else {
+            guard let transactions = snapshot?.documents.compactMap({ FTransaction(from: $0.data()) }) else {
                 completion?(.failure(.parseDataError("Parse accounts data failed")))
                 return
             }
@@ -107,7 +102,8 @@ final class FirebaseStorage: StorageProvider {
         completion: ParameterClosure<SeveAccountOutput>?
     ) {
         let newAccount = FAccount(uid: uid, name: name, balance: balance)
-        db.collection(FAccount.collectionKey).addDocument(data: newAccount.dictionaryRepresentation) { error in
+        
+        db.collection(FAccount.collectionKey).document(newAccount.uid).setData(newAccount.dictionaryRepresentation) { error in
             if let error = error {
                 completion?(.failure(.saveDataError("Failed to add new account: \(error.localizedDescription)")))
                 return
@@ -118,32 +114,30 @@ final class FirebaseStorage: StorageProvider {
     }
     
     func addTransaction(data: AddTransactionFormData, completion: ParameterClosure<SaveTransactionOutput>?) {
-        guard let accountReference = data.account.reference else {
-            completion?(.failure(.saveDataError("Account reference is nil")))
-            return
-        }
 
         let transaction = FTransaction(uid: data.uid,
                                        amount: data.amount,
                                        date: data.date,
                                        note: data.description,
                                        direction: data.direction,
-                                       relatedAccount: accountReference)
+                                       relatedAccountId: data.account.uid,
+                                       relatedCategory: data.category)
         
-        db.collection(FTransaction.collectionKey).addDocument(data: transaction.dictionaryRepresentation) { error in
+        db.collection(FTransaction.collectionKey).document(transaction.uid).setData(transaction.dictionaryRepresentation) { error in
             if let error = error {
                 completion?(.failure(.saveDataError("Faild to add new transaction: \(error.localizedDescription)")))
                 return
             }
             
+            let reference = self.db.collection(FAccount.collectionKey).document(data.account.uid)
+            
             if transaction.direction == .cost {
-                accountReference.updateData([FAccount.Keys.balance: FieldValue.increment(-transaction.amount)])
+                reference.updateData([FAccount.Keys.balance: FieldValue.increment(-transaction.amount)])
             }
             else {
-                accountReference.updateData([FAccount.Keys.balance: FieldValue.increment(transaction.amount)])
+                reference.updateData([FAccount.Keys.balance: FieldValue.increment(transaction.amount)])
             }
-            
-            accountReference.updateData([FAccount.Keys.relatedTransactionIds: FieldValue.arrayUnion([transaction.uid])])
+                        
             completion?(.success(transaction))
         }
     }
@@ -153,7 +147,7 @@ final class FirebaseStorage: StorageProvider {
                                  name: name,
                                  direction: direction)
         
-        db.collection(FCategory.collectionKey).addDocument(data: category.dictionaryRepresentation) { error in
+        db.collection(FCategory.collectionKey).document(category.uid).setData(category.dictionaryRepresentation) { error in
             if let error = error {
                 completion?(.failure(.saveDataError("Faild to add new category: \(error.localizedDescription)")))
             }

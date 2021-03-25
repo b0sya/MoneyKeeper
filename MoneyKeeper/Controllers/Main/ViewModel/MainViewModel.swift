@@ -42,7 +42,7 @@ extension MainViewModel {
             res + acc.balance
         }
         
-        return .init(titleLabelText: "Общий баланс", valueLabelText: NumberFormatter.rubFormatter.string(from: NSNumber(value: overalBalance)) ?? "")
+        return .init(titleLabelText: .generalBalance, valueLabelText: NumberFormatter.rubFormatter.string(from: NSNumber(value: overalBalance)) ?? "")
     }
     
     var addAccountViewModel: TappableCellViewModel {

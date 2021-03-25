@@ -15,7 +15,8 @@ struct FTransaction: FirestoreModel {
         static let date = "date"
         static let note = "note"
         static let direction = "direction"
-        static let relatedAccount = "relatedAccount"
+        static let relatedAccountId = "relatedAccountId"
+        static let relatedCategory = "relatedCategory"
     }
     
     static var collectionKey = "Transactions"
@@ -25,7 +26,8 @@ struct FTransaction: FirestoreModel {
     let date: Date
     let note: String?
     let direction: DirectionType
-    let relatedAccount: DocumentReference
+    let relatedAccountId: String
+    let relatedCategory: FCategory
     
     var reference: DocumentReference? = nil
     
@@ -39,7 +41,8 @@ struct FTransaction: FirestoreModel {
             Keys.amount: amount,
             Keys.date: date,
             Keys.direction: direction.rawValue,
-            Keys.relatedAccount: relatedAccount,
+            Keys.relatedAccountId: relatedAccountId,
+            Keys.relatedCategory: relatedCategory.dictionaryRepresentation,
         ]
         
         if let note = note {
@@ -54,32 +57,35 @@ struct FTransaction: FirestoreModel {
          date: Date,
          note: String?,
          direction: DirectionType,
-         relatedAccount: DocumentReference) {
+         relatedAccountId: String,
+         relatedCategory: FCategory) {
         self.uid = uid
         self.amount = amount
         self.date = date
         self.note = note
         self.direction = direction
-        self.relatedAccount = relatedAccount
+        self.relatedAccountId = relatedAccountId
+        self.relatedCategory = relatedCategory
     }
     
-    init?(from snapshot: DocumentSnapshot) {
-        guard let data = snapshot.data(),
-              let uid = data[Keys.uid] as? String,
+    init?(from data: [String: Any]) {
+        guard let uid = data[Keys.uid] as? String,
               let amount = data[Keys.amount] as? Double,
               let date = data[Keys.date] as? Timestamp,
               let directionRawValue = data[Keys.direction] as? Int16,
               let direction = DirectionType(rawValue: directionRawValue),
-              let accountReference = data[Keys.relatedAccount] as? DocumentReference else {
+              let relatedAccountId = data[Keys.relatedAccountId] as? String,
+              let categoryData = data[Keys.relatedCategory] as? [String: Any],
+              let category = FCategory(from: categoryData) else {
             return nil
         }
         
-        self.reference = snapshot.reference
         self.uid = uid
         self.amount = amount
         self.date = date.dateValue()
         self.direction = direction
-        self.relatedAccount = accountReference
+        self.relatedAccountId = relatedAccountId
+        self.relatedCategory = category
         self.note = data[Keys.note] as? String
     }
 }

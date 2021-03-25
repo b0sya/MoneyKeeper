@@ -26,7 +26,6 @@
 		068B888E26049A30004E81F2 /* TransactionsListCellContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B888D26049A30004E81F2 /* TransactionsListCellContainer.swift */; };
 		068B88942604A604004E81F2 /* Date+CompareDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88932604A604004E81F2 /* Date+CompareDates.swift */; };
 		068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */; };
-		068B889C2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B889B2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift */; };
 		068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */; };
 		068B88AC2606162A004E81F2 /* ModuleFactory+CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */; };
 		0690791225EA72FA008B38DB /* categoriesInitial.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0690791125EA72FA008B38DB /* categoriesInitial.plist */; };
@@ -151,7 +150,6 @@
 		068B888D26049A30004E81F2 /* TransactionsListCellContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListCellContainer.swift; sourceTree = "<group>"; };
 		068B88932604A604004E81F2 /* Date+CompareDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CompareDates.swift"; sourceTree = "<group>"; };
 		068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
-		068B889B2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderViewModel.swift; sourceTree = "<group>"; };
 		068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+RUB.swift"; sourceTree = "<group>"; };
 		068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+CategoriesList.swift"; sourceTree = "<group>"; };
 		0690791125EA72FA008B38DB /* categoriesInitial.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = categoriesInitial.plist; sourceTree = "<group>"; };
@@ -348,7 +346,6 @@
 			isa = PBXGroup;
 			children = (
 				068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */,
-				068B889B2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift */,
 			);
 			path = TableSectionHeader;
 			sourceTree = "<group>";
@@ -1167,7 +1164,6 @@
 				96504A2325C5A9BB00F4D960 /* CenterIconCellView.swift in Sources */,
 				0690793B25F4D098008B38DB /* AddTransactionFormValidator.swift in Sources */,
 				961CF25225CD5D6100ED1BD3 /* MainCoordinator.swift in Sources */,
-				068B889C2604A9EF004E81F2 /* TableSectionHeaderViewModel.swift in Sources */,
 				96F1974125CDA93100B0B634 /* ButtonCellVuiewModel.swift in Sources */,
 				96504A2725C5AC2300F4D960 /* TappableCellViewModel.swift in Sources */,
 				0690796D25F4FA37008B38DB /* Category+CoreDataClass copy.swift in Sources */,
