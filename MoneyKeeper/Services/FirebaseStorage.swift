@@ -84,7 +84,7 @@ final class FirebaseStorage: StorageProvider {
             }
             
             guard let transactions = snapshot?.documents.compactMap({ FTransaction(from: $0.data()) }) else {
-                completion?(.failure(.parseDataError("Parse accounts data failed")))
+                completion?(.failure(.parseDataError("Parse transactions data failed")))
                 return
             }
             
@@ -92,7 +92,26 @@ final class FirebaseStorage: StorageProvider {
             
         }
     }
-
+    
+    func fetchTransactions(for period: Period, completion: ParameterClosure<FetchTransactionsOutput>?) {
+        let query = db.collection(FTransaction.collectionKey)
+            .whereField(FTransaction.Keys.date, isGreaterThanOrEqualTo: period.start)
+            .whereField(FTransaction.Keys.date, isLessThanOrEqualTo: period.end)
+        
+        query.getDocuments { snapshot, error in
+            if let error = error {
+                completion?(.failure(.fetchDataError("Failed to load transactions for period \(period.start) \(period.end): \(error.localizedDescription)")))
+                return
+            }
+            
+            guard let transactions = snapshot?.documents.compactMap({ FTransaction(from: $0.data()) }) else {
+                completion?(.failure(.parseDataError("Parse transactions data failed")))
+                return
+            }
+            
+            completion?(.success(transactions))
+        }
+    }
     
     //MARK: Save methods
     func addAccount(

@@ -16,7 +16,7 @@ extension CoordinatorFactory {
 }
 
 final class MainCoordinator: BaseCoordinator {
-    typealias MainCoordinatorModuleFactory = MainModuleFactory & AddTransactionModuleFactory & AccountInfoModuleFactory
+    typealias MainCoordinatorModuleFactory = MainModuleFactory & AddTransactionModuleFactory & AccountInfoModuleFactory & ReportModuleFactory
     
     private let factory: MainCoordinatorModuleFactory
     private let router: Router
@@ -52,6 +52,12 @@ final class MainCoordinator: BaseCoordinator {
                 module?.refreshData()
             }
         }
+        
+        module.onReportTapped = { [weak self] in
+            self?.runReportFlow {
+                
+            }
+        }
 
         router.setRootModule(module, hideBar: false, animated: true)
     }
@@ -63,6 +69,11 @@ final class MainCoordinator: BaseCoordinator {
 
     private func runAddAccountFlow(onFinish: @escaping VoidClosure) {
         let coordinator = coordinatorFactory.makeAddAccountCoordinator(router: router)
+        bind(coordinator, completion: onFinish)
+    }
+    
+    private func runReportFlow(onFinish: @escaping VoidClosure) {
+        let coordinator = coordinatorFactory.makeReportCoordinator(router: router)
         bind(coordinator, completion: onFinish)
     }
     

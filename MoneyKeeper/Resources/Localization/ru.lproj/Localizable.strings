@@ -37,6 +37,7 @@
 "taxes" = "Налоги";
 "taxi" = "Такси";
 "transport" = "Транспорт";
+
 "expense" = "Расход";
 "income" = "Доход";
 "currentBalance" = "Текущий баланс";

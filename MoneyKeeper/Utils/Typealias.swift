@@ -18,3 +18,6 @@ typealias TitleCell = DefaultCellContainer<TitleCellView>
 typealias SegmentedControlCell = DefaultCellContainer<SegmentedControlCellView>
 typealias AccountInfoCell = DefaultCellContainer<AccountInfoCellView>
 typealias TransactionCell = TransactionsListCellContainer<TransactionCellView>
+typealias PieChartCell = DefaultCellContainer<PieChartCellView>
+
+typealias Period = (start: Date, end: Date)

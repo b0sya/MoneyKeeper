@@ -25,6 +25,30 @@ extension DateFormatter {
         return dateFormatter
     }()
     
+    /// Форматирует дату в формат "27 авг"
+    static let dayMonthFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMMM"
+        
+        return dateFormatter
+    }()
+    
+    /// Форматирует дату в формат "27 авг  2018"
+    static let dayMonthWordYearFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMMM YYYY"
+        
+        return dateFormatter
+    }()
+    
+    /// Форматирует дату в формат "10:10"
+    static let timeFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm"
+        
+        return dateFormatter
+    }()
+    
     static let monthFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "LLLL"

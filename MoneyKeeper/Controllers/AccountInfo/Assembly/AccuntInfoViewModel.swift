@@ -45,9 +45,9 @@ final class AccountInfoViewModel {
     
     private func headerTitle(for date: Date) -> String {
         guard Calendar.current.component(.year, from: Date()) == Calendar.current.component(.year, from: date) else {
-            return DateFormatter.monthYearFormatter.string(from: date)
+            return DateFormatter.dayMonthFormatter.string(from: date)
         }
-        return DateFormatter.monthFormatter.string(from: date)
+        return DateFormatter.dayMonthWordYearFormatter.string(from: date)
     }
     
     private func updateViewModels() {

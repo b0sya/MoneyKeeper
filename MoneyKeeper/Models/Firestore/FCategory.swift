@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-struct FCategory: FirestoreModel {
+struct FCategory: FirestoreModel, Hashable {
     struct Keys {
         static let uid = "uid"
         static let name = "name"

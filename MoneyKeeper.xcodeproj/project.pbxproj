@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065BC4DD261663330063BD0C /* CategoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BC4DC261663330063BD0C /* CategoryChartData.swift */; };
 		065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */; };
 		068B884C25FCFA19004E81F2 /* FirestoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B884B25FCFA19004E81F2 /* FirestoreModel.swift */; };
 		068B885325FCFB08004E81F2 /* FAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B885225FCFB08004E81F2 /* FAccount.swift */; };
@@ -28,6 +29,8 @@
 		068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */; };
 		068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */; };
 		068B88AC2606162A004E81F2 /* ModuleFactory+CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */; };
+		068E3FAB2610B91300B6B3E7 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E3FAA2610B91300B6B3E7 /* Report.swift */; };
+		068E3FAE2610BB2E00B6B3E7 /* Date+Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E3FAD2610BB2E00B6B3E7 /* Date+Periods.swift */; };
 		0690791225EA72FA008B38DB /* categoriesInitial.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0690791125EA72FA008B38DB /* categoriesInitial.plist */; };
 		0690791925EA73EE008B38DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0690791B25EA73EE008B38DB /* Localizable.strings */; };
 		0690792E25EA7F61008B38DB /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690792D25EA7F61008B38DB /* Keys.swift */; };
@@ -61,6 +64,22 @@
 		0698E97F25E26FFA000ED813 /* AddAccountFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E97E25E26FFA000ED813 /* AddAccountFormValidator.swift */; };
 		0698E98325E270A8000ED813 /* BaseFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E98225E270A8000ED813 /* BaseFormValidator.swift */; };
 		0698E99625E27AB7000ED813 /* TextFieldVIewModel+Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698E99525E27AB7000ED813 /* TextFieldVIewModel+Fabric.swift */; };
+		06D922432610D53000D17F60 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922422610D53000D17F60 /* PieChartView.swift */; };
+		06D922462610D53900D17F60 /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922452610D53900D17F60 /* PieChartViewModel.swift */; };
+		06D9224A2610D6EB00D17F60 /* ChartPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922492610D6EB00D17F60 /* ChartPresentable.swift */; };
+		06D922502610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9224F2610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift */; };
+		06D922532610D8D200D17F60 /* CategoryReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922522610D8D200D17F60 /* CategoryReportViewController.swift */; };
+		06D922562610D8DF00D17F60 /* CategoryReportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922552610D8DF00D17F60 /* CategoryReportBuilder.swift */; };
+		06D922592610D8ED00D17F60 /* CategoryReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922582610D8ED00D17F60 /* CategoryReportViewModel.swift */; };
+		06D9225D2610DDF700D17F60 /* ReportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9225C2610DDF700D17F60 /* ReportCoordinator.swift */; };
+		06E71EC8260D2EBE00373B90 /* ModuleFactory+ReportModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71EC7260D2EBE00373B90 /* ModuleFactory+ReportModule.swift */; };
+		06E71ED0260D2EE100373B90 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71ECF260D2EE100373B90 /* ReportViewModel.swift */; };
+		06E71ED4260D2EEB00373B90 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71ED3260D2EEB00373B90 /* ReportViewController.swift */; };
+		06E71ED7260D2EF600373B90 /* ReportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71ED6260D2EF600373B90 /* ReportBuilder.swift */; };
+		06E71EDB260D314D00373B90 /* ReportCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71EDA260D314D00373B90 /* ReportCategoryView.swift */; };
+		06E71EDF260D340E00373B90 /* ReportCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71EDE260D340E00373B90 /* ReportCategoryViewModel.swift */; };
+		06E71EE4260D35C100373B90 /* ReportCategoriesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71EE3260D35C100373B90 /* ReportCategoriesCellView.swift */; };
+		06E71EE9260D35D500373B90 /* ReportCategoriesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71EE8260D35D500373B90 /* ReportCategoriesCellViewModel.swift */; };
 		06EAB26025E2872600E05FAB /* UIButton+BackgoundColorForState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB25F25E2872600E05FAB /* UIButton+BackgoundColorForState.swift */; };
 		06EAB26725E2904E00E05FAB /* DataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB26625E2904E00E05FAB /* DataListViewController.swift */; };
 		06EAB26D25E2909700E05FAB /* DataListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB26C25E2909700E05FAB /* DataListBuilder.swift */; };
@@ -131,6 +150,7 @@
 
 /* Begin PBXFileReference section */
 		000B42E85F7F77B09B44A082 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
+		065BC4DC261663330063BD0C /* CategoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartData.swift; sourceTree = "<group>"; };
 		065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableBuilder.swift; sourceTree = "<group>"; };
 		068B884B25FCFA19004E81F2 /* FirestoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreModel.swift; sourceTree = "<group>"; };
 		068B885225FCFB08004E81F2 /* FAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAccount.swift; sourceTree = "<group>"; };
@@ -152,6 +172,8 @@
 		068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+RUB.swift"; sourceTree = "<group>"; };
 		068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+CategoriesList.swift"; sourceTree = "<group>"; };
+		068E3FAA2610B91300B6B3E7 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		068E3FAD2610BB2E00B6B3E7 /* Date+Periods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Periods.swift"; sourceTree = "<group>"; };
 		0690791125EA72FA008B38DB /* categoriesInitial.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = categoriesInitial.plist; sourceTree = "<group>"; };
 		0690791A25EA73EE008B38DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0690791C25EA73F2008B38DB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -186,6 +208,22 @@
 		0698E97E25E26FFA000ED813 /* AddAccountFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountFormValidator.swift; sourceTree = "<group>"; };
 		0698E98225E270A8000ED813 /* BaseFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormValidator.swift; sourceTree = "<group>"; };
 		0698E99525E27AB7000ED813 /* TextFieldVIewModel+Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldVIewModel+Fabric.swift"; sourceTree = "<group>"; };
+		06D922422610D53000D17F60 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		06D922452610D53900D17F60 /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
+		06D922492610D6EB00D17F60 /* ChartPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresentable.swift; sourceTree = "<group>"; };
+		06D9224F2610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+CategoryReport.swift"; sourceTree = "<group>"; };
+		06D922522610D8D200D17F60 /* CategoryReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryReportViewController.swift; sourceTree = "<group>"; };
+		06D922552610D8DF00D17F60 /* CategoryReportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryReportBuilder.swift; sourceTree = "<group>"; };
+		06D922582610D8ED00D17F60 /* CategoryReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryReportViewModel.swift; path = MoneyKeeper/Controllers/CategoryReport/View/CategoryReportViewModel.swift; sourceTree = SOURCE_ROOT; };
+		06D9225C2610DDF700D17F60 /* ReportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCoordinator.swift; sourceTree = "<group>"; };
+		06E71EC7260D2EBE00373B90 /* ModuleFactory+ReportModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+ReportModule.swift"; sourceTree = "<group>"; };
+		06E71ECF260D2EE100373B90 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		06E71ED3260D2EEB00373B90 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		06E71ED6260D2EF600373B90 /* ReportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBuilder.swift; sourceTree = "<group>"; };
+		06E71EDA260D314D00373B90 /* ReportCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCategoryView.swift; sourceTree = "<group>"; };
+		06E71EDE260D340E00373B90 /* ReportCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCategoryViewModel.swift; sourceTree = "<group>"; };
+		06E71EE3260D35C100373B90 /* ReportCategoriesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCategoriesCellView.swift; sourceTree = "<group>"; };
+		06E71EE8260D35D500373B90 /* ReportCategoriesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCategoriesCellViewModel.swift; sourceTree = "<group>"; };
 		06EAB25F25E2872600E05FAB /* UIButton+BackgoundColorForState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgoundColorForState.swift"; sourceTree = "<group>"; };
 		06EAB26625E2904E00E05FAB /* DataListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListViewController.swift; sourceTree = "<group>"; };
 		06EAB26C25E2909700E05FAB /* DataListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListBuilder.swift; sourceTree = "<group>"; };
@@ -338,6 +376,7 @@
 			children = (
 				068B88932604A604004E81F2 /* Date+CompareDates.swift */,
 				068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */,
+				068E3FAD2610BB2E00B6B3E7 /* Date+Periods.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -455,6 +494,7 @@
 		069079C125F65267008B38DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				06E71ED9260D313200373B90 /* ReportCategoryView */,
 				068B88962604A9BF004E81F2 /* TableSectionHeader */,
 				965990C325B615BE002A23BD /* BaseView.swift */,
 				069079C225F65274008B38DB /* LoginView.swift */,
@@ -535,6 +575,119 @@
 			path = BaseFormValidator;
 			sourceTree = "<group>";
 		};
+		06D922402610D4B900D17F60 /* CategoryReport */ = {
+			isa = PBXGroup;
+			children = (
+				06D9224C2610D89F00D17F60 /* Assembly */,
+				06D9224D2610D8A500D17F60 /* View */,
+				06D9224E2610D8AA00D17F60 /* ViewModel */,
+			);
+			path = CategoryReport;
+			sourceTree = "<group>";
+		};
+		06D922412610D4C700D17F60 /* PieChartCellView */ = {
+			isa = PBXGroup;
+			children = (
+				06D922422610D53000D17F60 /* PieChartView.swift */,
+				06D922452610D53900D17F60 /* PieChartViewModel.swift */,
+			);
+			path = PieChartCellView;
+			sourceTree = "<group>";
+		};
+		06D922482610D6DE00D17F60 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				06D922492610D6EB00D17F60 /* ChartPresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		06D9224C2610D89F00D17F60 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				06D9224F2610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		06D9224D2610D8A500D17F60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06D922522610D8D200D17F60 /* CategoryReportViewController.swift */,
+				06D922552610D8DF00D17F60 /* CategoryReportBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06D9224E2610D8AA00D17F60 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				06D922582610D8ED00D17F60 /* CategoryReportViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		06D9225B2610DDE000D17F60 /* ReportCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				06D9225C2610DDF700D17F60 /* ReportCoordinator.swift */,
+			);
+			path = ReportCoordinator;
+			sourceTree = "<group>";
+		};
+		06E71EC6260D2E9100373B90 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				06E71ECA260D2EC200373B90 /* Assembly */,
+				06E71ECD260D2ED000373B90 /* View */,
+				06E71ECB260D2EC900373B90 /* ViewModel */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		06E71ECA260D2EC200373B90 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				06E71EC7260D2EBE00373B90 /* ModuleFactory+ReportModule.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		06E71ECB260D2EC900373B90 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				06E71ECF260D2EE100373B90 /* ReportViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		06E71ECD260D2ED000373B90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06E71ED3260D2EEB00373B90 /* ReportViewController.swift */,
+				06E71ED6260D2EF600373B90 /* ReportBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06E71ED9260D313200373B90 /* ReportCategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				06E71EDA260D314D00373B90 /* ReportCategoryView.swift */,
+				06E71EDE260D340E00373B90 /* ReportCategoryViewModel.swift */,
+			);
+			path = ReportCategoryView;
+			sourceTree = "<group>";
+		};
+		06E71EE2260D359F00373B90 /* ReportCategriesCellView */ = {
+			isa = PBXGroup;
+			children = (
+				06E71EE3260D35C100373B90 /* ReportCategoriesCellView.swift */,
+				06E71EE8260D35D500373B90 /* ReportCategoriesCellViewModel.swift */,
+			);
+			path = ReportCategriesCellView;
+			sourceTree = "<group>";
+		};
 		06EAB26225E2901C00E05FAB /* BaseList */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,7 +760,9 @@
 		961B5E5025A890C500C7BADE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06D922402610D4B900D17F60 /* CategoryReport */,
 				965990A625B44B46002A23BD /* BaseViewController.swift */,
+				06E71EC6260D2E9100373B90 /* Report */,
 				068B886925FE2C6B004E81F2 /* AccountInfo */,
 				965991F825BD7D2D002A23BD /* BaseTableController */,
 				069079B625F651A5008B38DB /* Login */,
@@ -714,6 +869,7 @@
 		961CF25025CD5D5700ED1BD3 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				06D9225B2610DDE000D17F60 /* ReportCoordinator */,
 				961CF26D25CD7A6A00ED1BD3 /* Base */,
 				06907A1425F65CD2008B38DB /* AuthCoordinator */,
 				961CF26A25CD7A0800ED1BD3 /* MainCoordinator */,
@@ -842,6 +998,8 @@
 		9659920825BD836F002A23BD /* CellViews */ = {
 			isa = PBXGroup;
 			children = (
+				06D922412610D4C700D17F60 /* PieChartCellView */,
+				06E71EE2260D359F00373B90 /* ReportCategriesCellView */,
 				068B887E25FE2F84004E81F2 /* TransactionCellView */,
 				068B887625FE2D51004E81F2 /* AccountInfoCellView */,
 				0690793025EA84CE008B38DB /* SegmentedControllCell */,
@@ -888,6 +1046,7 @@
 		96C5E41325A5BD6B00E374B7 /* MoneyKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				06D922482610D6DE00D17F60 /* Protocols */,
 				96C5E42E25A5BE1E00E374B7 /* Application */,
 				96C5E43125A5BE6F00E374B7 /* Base */,
 				96E067BC25C6A1DE00DB7C35 /* Models */,
@@ -960,9 +1119,11 @@
 		96E067BC25C6A1DE00DB7C35 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				068E3FAA2610B91300B6B3E7 /* Report.swift */,
 				069079B325F64717008B38DB /* CategoryListInput.swift */,
 				068B884A25FCFA05004E81F2 /* Firestore */,
 				06907A3425FA9C51008B38DB /* Core Data */,
+				065BC4DC261663330063BD0C /* CategoryChartData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1149,10 +1310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D922432610D53000D17F60 /* PieChartView.swift in Sources */,
 				068B886225FD0357004E81F2 /* StorageProvider.swift in Sources */,
+				06D922562610D8DF00D17F60 /* CategoryReportBuilder.swift in Sources */,
 				9659920225BD80ED002A23BD /* MainViewController.swift in Sources */,
 				06907A2325F938C9008B38DB /* GoogleAuthProvider.swift in Sources */,
 				96504A2A25C5AD9200F4D960 /* Typealias.swift in Sources */,
+				06D922592610D8ED00D17F60 /* CategoryReportViewModel.swift in Sources */,
 				0690798525F51734008B38DB /* CategoriesListViewModel.swift in Sources */,
 				06EAB26725E2904E00E05FAB /* DataListViewController.swift in Sources */,
 				961CF26525CD649100ED1BD3 /* RouterImp.swift in Sources */,
@@ -1193,6 +1357,7 @@
 				9699EE0725D0102E00EF316E /* UITextField+ToolBarDatePicker.swift in Sources */,
 				068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */,
 				96C5E41525A5BD6B00E374B7 /* AppDelegate.swift in Sources */,
+				06E71EC8260D2EBE00373B90 /* ModuleFactory+ReportModule.swift in Sources */,
 				0690797C25F51553008B38DB /* DataListViewModel.swift in Sources */,
 				069079C625F652AA008B38DB /* LoginViewModel.swift in Sources */,
 				068B888825FE331E004E81F2 /* AccountInfoBuilder.swift in Sources */,
@@ -1216,14 +1381,20 @@
 				961CF22225CAAD3F00ED1BD3 /* ModuleFactory+AddAccountModule.swift in Sources */,
 				0690792E25EA7F61008B38DB /* Keys.swift in Sources */,
 				965049E025C5999B00F4D960 /* Strings.swift in Sources */,
+				06E71EE9260D35D500373B90 /* ReportCategoriesCellViewModel.swift in Sources */,
+				065BC4DD261663330063BD0C /* CategoryChartData.swift in Sources */,
 				0690797525F4FACF008B38DB /* Transactions+DirectionType.swift in Sources */,
 				068B886E25FE2CAB004E81F2 /* ModuleFactory+AccountInfo.swift in Sources */,
 				06907A1725F65CE9008B38DB /* AuthCoordinator.swift in Sources */,
 				96F4B0CF25C41A5B00E8339E /* DefaultCellViewModel.swift in Sources */,
 				96F1972C25CD801400B0B634 /* RoundedContainerCellView.swift in Sources */,
+				068E3FAB2610B91300B6B3E7 /* Report.swift in Sources */,
+				06D922532610D8D200D17F60 /* CategoryReportViewController.swift in Sources */,
 				96F4B0E725C420CC00E8339E /* DefaultCellContainer.swift in Sources */,
 				068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */,
+				06E71EE4260D35C100373B90 /* ReportCategoriesCellView.swift in Sources */,
 				961CF24E25CD5CEF00ED1BD3 /* Presentable.swift in Sources */,
+				06D9225D2610DDF700D17F60 /* ReportCoordinator.swift in Sources */,
 				961CF25925CD5F3900ED1BD3 /* CoordinatorFactory.swift in Sources */,
 				965049D925C5969500F4D960 /* Colors.swift in Sources */,
 				068B885325FCFB08004E81F2 /* FAccount.swift in Sources */,
@@ -1231,6 +1402,8 @@
 				0698E98325E270A8000ED813 /* BaseFormValidator.swift in Sources */,
 				965991FA25BD7D50002A23BD /* BaseTableController.swift in Sources */,
 				06EAB27B25E295B500E05FAB /* AddTransactionCoordinator.swift in Sources */,
+				06D922462610D53900D17F60 /* PieChartViewModel.swift in Sources */,
+				06D9224A2610D6EB00D17F60 /* ChartPresentable.swift in Sources */,
 				0690799325F53B87008B38DB /* AccountsListViewController.swift in Sources */,
 				0698E99625E27AB7000ED813 /* TextFieldVIewModel+Fabric.swift in Sources */,
 				068B885625FCFD67004E81F2 /* FTransaction.swift in Sources */,
@@ -1238,6 +1411,8 @@
 				0690796C25F4FA37008B38DB /* Transaction+CoreDataProperties copy.swift in Sources */,
 				961CF24725CD5CA400ED1BD3 /* BaseCoordinator.swift in Sources */,
 				065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */,
+				06D922502610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift in Sources */,
+				06E71ED0260D2EE100373B90 /* ReportViewModel.swift in Sources */,
 				961CF26825CD698B00ED1BD3 /* ApplicationCoordinator.swift in Sources */,
 				068B887425FE2CCD004E81F2 /* AccountInfoViewController.swift in Sources */,
 				068B887B25FE2F12004E81F2 /* AccountInfoCellViewModel.swift in Sources */,
@@ -1245,7 +1420,9 @@
 				961C082025CEC9EA00C8E300 /* SelectCellView.swift in Sources */,
 				961CF24325CD5B8400ED1BD3 /* Coordinator.swift in Sources */,
 				0690793625EA85BD008B38DB /* SegmentedControllCellViewModel.swift in Sources */,
+				06E71ED7260D2EF600373B90 /* ReportBuilder.swift in Sources */,
 				961C081525CEC78E00C8E300 /* AddTransactionViewController.swift in Sources */,
+				06E71EDF260D340E00373B90 /* ReportCategoryViewModel.swift in Sources */,
 				96F4B0D725C41C7600E8339E /* ConfigurableView.swift in Sources */,
 				9659920F25BD84AD002A23BD /* DefaultCellView.swift in Sources */,
 				9659912925B8990C002A23BD /* ModuleFactory+MainModule.swift in Sources */,
@@ -1255,6 +1432,7 @@
 				9699EE0425D009FB00EF316E /* DateFormatter+Extension.swift in Sources */,
 				06EAB27125E2910200E05FAB /* TitleCellView.swift in Sources */,
 				0690796E25F4FA37008B38DB /* Account+CoreDataProperties copy.swift in Sources */,
+				06E71EDB260D314D00373B90 /* ReportCategoryView.swift in Sources */,
 				0698E97925E26CC5000ED813 /* MKNavigationController.swift in Sources */,
 				96504A5725C5FB4600F4D960 /* CoreDataStorage.swift in Sources */,
 				0690797125F4FA37008B38DB /* Category+CoreDataProperties copy.swift in Sources */,
@@ -1263,6 +1441,8 @@
 				965049CC25C566EC00F4D960 /* TableSection+Init.swift in Sources */,
 				0690798225F51647008B38DB /* AccountsListViewModel.swift in Sources */,
 				0690796F25F4FA37008B38DB /* Transaction+CoreDataClass copy.swift in Sources */,
+				06E71ED4260D2EEB00373B90 /* ReportViewController.swift in Sources */,
+				068E3FAE2610BB2E00B6B3E7 /* Date+Periods.swift in Sources */,
 				068B887825FE2D91004E81F2 /* AcountInfoCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,7 @@
 "title" = "Title";
 "balance" = "Balance";
 "date" = "Date";
+"sum" = "Amount";
 "Currency" = "Currency";
 "description" = "Description";
 "category" = "Category";
@@ -37,6 +38,7 @@
 "taxes" = "Taxes";
 "taxi" = "Taxi";
 "transport" = "Transport";
+
 "expense" = "expense";
 "income" = "income";
 "currentBalance" = "Current balance";
