@@ -10,6 +10,8 @@
 		060D0C182619CB2D00D4C0AA /* PieChart+Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */; };
 		065BC4DD261663330063BD0C /* CategoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BC4DC261663330063BD0C /* CategoryChartData.swift */; };
 		065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */; };
+		0673C69A26208E750017AE45 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673C69926208E750017AE45 /* LoadingIndicator.swift */; };
+		0673C6A5262094170017AE45 /* LoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673C6A4262094170017AE45 /* LoadableViewController.swift */; };
 		067A34072619D46F005F1490 /* PercentageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A34062619D46F005F1490 /* PercentageFormatter.swift */; };
 		067A34122619E154005F1490 /* DetailedReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A34112619E154005F1490 /* DetailedReportViewModel.swift */; };
 		067A341F2619FBED005F1490 /* LoadingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A341E2619FBED005F1490 /* LoadingPresentable.swift */; };
@@ -156,6 +158,8 @@
 		060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PieChart+Fabric.swift"; sourceTree = "<group>"; };
 		065BC4DC261663330063BD0C /* CategoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartData.swift; sourceTree = "<group>"; };
 		065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableBuilder.swift; sourceTree = "<group>"; };
+		0673C69926208E750017AE45 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		0673C6A4262094170017AE45 /* LoadableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewController.swift; sourceTree = "<group>"; };
 		067A34062619D46F005F1490 /* PercentageFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageFormatter.swift; sourceTree = "<group>"; };
 		067A34112619E154005F1490 /* DetailedReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedReportViewModel.swift; sourceTree = "<group>"; };
 		067A341E2619FBED005F1490 /* LoadingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresentable.swift; sourceTree = "<group>"; };
@@ -319,6 +323,22 @@
 				060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		0673C69826208E5C0017AE45 /* LoadingIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				0673C69926208E750017AE45 /* LoadingIndicator.swift */,
+			);
+			path = LoadingIndicator;
+			sourceTree = "<group>";
+		};
+		0673C6A3262094070017AE45 /* LoadableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0673C6A4262094170017AE45 /* LoadableViewController.swift */,
+			);
+			path = LoadableViewController;
 			sourceTree = "<group>";
 		};
 		068B884A25FCFA05004E81F2 /* Firestore */ = {
@@ -508,6 +528,7 @@
 		069079C125F65267008B38DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0673C69826208E5C0017AE45 /* LoadingIndicator */,
 				06E71ED9260D313200373B90 /* ReportCategoryView */,
 				068B88962604A9BF004E81F2 /* TableSectionHeader */,
 				965990C325B615BE002A23BD /* BaseView.swift */,
@@ -776,6 +797,7 @@
 		961B5E5025A890C500C7BADE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0673C6A3262094070017AE45 /* LoadableViewController */,
 				965990A625B44B46002A23BD /* BaseViewController.swift */,
 				06D922402610D4B900D17F60 /* DetailedReport */,
 				06E71EC6260D2E9100373B90 /* Report */,
@@ -1014,20 +1036,20 @@
 		9659920825BD836F002A23BD /* CellViews */ = {
 			isa = PBXGroup;
 			children = (
+				961C080725CEA0F000C8E300 /* AccountCellView */,
+				068B887625FE2D51004E81F2 /* AccountInfoCellView */,
+				96F1973A25CDA72800B0B634 /* ButtonCellView */,
+				96504A2125C5A97B00F4D960 /* CenterIconCellView */,
+				9699EDF925CFFA5000EF316E /* DatePickerCellView */,
+				96504A2025C5A96400F4D960 /* DefaultCellView */,
 				06D922412610D4C700D17F60 /* PieChartCellView */,
 				06E71EE2260D359F00373B90 /* ReportCategriesCellView */,
-				068B887E25FE2F84004E81F2 /* TransactionCellView */,
-				068B887625FE2D51004E81F2 /* AccountInfoCellView */,
-				0690793025EA84CE008B38DB /* SegmentedControllCell */,
-				06EAB26F25E290EC00E05FAB /* TitleCellView */,
 				96F1972A25CD800100B0B634 /* RoundedContainerView */,
-				96504A2025C5A96400F4D960 /* DefaultCellView */,
-				9699EDF925CFFA5000EF316E /* DatePickerCellView */,
+				0690793025EA84CE008B38DB /* SegmentedControllCell */,
 				961C081E25CEC9D900C8E300 /* SelectCellView */,
-				961C080725CEA0F000C8E300 /* AccountCellView */,
-				96F1973A25CDA72800B0B634 /* ButtonCellView */,
 				96F1972525CD7E3B00B0B634 /* TextFieldCellView */,
-				96504A2125C5A97B00F4D960 /* CenterIconCellView */,
+				06EAB26F25E290EC00E05FAB /* TitleCellView */,
+				068B887E25FE2F84004E81F2 /* TransactionCellView */,
 			);
 			path = CellViews;
 			sourceTree = "<group>";
@@ -1327,6 +1349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0673C69A26208E750017AE45 /* LoadingIndicator.swift in Sources */,
 				06D922432610D53000D17F60 /* PieChartView.swift in Sources */,
 				068B886225FD0357004E81F2 /* StorageProvider.swift in Sources */,
 				06D922562610D8DF00D17F60 /* DetailedReportBuilder.swift in Sources */,
@@ -1372,6 +1395,7 @@
 				06907A2D25FA860E008B38DB /* AuthProvider.swift in Sources */,
 				9699EE0725D0102E00EF316E /* UITextField+ToolBarDatePicker.swift in Sources */,
 				068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */,
+				0673C6A5262094170017AE45 /* LoadableViewController.swift in Sources */,
 				96C5E41525A5BD6B00E374B7 /* AppDelegate.swift in Sources */,
 				06E71EC8260D2EBE00373B90 /* ModuleFactory+ReportModule.swift in Sources */,
 				0690797C25F51553008B38DB /* DataListViewModel.swift in Sources */,

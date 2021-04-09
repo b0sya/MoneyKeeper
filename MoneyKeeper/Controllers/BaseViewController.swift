@@ -20,6 +20,7 @@ class BaseViewController<View: BaseView, ViewModel>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureLayout()
         configureAppearance()
         localize()
     }
@@ -30,6 +31,10 @@ class BaseViewController<View: BaseView, ViewModel>: UIViewController {
 
     override func loadView() {
         view = baseView
+    }
+    
+    func configureLayout() {
+        
     }
 
     func configureAppearance() {

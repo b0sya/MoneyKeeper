@@ -15,7 +15,7 @@ protocol ReportModule: Presentable {
                                              totalValue: Double)>? { get set }
 }
 
-protocol ReportInput: BaseContentInput, LoadingPresentable {
+protocol ReportInput: BaseContentInput {
     
 }
 

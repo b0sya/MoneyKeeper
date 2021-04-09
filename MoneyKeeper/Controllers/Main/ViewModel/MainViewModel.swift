@@ -18,9 +18,7 @@ final class MainViewModel: MainBuilderDataSource {
     private(set) var currentBalance: Double = 0
 
     func loadAccounts() {
-        view?.showActivityIndicator()
         firebaseStorage.fetchAccounts { [weak self] result in
-            self?.view?.hideActivityIndicator()
             switch result {
             case .success(let accounts):
                 self?.accounts = accounts

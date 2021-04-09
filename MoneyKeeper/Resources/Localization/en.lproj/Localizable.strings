@@ -43,3 +43,5 @@
 "income" = "income";
 "currentBalance" = "Current balance";
 "generalBalance" = "General balance";
+
+"loading" = "Loading";

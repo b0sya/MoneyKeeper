@@ -112,4 +112,7 @@ extension String {
     /// Общий баланс / General balance
     static let generalBalance = NSLocalizedString("generalBalance", comment: "");
     
+    /// Загружаем / Loading
+    static let loading = NSLocalizedString("loading", comment: "");
+    
 }

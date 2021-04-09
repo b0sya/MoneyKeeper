@@ -27,9 +27,7 @@ final class AddAccountViewModel {
         guard let formData = validator.cleanData else {
             return
         }
-        view?.showActivityIndicator()
         firebaseStorage.addAccount(uid: formData.uid, name: formData.accountName, balance: formData.accountBalance) { [weak self] result in
-            self?.view?.hideActivityIndicator()
             switch result {
             case .success(_):
                 self?.view?.onFinish?()

@@ -42,3 +42,5 @@
 "income" = "Доход";
 "currentBalance" = "Текущий баланс";
 "generalBalance" = "Общий баланс";
+
+"loading" = "Загружаем";

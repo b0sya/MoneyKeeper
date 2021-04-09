@@ -17,9 +17,7 @@ final class CategoriesListViewModel: BaseListViewModel {
     }
     
     override func loadData() {
-        view?.showActivityIndicator()
         firebaseStorage.fetchCategories(direction: direction) { [weak self] result in
-            self?.view?.hideActivityIndicator()
             switch result {
             case .success(let categories):
                 self?.categories = categories

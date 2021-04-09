@@ -43,7 +43,6 @@ final class ReportViewModel {
         incomes = 0
         dates = []
         
-        view?.showActivityIndicator()
         loadTransactions()
     }
     
@@ -60,7 +59,6 @@ final class ReportViewModel {
         defer {
             DispatchQueue.main.async { [weak view] in
                 view?.fillTable()
-                view?.hideActivityIndicator()
             }
         }
         

@@ -12,9 +12,7 @@ final class AccountsListViewModel: BaseListViewModel {
     private let firebaseStorage = FirebaseStorage.instance
     
     override func loadData() {
-        view?.showActivityIndicator()
         firebaseStorage.fetchAccounts { [weak self] result in
-            self?.view?.hideActivityIndicator()
             switch result {
             case .success(let accounts):
                 self?.accounts = accounts

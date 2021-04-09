@@ -8,7 +8,7 @@
 import Foundation
 import TableKit
 
-class BaseTableController<ViewModel, TableBuilder: BaseTableBuilder>: BaseViewController<BaseTableView, ViewModel>, BaseContentInput {
+class BaseTableController<ViewModel, TableBuilder: BaseTableBuilder>: LoadableViewController<BaseTableView, ViewModel>, BaseContentInput {
     private(set) lazy var tableDirector = TableDirector(tableView: baseView.tableView)
 	
 	let builder = TableBuilder()
@@ -35,21 +35,14 @@ class BaseTableController<ViewModel, TableBuilder: BaseTableBuilder>: BaseViewCo
     
 
     func fillTable() {
+        loadingIndicator.hide()
         tableDirector.clear()
         tableDirector.append(sections: buildSections())
         tableDirector.reload()
     }
     
-    func refreshData() {}
-    
-    func showActivityIndicator() {
-        baseView.tableView.isUserInteractionEnabled = false
-        baseView.activityIndicator.startAnimating()
-    }
-    
-    func hideActivityIndicator() {
-        baseView.tableView.isUserInteractionEnabled = true
-        baseView.activityIndicator.stopAnimating()
+    func refreshData() {
+        loadingIndicator.show()
     }
 
 }

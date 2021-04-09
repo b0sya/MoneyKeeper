@@ -10,13 +10,11 @@ import SnapKit
 
 class BaseTableView: BaseView {
     let tableView = UITableView()
-    let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
 
     override func addSubviews() {
         super.addSubviews()
 
         addSubview(tableView)
-        addSubview(activityIndicator)
     }
 
     override func configureLayout() {
@@ -24,10 +22,6 @@ class BaseTableView: BaseView {
             $0.leading.trailing.equalToSuperview()
             $0.top.equalTo(snp.topMargin)
             $0.bottom.equalTo(snp.bottomMargin)
-        }
-        
-        activityIndicator.snp.makeConstraints {
-            $0.center.equalToSuperview()
         }
     }
 
