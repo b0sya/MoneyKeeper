@@ -16,6 +16,7 @@ struct FTransaction: FirestoreModel {
         static let note = "note"
         static let direction = "direction"
         static let relatedAccountId = "relatedAccountId"
+        static let relatedAccount = "relatedAccount"
         static let relatedCategory = "relatedCategory"
     }
     
@@ -27,6 +28,7 @@ struct FTransaction: FirestoreModel {
     let note: String?
     let direction: DirectionType
     let relatedAccountId: String
+    let relatedAccount: FAccount
     let relatedCategory: FCategory
     
     var reference: DocumentReference? = nil
@@ -41,7 +43,8 @@ struct FTransaction: FirestoreModel {
             Keys.amount: amount,
             Keys.date: date,
             Keys.direction: direction.rawValue,
-            Keys.relatedAccountId: relatedAccountId,
+            Keys.relatedAccountId: relatedAccount.uid,
+            Keys.relatedAccount: relatedAccount.dictionaryRepresentation,
             Keys.relatedCategory: relatedCategory.dictionaryRepresentation,
         ]
         
@@ -57,15 +60,16 @@ struct FTransaction: FirestoreModel {
          date: Date,
          note: String?,
          direction: DirectionType,
-         relatedAccountId: String,
+         relatedAccount: FAccount,
          relatedCategory: FCategory) {
         self.uid = uid
         self.amount = amount
         self.date = date
         self.note = note
         self.direction = direction
-        self.relatedAccountId = relatedAccountId
+        self.relatedAccount = relatedAccount
         self.relatedCategory = relatedCategory
+        self.relatedAccountId = relatedAccount.uid
     }
     
     init?(from data: [String: Any]) {
@@ -74,7 +78,8 @@ struct FTransaction: FirestoreModel {
               let date = data[Keys.date] as? Timestamp,
               let directionRawValue = data[Keys.direction] as? Int16,
               let direction = DirectionType(rawValue: directionRawValue),
-              let relatedAccountId = data[Keys.relatedAccountId] as? String,
+              let relatedAccountData = data[Keys.relatedAccount] as? [String: Any],
+              let account = FAccount(from: relatedAccountData),
               let categoryData = data[Keys.relatedCategory] as? [String: Any],
               let category = FCategory(from: categoryData) else {
             return nil
@@ -84,8 +89,9 @@ struct FTransaction: FirestoreModel {
         self.amount = amount
         self.date = date.dateValue()
         self.direction = direction
-        self.relatedAccountId = relatedAccountId
+        self.relatedAccount = account
         self.relatedCategory = category
         self.note = data[Keys.note] as? String
+        self.relatedAccountId = account.uid
     }
 }

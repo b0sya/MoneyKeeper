@@ -32,5 +32,7 @@ extension UIImage {
         return resourceImage(named: "googleLogo")
     }
     
-    
+    static var calendarIcon: UIImage {
+        return resourceImage(named: "calendar")
+    }
 }

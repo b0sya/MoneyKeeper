@@ -14,6 +14,8 @@ final class MainViewModel: MainBuilderDataSource {
 
     private var accounts: [FAccount]?
     private let firebaseStorage = FirebaseStorage.instance
+    
+    private(set) var currentBalance: Double = 0
 
     func loadAccounts() {
         view?.showActivityIndicator()
@@ -38,11 +40,11 @@ extension MainViewModel {
             return nil
         }
         
-        let overalBalance = accounts.reduce(0) { (res, acc) in
+        currentBalance = accounts.reduce(0) { (res, acc) in
             res + acc.balance
         }
         
-        return .init(titleLabelText: .generalBalance, valueLabelText: NumberFormatter.rubFormatter.string(from: NSNumber(value: overalBalance)) ?? "")
+        return .init(titleLabelText: .generalBalance, valueLabelText: NumberFormatter.rub.string(from: NSNumber(value: currentBalance)) ?? "")
     }
     
     var addAccountViewModel: TappableCellViewModel {

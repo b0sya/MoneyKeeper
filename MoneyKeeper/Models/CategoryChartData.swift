@@ -5,12 +5,12 @@
 //  Created by Максим Шалашников on 01.04.2021.
 //
 
-import Foundation
+import UIKit
 
 struct CategoryChartData: ChartPresentable {
     var value: Double
     
     var title: String
     
-    
+    var color: UIColor?
 }

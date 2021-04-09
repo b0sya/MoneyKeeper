@@ -11,12 +11,16 @@ final class CategoryReportViewModel {
     weak var view: CategoryReportModuleInput?
     
     private let transactions: [FTransaction]
+    private let costs: Double
+    
     private var groupedTransactions: [FCategory: [FTransaction]] = [:]
     private var chartEntries: [ChartPresentable] = []
     private var categoryStat: [FCategory: Double] = [:]
     
-    init(transactions: [FTransaction]) {
+    init(transactions: [FTransaction], costs: Double) {
         self.transactions = transactions
+        self.costs = costs
+        
         groupTransactions()
     }
     

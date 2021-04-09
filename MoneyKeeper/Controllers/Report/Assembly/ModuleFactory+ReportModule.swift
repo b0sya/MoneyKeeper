@@ -8,12 +8,12 @@
 import Foundation
 
 protocol ReportModuleFactory {
-    func makeReportModule() -> ReportModule
+    func makeReportModule(currentBalance: Double) -> ReportModule
 }
 
 extension ModuleFactoryImp: ReportModuleFactory {
-    func makeReportModule() -> ReportModule {
-        let viewModel = ReportViewModel()
+    func makeReportModule(currentBalance: Double) -> ReportModule {
+        let viewModel = ReportViewModel(currentBalance: currentBalance)
         let viewController = ReportViewController(viewModel: viewModel)
         
         viewModel.view = viewController

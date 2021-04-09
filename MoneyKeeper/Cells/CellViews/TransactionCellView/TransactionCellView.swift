@@ -7,15 +7,17 @@
 
 import UIKit
 
-final class TransactionCellView: AccountCellView {
+class TransactionCellView: AccountCellView {
     
     private let timeLabel = UILabel()
+    private let accountNameLabel = UILabel()
     private let descriptionLabel = UILabel()
     
     override func addSubviews() {
         super.addSubviews()
         
         addSubview(timeLabel)
+        addSubview(accountNameLabel)
         addSubview(descriptionLabel)
     }
     
@@ -28,19 +30,26 @@ final class TransactionCellView: AccountCellView {
             $0.trailing.lessThanOrEqualTo(valueLabel.snp.leading).offset(-8)
         }
         
-        timeLabel.snp.makeConstraints {
-            $0.leading.equalTo(leftStackView)
-            $0.trailing.equalTo(leftStackView)
+        timeLabel.snp.makeConstraints{
+            $0.trailing.equalTo(valueLabel)
             $0.top.equalTo(leftStackView.snp.bottom).offset(8)
             $0.bottom.equalToSuperview().offset(-8)
         }
+        
+        accountNameLabel.snp.makeConstraints {
+            $0.leading.equalTo(leftStackView)
+            $0.trailing.equalTo(timeLabel.snp.leading).offset(-8)
+            $0.top.equalTo(leftStackView.snp.bottom).offset(8)
+        }
+
+        timeLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
+        accountNameLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .vertical)
         
     }
     
     private func configureCategoryAndDescriptionLayout() {
         timeLabel.snp.remakeConstraints {
-            $0.leading.equalTo(leftStackView)
-            $0.trailing.equalTo(leftStackView)
+            $0.trailing.equalTo(valueLabel)
             $0.top.equalTo(leftStackView.snp.bottom).offset(8)
         }
         
@@ -56,6 +65,8 @@ final class TransactionCellView: AccountCellView {
         super.configureAppearance()
         
         timeLabel.textColor = timeLabel.textColor.withAlphaComponent(0.3)
+        timeLabel.textAlignment = .right
+        
         
         descriptionLabel.textColor = descriptionLabel.textColor.withAlphaComponent(0.3)
         descriptionLabel.numberOfLines = 0
@@ -76,6 +87,10 @@ final class TransactionCellView: AccountCellView {
         }
         
         timeLabel.text = transactionCellViewModel.time
+        
+        if transactionCellViewModel.showAccountName {
+            accountNameLabel.text =  "Счет: \(transactionCellViewModel.accountName)"
+        }
         
         if let description = transactionCellViewModel.description, !description.isEmpty {
             configureCategoryAndDescriptionLayout()

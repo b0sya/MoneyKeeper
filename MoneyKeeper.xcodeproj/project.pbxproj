@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060D0C182619CB2D00D4C0AA /* PieChart+Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */; };
 		065BC4DD261663330063BD0C /* CategoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BC4DC261663330063BD0C /* CategoryChartData.swift */; };
 		065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */; };
+		067A34072619D46F005F1490 /* PercentageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A34062619D46F005F1490 /* PercentageFormatter.swift */; };
+		067A34122619E154005F1490 /* DetailedReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A34112619E154005F1490 /* DetailedReportViewModel.swift */; };
+		067A341F2619FBED005F1490 /* LoadingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A341E2619FBED005F1490 /* LoadingPresentable.swift */; };
 		068B884C25FCFA19004E81F2 /* FirestoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B884B25FCFA19004E81F2 /* FirestoreModel.swift */; };
 		068B885325FCFB08004E81F2 /* FAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B885225FCFB08004E81F2 /* FAccount.swift */; };
 		068B885625FCFD67004E81F2 /* FTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B885525FCFD67004E81F2 /* FTransaction.swift */; };
@@ -68,9 +72,8 @@
 		06D922462610D53900D17F60 /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922452610D53900D17F60 /* PieChartViewModel.swift */; };
 		06D9224A2610D6EB00D17F60 /* ChartPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922492610D6EB00D17F60 /* ChartPresentable.swift */; };
 		06D922502610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9224F2610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift */; };
-		06D922532610D8D200D17F60 /* CategoryReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922522610D8D200D17F60 /* CategoryReportViewController.swift */; };
-		06D922562610D8DF00D17F60 /* CategoryReportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922552610D8DF00D17F60 /* CategoryReportBuilder.swift */; };
-		06D922592610D8ED00D17F60 /* CategoryReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922582610D8ED00D17F60 /* CategoryReportViewModel.swift */; };
+		06D922532610D8D200D17F60 /* DetailedReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922522610D8D200D17F60 /* DetailedReportViewController.swift */; };
+		06D922562610D8DF00D17F60 /* DetailedReportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D922552610D8DF00D17F60 /* DetailedReportBuilder.swift */; };
 		06D9225D2610DDF700D17F60 /* ReportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9225C2610DDF700D17F60 /* ReportCoordinator.swift */; };
 		06E71EC8260D2EBE00373B90 /* ModuleFactory+ReportModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71EC7260D2EBE00373B90 /* ModuleFactory+ReportModule.swift */; };
 		06E71ED0260D2EE100373B90 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E71ECF260D2EE100373B90 /* ReportViewModel.swift */; };
@@ -150,8 +153,12 @@
 
 /* Begin PBXFileReference section */
 		000B42E85F7F77B09B44A082 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
+		060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PieChart+Fabric.swift"; sourceTree = "<group>"; };
 		065BC4DC261663330063BD0C /* CategoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartData.swift; sourceTree = "<group>"; };
 		065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableBuilder.swift; sourceTree = "<group>"; };
+		067A34062619D46F005F1490 /* PercentageFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageFormatter.swift; sourceTree = "<group>"; };
+		067A34112619E154005F1490 /* DetailedReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedReportViewModel.swift; sourceTree = "<group>"; };
+		067A341E2619FBED005F1490 /* LoadingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresentable.swift; sourceTree = "<group>"; };
 		068B884B25FCFA19004E81F2 /* FirestoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreModel.swift; sourceTree = "<group>"; };
 		068B885225FCFB08004E81F2 /* FAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAccount.swift; sourceTree = "<group>"; };
 		068B885525FCFD67004E81F2 /* FTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTransaction.swift; sourceTree = "<group>"; };
@@ -212,9 +219,8 @@
 		06D922452610D53900D17F60 /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 		06D922492610D6EB00D17F60 /* ChartPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresentable.swift; sourceTree = "<group>"; };
 		06D9224F2610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+CategoryReport.swift"; sourceTree = "<group>"; };
-		06D922522610D8D200D17F60 /* CategoryReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryReportViewController.swift; sourceTree = "<group>"; };
-		06D922552610D8DF00D17F60 /* CategoryReportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryReportBuilder.swift; sourceTree = "<group>"; };
-		06D922582610D8ED00D17F60 /* CategoryReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryReportViewModel.swift; path = MoneyKeeper/Controllers/CategoryReport/View/CategoryReportViewModel.swift; sourceTree = SOURCE_ROOT; };
+		06D922522610D8D200D17F60 /* DetailedReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedReportViewController.swift; sourceTree = "<group>"; };
+		06D922552610D8DF00D17F60 /* DetailedReportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedReportBuilder.swift; sourceTree = "<group>"; };
 		06D9225C2610DDF700D17F60 /* ReportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCoordinator.swift; sourceTree = "<group>"; };
 		06E71EC7260D2EBE00373B90 /* ModuleFactory+ReportModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+ReportModule.swift"; sourceTree = "<group>"; };
 		06E71ECF260D2EE100373B90 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
@@ -307,6 +313,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060D0C162619CB1D00D4C0AA /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		068B884A25FCFA05004E81F2 /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,14 +589,14 @@
 			path = BaseFormValidator;
 			sourceTree = "<group>";
 		};
-		06D922402610D4B900D17F60 /* CategoryReport */ = {
+		06D922402610D4B900D17F60 /* DetailedReport */ = {
 			isa = PBXGroup;
 			children = (
 				06D9224C2610D89F00D17F60 /* Assembly */,
 				06D9224D2610D8A500D17F60 /* View */,
 				06D9224E2610D8AA00D17F60 /* ViewModel */,
 			);
-			path = CategoryReport;
+			path = DetailedReport;
 			sourceTree = "<group>";
 		};
 		06D922412610D4C700D17F60 /* PieChartCellView */ = {
@@ -590,6 +604,7 @@
 			children = (
 				06D922422610D53000D17F60 /* PieChartView.swift */,
 				06D922452610D53900D17F60 /* PieChartViewModel.swift */,
+				067A34062619D46F005F1490 /* PercentageFormatter.swift */,
 			);
 			path = PieChartCellView;
 			sourceTree = "<group>";
@@ -598,6 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				06D922492610D6EB00D17F60 /* ChartPresentable.swift */,
+				067A341E2619FBED005F1490 /* LoadingPresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -613,8 +629,8 @@
 		06D9224D2610D8A500D17F60 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				06D922522610D8D200D17F60 /* CategoryReportViewController.swift */,
-				06D922552610D8DF00D17F60 /* CategoryReportBuilder.swift */,
+				06D922522610D8D200D17F60 /* DetailedReportViewController.swift */,
+				06D922552610D8DF00D17F60 /* DetailedReportBuilder.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -622,7 +638,7 @@
 		06D9224E2610D8AA00D17F60 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				06D922582610D8ED00D17F60 /* CategoryReportViewModel.swift */,
+				067A34112619E154005F1490 /* DetailedReportViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -760,8 +776,8 @@
 		961B5E5025A890C500C7BADE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				06D922402610D4B900D17F60 /* CategoryReport */,
 				965990A625B44B46002A23BD /* BaseViewController.swift */,
+				06D922402610D4B900D17F60 /* DetailedReport */,
 				06E71EC6260D2E9100373B90 /* Report */,
 				068B886925FE2C6B004E81F2 /* AccountInfo */,
 				965991F825BD7D2D002A23BD /* BaseTableController */,
@@ -1098,6 +1114,7 @@
 		96C5E44525A5C10A00E374B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				060D0C162619CB1D00D4C0AA /* Charts */,
 				068B88922604A5F1004E81F2 /* Foundation */,
 				06907A3A25FA9D7F008B38DB /* CoreData */,
 				06907A3925FA9D7A008B38DB /* UI */,
@@ -1312,11 +1329,10 @@
 			files = (
 				06D922432610D53000D17F60 /* PieChartView.swift in Sources */,
 				068B886225FD0357004E81F2 /* StorageProvider.swift in Sources */,
-				06D922562610D8DF00D17F60 /* CategoryReportBuilder.swift in Sources */,
+				06D922562610D8DF00D17F60 /* DetailedReportBuilder.swift in Sources */,
 				9659920225BD80ED002A23BD /* MainViewController.swift in Sources */,
 				06907A2325F938C9008B38DB /* GoogleAuthProvider.swift in Sources */,
 				96504A2A25C5AD9200F4D960 /* Typealias.swift in Sources */,
-				06D922592610D8ED00D17F60 /* CategoryReportViewModel.swift in Sources */,
 				0690798525F51734008B38DB /* CategoriesListViewModel.swift in Sources */,
 				06EAB26725E2904E00E05FAB /* DataListViewController.swift in Sources */,
 				961CF26525CD649100ED1BD3 /* RouterImp.swift in Sources */,
@@ -1389,13 +1405,15 @@
 				96F4B0CF25C41A5B00E8339E /* DefaultCellViewModel.swift in Sources */,
 				96F1972C25CD801400B0B634 /* RoundedContainerCellView.swift in Sources */,
 				068E3FAB2610B91300B6B3E7 /* Report.swift in Sources */,
-				06D922532610D8D200D17F60 /* CategoryReportViewController.swift in Sources */,
+				06D922532610D8D200D17F60 /* DetailedReportViewController.swift in Sources */,
 				96F4B0E725C420CC00E8339E /* DefaultCellContainer.swift in Sources */,
 				068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */,
 				06E71EE4260D35C100373B90 /* ReportCategoriesCellView.swift in Sources */,
 				961CF24E25CD5CEF00ED1BD3 /* Presentable.swift in Sources */,
 				06D9225D2610DDF700D17F60 /* ReportCoordinator.swift in Sources */,
 				961CF25925CD5F3900ED1BD3 /* CoordinatorFactory.swift in Sources */,
+				067A34072619D46F005F1490 /* PercentageFormatter.swift in Sources */,
+				067A34122619E154005F1490 /* DetailedReportViewModel.swift in Sources */,
 				965049D925C5969500F4D960 /* Colors.swift in Sources */,
 				068B885325FCFB08004E81F2 /* FAccount.swift in Sources */,
 				96F1973725CD8B5300B0B634 /* CGFloat+IconSize.swift in Sources */,
@@ -1413,6 +1431,7 @@
 				065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */,
 				06D922502610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift in Sources */,
 				06E71ED0260D2EE100373B90 /* ReportViewModel.swift in Sources */,
+				060D0C182619CB2D00D4C0AA /* PieChart+Fabric.swift in Sources */,
 				961CF26825CD698B00ED1BD3 /* ApplicationCoordinator.swift in Sources */,
 				068B887425FE2CCD004E81F2 /* AccountInfoViewController.swift in Sources */,
 				068B887B25FE2F12004E81F2 /* AccountInfoCellViewModel.swift in Sources */,
@@ -1443,6 +1462,7 @@
 				0690796F25F4FA37008B38DB /* Transaction+CoreDataClass copy.swift in Sources */,
 				06E71ED4260D2EEB00373B90 /* ReportViewController.swift in Sources */,
 				068E3FAE2610BB2E00B6B3E7 /* Date+Periods.swift in Sources */,
+				067A341F2619FBED005F1490 /* LoadingPresentable.swift in Sources */,
 				068B887825FE2D91004E81F2 /* AcountInfoCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

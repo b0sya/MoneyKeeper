@@ -9,7 +9,7 @@ import Charts
 import UIKit
 
 final class PieChartCellView: RoundedContainerCellView {
-    private let pieChart = PieChartView()
+    private let pieChart = PieChartView.default
     
     override func addSubviews() {
         super.addSubviews()
@@ -28,8 +28,7 @@ final class PieChartCellView: RoundedContainerCellView {
     
     override func configureAppearance() {
         super.configureAppearance()
-        
-        pieChart.drawEntryLabelsEnabled = false
+    
     }
     
     private func configurePieChart(for viewModel: PieChartCellViewModel) {
@@ -38,22 +37,13 @@ final class PieChartCellView: RoundedContainerCellView {
         }
         
         let dataSet = PieChartDataSet(entries: entries)
-        dataSet.colors = colorsOfCharts(numbersOfColor: entries.count)
+        dataSet.colors = viewModel.entries.compactMap { $0.color }
+        dataSet.label = ""
+        
         let data = PieChartData(dataSet: dataSet)
-         
+        data.setValueFormatter(DefaultValueFormatter(formatter: .perscntage))
+                 
         pieChart.data = data
-    }
-    
-    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
-        var colors: [UIColor] = []
-        for _ in 0..<numbersOfColor {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        return colors
     }
 }
 

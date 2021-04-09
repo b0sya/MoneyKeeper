@@ -139,7 +139,7 @@ final class FirebaseStorage: StorageProvider {
                                        date: data.date,
                                        note: data.description,
                                        direction: data.direction,
-                                       relatedAccountId: data.account.uid,
+                                       relatedAccount: data.account,
                                        relatedCategory: data.category)
         
         db.collection(FTransaction.collectionKey).document(transaction.uid).setData(transaction.dictionaryRepresentation) { error in

@@ -1,5 +1,5 @@
 //
-//  CategoryReportViewController.swift
+//  DetailedReportViewController.swift
 //  MoneyKeeper
 //
 //  Created by Максим Шалашников on 28.03.2021.
@@ -8,17 +8,17 @@
 import Foundation
 import TableKit
 
-typealias CategoryReportModuleInput = CategoryReportModule & CategoryReportInput
+typealias DetailedReportModuleInput = DetailedReportModule & DetailedReportInput
 
-protocol CategoryReportModule: Presentable {
+protocol DetailedReportModule: Presentable {
     
 }
 
-protocol CategoryReportInput: BaseContentInput {
+protocol DetailedReportInput: BaseContentInput {
     
 }
 
-final class CategoryReportViewController: BaseTableController<CategoryReportViewModel, CategoryReportBuilder>, CategoryReportModuleInput {
+final class DetailedReportViewController: BaseTableController<DetailedReportViewModel, DetailedReportBuilder>, DetailedReportModuleInput {
     override func buildSections() -> [TableSection] {
         builder.buildSections(from: viewModel)
     }

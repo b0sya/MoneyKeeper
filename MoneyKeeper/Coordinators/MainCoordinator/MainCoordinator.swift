@@ -53,8 +53,9 @@ final class MainCoordinator: BaseCoordinator {
             }
         }
         
-        module.onReportTapped = { [weak self] in
-            self?.runReportFlow {
+        module.onReportTapped = { [weak self, weak module] in
+            guard let module = module else { return }
+            self?.runReportFlow(currentBalance: module.currentBalance) {
                 
             }
         }
@@ -72,8 +73,8 @@ final class MainCoordinator: BaseCoordinator {
         bind(coordinator, completion: onFinish)
     }
     
-    private func runReportFlow(onFinish: @escaping VoidClosure) {
-        let coordinator = coordinatorFactory.makeReportCoordinator(router: router)
+    private func runReportFlow(currentBalance: Double, onFinish: @escaping VoidClosure) {
+        let coordinator = coordinatorFactory.makeReportCoordinator(router: router, currentBalance: currentBalance)
         bind(coordinator, completion: onFinish)
     }
     

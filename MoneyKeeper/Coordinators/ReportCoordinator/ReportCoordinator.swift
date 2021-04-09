@@ -6,44 +6,48 @@
 //
 
 extension CoordinatorFactory {
-    func makeReportCoordinator(router: Router) -> ReportCoordinator {
+    func makeReportCoordinator(router: Router, currentBalance: Double) -> ReportCoordinator {
         ReportCoordinator(router: router,
                           factory: moduleFactory,
-                          coordinatorFactory: self)
+                          coordinatorFactory: self,
+                          currentBalance: currentBalance)
     }
 }
 
 final class ReportCoordinator: BaseCoordinator {
-    typealias ReportCoordinatorModuleFactory = ReportModuleFactory & CategoryReportModuleFactory
+    typealias ReportCoordinatorModuleFactory = ReportModuleFactory & DetailedReportModuleFactory
     
     private let factory: ReportCoordinatorModuleFactory
     private let router: Router
     private let coordinatorFactory: CoordinatorFactory
+    private let currentBalance: Double
     
     init(router: Router,
          factory: ReportCoordinatorModuleFactory,
-         coordinatorFactory: CoordinatorFactory) {
+         coordinatorFactory: CoordinatorFactory,
+         currentBalance: Double) {
         self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
+        self.currentBalance = currentBalance
     }
     
     override func start() {
-        showReport()
+        showReport(currentBalance: currentBalance)
     }
     
-    private func showReport() {
-        let module = factory.makeReportModule()
+    private func showReport(currentBalance: Double) {
+        let module = factory.makeReportModule(currentBalance: currentBalance)
         
-        module.onCostCategoryTap = { [weak self] in
-            self?.showCategoryReport(transactions: $0)
+        module.onDetailderItemTap = { [weak self] in
+            self?.showCategoryReport(transactions: $0.transactions, totalValue: $0.totalValue)
         }
         
         router.push(module)
     }
     
-    private func showCategoryReport(transactions: [FTransaction]) {
-        let module = factory.makeCategoryReportModule(for: transactions)
+    private func showCategoryReport(transactions: [FTransaction], totalValue: Double) {
+        let module = factory.makeDetailedReportModule(for: transactions, totalValue: totalValue)
         
         router.push(module)
     }

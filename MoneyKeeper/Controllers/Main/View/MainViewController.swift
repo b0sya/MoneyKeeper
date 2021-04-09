@@ -9,6 +9,8 @@ import Foundation
 import TableKit
 
 protocol MainModule: Presentable {
+    var currentBalance: Double { get }
+    
     var onAddAccount: VoidClosure? { get set }
     var onAccountTap: ParameterClosure<FAccount>? { get set }
     var onAddTransaction: VoidClosure? { get set }
@@ -18,6 +20,10 @@ protocol MainModule: Presentable {
 }
 
 final class MainViewController: BaseTableController<MainViewModel, MainBuilder>, MainModule {
+    
+    var currentBalance: Double {
+        viewModel.currentBalance
+    }
 	
     var onAddAccount: VoidClosure?
     var onAccountTap: ParameterClosure<FAccount>?
