@@ -31,22 +31,30 @@ class DefaultCellView: RoundedContainerCellView, ConfigurableView {
         iconImageView.snp.makeConstraints {
             $0.width.equalTo(iconImageView.snp.height).offset(10).priority(500)
         }
-
+        
         leftStackView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(8)
             $0.leading.equalTo(16)
-            $0.trailing.lessThanOrEqualTo(arrowImageView.snp.leading).offset(-8)
+            $0.trailing.equalToSuperview().inset(16)
         }
 
         titleLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .vertical)
 
+    }
+    
+    func configureLyoutWithArrow() {
+        leftStackView.snp.remakeConstraints {
+            $0.top.bottom.equalToSuperview().inset(8)
+            $0.leading.equalTo(16)
+            $0.trailing.lessThanOrEqualTo(arrowImageView.snp.leading).offset(-8)
+        }
+        
         arrowImageView.snp.makeConstraints {
             $0.top.equalTo(leftStackView).inset(4)
             $0.bottom.equalTo(leftStackView).inset(4)
             $0.trailing.equalToSuperview().inset(8)
             $0.width.equalTo(arrowImageView.snp.height)
         }
-
     }
 
     override func configureAppearance() {
@@ -70,6 +78,10 @@ class DefaultCellView: RoundedContainerCellView, ConfigurableView {
         iconImageView.image = viewModel.icon
 
         iconImageView.isHidden = viewModel.icon == nil
+        
+        if viewModel.onTap != nil {
+            configureLyoutWithArrow()
+        }
 
         arrowImageView.isHidden = viewModel.onTap == nil
     }

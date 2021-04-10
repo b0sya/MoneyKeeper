@@ -28,9 +28,26 @@ class AccountCellView: DefaultCellView {
         valueLabel.snp.makeConstraints {
             $0.top.equalTo(leftStackView)
             $0.bottom.equalTo(leftStackView)
-            $0.trailing.equalTo(arrowImageView.snp.leading).offset(-8)
+            $0.trailing.equalToSuperview().inset(16)
         }
         valueLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
+    }
+    
+    override func configureLyoutWithArrow() {
+        super.configureLyoutWithArrow()
+        
+        valueLabel.snp.remakeConstraints {
+            $0.top.equalTo(leftStackView)
+            $0.bottom.equalTo(leftStackView)
+            $0.trailing.lessThanOrEqualTo(arrowImageView.snp.leading).offset(-8)
+        }
+        
+        arrowImageView.snp.makeConstraints {
+            $0.top.equalTo(leftStackView).inset(4)
+            $0.bottom.equalTo(leftStackView).inset(4)
+            $0.trailing.equalToSuperview().inset(8)
+            $0.width.equalTo(arrowImageView.snp.height)
+        }
     }
 
     override func configureAppearance() {
