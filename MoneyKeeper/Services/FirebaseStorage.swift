@@ -11,9 +11,16 @@ import FirebaseFirestore
 final class FirebaseStorage: StorageProvider {
     static let instance = FirebaseStorage()
     
-    private let db = Firestore.firestore()
+    private let db: Firestore
     
     private init() {
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
+        
+        let db = Firestore.firestore()
+        db.settings = settings
+        
+        self.db = db
         loadInitialCategoriesIfNeeded()
     }
     
