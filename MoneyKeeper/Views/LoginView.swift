@@ -47,14 +47,14 @@ final class LoginView: BaseView {
         
         backgroundColor = .MKGreen
         
-        titleLabel.text = "Пора организовать личный бюджет!"
+        titleLabel.text = .loginPromoTitle
         titleLabel.font = UIFont.systemFont(ofSize: 40)
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         
         googleButton.setBackgroundColor(.white, for: .normal)
         googleButton.setBackgroundColor(.white, for: .selected)
-        googleButton.setTitle("Войти через Google", for: .normal)
+        googleButton.setTitle(.signInWithGoogle, for: .normal)
         googleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 19)
         googleButton.setTitleColor(.black, for: .normal)
         googleButton.layer.cornerRadius = CGFloat.buttonCornerRadius

@@ -8,13 +8,18 @@
 import UIKit
 
 final class ReportViewModel {
+    enum DetailReportType {
+        case incomes
+        case costs
+    }
+    
     weak var view: ReportMoudleInput?
     
     private let firebaseStorage = FirebaseStorage.instance
     
     var selectedPeriod = Date.currentYearPeriod {
         didSet {
-            loadReport()
+            view?.refreshData()
         }
     }
     
@@ -112,12 +117,27 @@ final class ReportViewModel {
         }
     }
     
-    private func openCostReport() {
+    private func openCostsReport() {
         view?.onDetailderItemTap?((costTransactions, costs))
     }
     
     private func openIncomeReport() {
         view?.onDetailderItemTap?((incomeTransactions, incomes))
+    }
+    
+    private func actionForDetailedReport(type: DetailReportType) -> VoidClosure? {
+        switch type {
+        case .costs:
+            guard costs > 0 else { return nil }
+            return { [weak self] in
+                self?.openCostsReport()
+            }
+        case .incomes:
+            guard incomes > 0 else { return nil }
+            return { [weak self] in
+                self?.openIncomeReport()
+            }
+        }
     }
 }
 
@@ -157,32 +177,30 @@ extension ReportViewModel: ReportBuilderDataSource {
     
     var reportCategoriesViewModels: [ReportCategoryCellViewModel] {
         [
-            ReportCategoryCellViewModel(leftReportCategoryViewModel: .init(title: "Доходы",
+            ReportCategoryCellViewModel(leftReportCategoryViewModel: .init(title: .incomes,
                                                                            amount: incomes,
-                                                                           tapAction: { [weak self] in
-                                                                                self?.openIncomeReport()
-                                                                           }),
-                                        rightReportCategoryViewModel: .init(title: "Расходы",
+                                                                           tapAction: actionForDetailedReport(type: .incomes)),
+                                        rightReportCategoryViewModel: .init(title: .costs,
                                                                             amount: costs,
-                                                                            tapAction: { [weak self] in
-                                                                                self?.openCostReport()
-                                                                            })),
-            ReportCategoryCellViewModel(leftReportCategoryViewModel: .init(title: "Баланс за период",
+                                                                            tapAction: actionForDetailedReport(type: .costs))
+            ),
+            ReportCategoryCellViewModel(leftReportCategoryViewModel: .init(title: .periodBalance,
                                                                            amount: periodBalance),
-                                        rightReportCategoryViewModel: .init(title: "Текущий баланс",
-                                                                            amount: currentBalance))
+                                        rightReportCategoryViewModel: .init(title: .currentBalance,
+                                                                            amount: currentBalance)
+            )
         ]
     }
     
     var titleCellViewModel: TitleCellViewModel {
         if selectedPeriod == Date.currentWeekPeriod {
-            return .init(title: "Все операции за текущую неделю")
+            return .init(title: .weekPeriodOperationsTitle)
         }
         else if selectedPeriod == Date.currentMonthPeriod {
-            return .init(title: "Все операции за текущий меясц")
+            return .init(title: .monthPeriodOperationsTitle)
         }
         
-        return .init(title: "Все операции за текущий год")
+        return .init(title: .yearPeriodOperationsTitle)
     }
     
 }

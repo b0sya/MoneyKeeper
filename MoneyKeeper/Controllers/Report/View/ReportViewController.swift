@@ -40,17 +40,17 @@ final class ReportViewController: BaseTableController<ReportViewModel, ReportBui
     }
     
     @objc private func calendarButtonTapped() {
-        let alert = UIAlertController(title: "Период", message: "Выберите период", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Неделя", style: .default, handler: { _ in
+        let alert = UIAlertController(title: .period, message: .selectPeriod, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: .week, style: .default, handler: { _ in
             self.viewModel.selectedPeriod = Date.currentWeekPeriod
         }))
-        alert.addAction(UIAlertAction(title: "Месяц", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: .month, style: .default, handler: { _ in
             self.viewModel.selectedPeriod = Date.currentMonthPeriod
         }))
-        alert.addAction(UIAlertAction(title: "Год", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: .year, style: .default, handler: { _ in
             self.viewModel.selectedPeriod = Date.currentYearPeriod
         }))
-        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: .cancel, style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
     }
@@ -58,6 +58,6 @@ final class ReportViewController: BaseTableController<ReportViewModel, ReportBui
     override func localize() {
         super.localize()
         
-        title = "Отчет"
+        title = .report
     }
 }

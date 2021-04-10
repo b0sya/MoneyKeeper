@@ -45,3 +45,21 @@
 "generalBalance" = "General balance";
 
 "loading" = "Loading";
+
+"incomes" = "Incomes";
+"costs" = "Costs";
+"periodBalance" = "Balance for the period";
+"weekPeriodOperationsTitle" = "All transactions for the current week";
+"monthPeriodOperationsTitle" = "All transactions for the current month";
+"yearPeriodOperationsTitle" = "All transactions for the current year";
+
+"report" = "Report";
+
+"selectPeriod" = "Выберите период";
+"period" = "Period";
+"week" = "Week";
+"month" = "Month";
+"year" = "Year";
+
+"loginPromoTitle" = "It's time to organize your personal budget!";
+"signInWithGoogle" = "Sign in with Google";

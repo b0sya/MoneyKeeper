@@ -65,7 +65,7 @@ extension MainViewModel {
     
 
     var serviceCellsViewModel: [DefaultCellViewModel] {
-        [.init(title: "Отчет", icon: nil, tapAction: { [weak self] in
+        [.init(title: .report, icon: nil, tapAction: { [weak self] in
             self?.view?.onReportTapped?()
         })]
     }

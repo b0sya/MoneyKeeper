@@ -44,3 +44,23 @@
 "generalBalance" = "Общий баланс";
 
 "loading" = "Загружаем";
+
+"incomes" = "Доходы";
+"costs" = "Расходы";
+"periodBalance" = "Баланс за период";
+"weekPeriodOperationsTitle" = "Все операции за текущую неделю";
+"monthPeriodOperationsTitle" = "Все операции за текущий меясц";
+"yearPeriodOperationsTitle" = "Все операции за текущий год";
+
+"report" = "Отчет";
+
+"selectPeriod" = "Select period";
+"period" = "Период";
+"week" = "Неделя";
+"month" = "Месяц";
+"year" = "Год";
+
+"accountName" = "Счет: %@";
+
+"loginPromoTitle" = "Пора организовать личный бюджет!";
+"signInWithGoogle" = "Войти через Google";

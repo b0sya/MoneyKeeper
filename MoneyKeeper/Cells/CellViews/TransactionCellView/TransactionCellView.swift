@@ -89,7 +89,7 @@ class TransactionCellView: AccountCellView {
         timeLabel.text = transactionCellViewModel.time
         
         if transactionCellViewModel.showAccountName {
-            accountNameLabel.text =  "Счет: \(transactionCellViewModel.accountName)"
+            accountNameLabel.text =  String(format: .accountName, transactionCellViewModel.accountName)
         }
         
         if let description = transactionCellViewModel.description, !description.isEmpty {

@@ -115,4 +115,48 @@ extension String {
     /// Загружаем / Loading
     static let loading = NSLocalizedString("loading", comment: "");
     
+    /// Доходы / Incomes
+    static let incomes = NSLocalizedString("incomes", comment: "");
+    
+    /// Расходы / Costs
+    static let costs = NSLocalizedString("costs", comment: "");
+    
+    /// Баланс за период / Balance for the period
+    static let periodBalance = NSLocalizedString("periodBalance", comment: "");
+    
+    /// Все операции за текущую неделю / All transactions for the current week
+    static let weekPeriodOperationsTitle = NSLocalizedString("weekPeriodOperationsTitle", comment: "");
+    
+    /// Все операции за текущий меясц / All transactions for the current month
+    static let monthPeriodOperationsTitle = NSLocalizedString("monthPeriodOperationsTitle", comment: "");
+    
+    /// Все операции за текущий год/ All transactions for the current year
+    static let yearPeriodOperationsTitle = NSLocalizedString("yearPeriodOperationsTitle", comment: "");
+    
+    /// Отчет / Report
+    static let report = NSLocalizedString("report", comment: "");
+    
+    /// Период / Period
+    static let period = NSLocalizedString("period", comment: "");
+    
+    /// Неделя / Week
+    static let week = NSLocalizedString("week", comment: "");
+    
+    /// Месяц / Month
+    static let month = NSLocalizedString("month", comment: "");
+    
+    /// Год / Year
+    static let year = NSLocalizedString("year", comment: "");
+    
+    /// Выберите период / Select period
+    static let selectPeriod = NSLocalizedString("selectPeriod", comment: "");
+    
+    /// Счет: %s / Account: %s
+    static let accountName = NSLocalizedString("accountName", comment: "");
+    
+    /// Пора организовать личный бюджет! / It's time to organize your personal budget!
+    static let loginPromoTitle = NSLocalizedString("loginPromoTitle", comment: "");
+    
+    /// Войти через Google / Sign in with Google
+    static let signInWithGoogle = NSLocalizedString("signInWithGoogle", comment: "");
 }
