@@ -39,10 +39,9 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func logOutIfNeeded() {
-        let key = "isNotFirstStart"
-        if !UserDefaults.standard.bool(forKey: key) {
+        if !UserDefaults.standard.bool(forKey: Keys.isNotFirstStartKey) {
             GoogleAuth.logOut(successCompletion: nil, failureCompletion: nil)
-            UserDefaults.standard.setValue(true, forKey: key)
+            UserDefaults.standard.setValue(true, forKey: Keys.isNotFirstStartKey)
         }
     }
 }

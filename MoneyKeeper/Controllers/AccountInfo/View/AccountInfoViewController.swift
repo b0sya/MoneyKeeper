@@ -7,11 +7,20 @@
 
 import TableKit
 
+typealias AccountInfoModuleInput  = AccountInfoModule & AccountInfoInput
+
 protocol AccountInfoModule: Presentable {
-    func fillTable()
+    var onFinishDelete: VoidClosure? { get set }
 }
 
-final class AccountInfoViewController: BaseTableController<AccountInfoViewModel, AccountInfoBuilder>, AccountInfoModule {
+protocol AccountInfoInput: ErrorPresentable, LoadingPresentable, BaseContentInput {
+    
+}
+
+final class AccountInfoViewController: BaseTableController<AccountInfoViewModel, AccountInfoBuilder>, AccountInfoModuleInput {
+    
+    var onFinishDelete: VoidClosure?
+    
     
     override func localize() {
         super.localize()
@@ -27,5 +36,17 @@ final class AccountInfoViewController: BaseTableController<AccountInfoViewModel,
         super.refreshData()
         
         viewModel.loadTransactions()
+    }
+    
+    override func configureAppearance() {
+        super.configureAppearance()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,
+                                                            target: self,
+                                                            action: #selector(removeButtonTapped))
+    }
+    
+    @objc private func removeButtonTapped() {
+        viewModel.removeAccount()
     }
 }

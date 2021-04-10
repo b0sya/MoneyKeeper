@@ -8,7 +8,7 @@
 import UIKit
 
 final class AccountInfoViewModel {
-    weak var view: AccountInfoModule?
+    weak var view: AccountInfoModuleInput?
     
     private var transactions: [FTransaction] = [] {
         didSet {
@@ -75,6 +75,19 @@ final class AccountInfoViewModel {
         }
         
         groupedTransactions = sections
+    }
+    
+    func removeAccount() {
+        view?.showActivityIndicator()
+        firebaseStorage.remove(account: account, transactions: transactions) { [weak view] result in
+            view?.hideActivityIndicator()
+            switch result {
+            case .failure(let error):
+                view?.showError(message: error.localizedDescription)
+            case .success(_):
+                view?.onFinishDelete?()
+            }
+        }
     }
 }
 

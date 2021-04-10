@@ -9,4 +9,5 @@ import Foundation
 
 struct Keys {
     static let initialCategoriesWasLoaded = "initialCategoriesWasLoaded"
+    static let isNotFirstStartKey = "isNotFirstStart"
 }

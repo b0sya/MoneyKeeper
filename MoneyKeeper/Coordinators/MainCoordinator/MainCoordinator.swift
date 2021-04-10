@@ -43,8 +43,10 @@ final class MainCoordinator: BaseCoordinator {
             }
         }
         
-        module.onAccountTap = { [weak self] account in
-            self?.showAccountInfo(for: account)
+        module.onAccountTap = { [weak self, weak module] account in
+            self?.showAccountInfo(for: account) { [weak module] in
+                module?.refreshData()
+            }
         }
 
         module.onAddTransaction = { [weak self] in
@@ -88,8 +90,14 @@ final class MainCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
-    private func showAccountInfo(for account: FAccount) {
+    private func showAccountInfo(for account: FAccount, onFinishDelete: VoidClosure?) {
         let module = factory.makeAccountInfoModule(account: account)
+        
+        module.onFinishDelete = { [weak self] in
+            self?.router.popModule()
+            onFinishDelete?()
+            
+        }
         router.push(module)
     }
     

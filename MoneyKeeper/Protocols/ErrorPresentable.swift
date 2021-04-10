@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ErrorPresentable {
+protocol ErrorPresentable: class {
     func showError(message: String)
 }

@@ -7,8 +7,8 @@
 
 import Foundation
 
-class LoadableViewController<View: BaseView, ViewModel>: BaseViewController<View, ViewModel> {
-    let loadingIndicator = LoadingIndicator()
+class LoadableViewController<View: BaseView, ViewModel>: BaseViewController<View, ViewModel>, LoadingPresentable {
+    private let loadingIndicator = LoadingIndicator()
     
     override func configureLayout() {
         super.configureLayout()
@@ -17,5 +17,13 @@ class LoadableViewController<View: BaseView, ViewModel>: BaseViewController<View
         loadingIndicator.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+    }
+    
+    func showActivityIndicator() {
+        loadingIndicator.show()
+    }
+    
+    func hideActivityIndicator() {
+        loadingIndicator.hide()
     }
 }

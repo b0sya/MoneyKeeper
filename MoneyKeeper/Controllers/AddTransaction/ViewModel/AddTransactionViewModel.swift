@@ -91,7 +91,9 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
         guard let data = validator.cleanData else {
             return
         }
+        view?.showActivityIndicator()
         firebaseStorage.addTransaction(data: data) { [weak self] result in
+            self?.view?.hideActivityIndicator()
             switch result {
             case .success(_):
                 self?.view?.onFinish?()

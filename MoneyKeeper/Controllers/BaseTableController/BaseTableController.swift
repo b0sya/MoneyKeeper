@@ -35,14 +35,14 @@ class BaseTableController<ViewModel, TableBuilder: BaseTableBuilder>: LoadableVi
     
 
     func fillTable() {
-        loadingIndicator.hide()
+        hideActivityIndicator()
         tableDirector.clear()
         tableDirector.append(sections: buildSections())
         tableDirector.reload()
     }
     
     func refreshData() {
-        loadingIndicator.show()
+        showActivityIndicator()
     }
 
 }

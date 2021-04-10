@@ -18,25 +18,23 @@ final class FirebaseStorage: StorageProvider {
     }
     
     private func loadInitialCategoriesIfNeeded() {
-        guard !UserDefaults.standard.bool(forKey: Keys.initialCategoriesWasLoaded) else {
-            return
-        }
-        
-        UserDefaults.standard.setValue(true, forKey: Keys.initialCategoriesWasLoaded)
-        
-        guard let pathToFile = Bundle.main.path(forResource: "categoriesInitial", ofType: "plist") else { return }
-        
-        guard let dataArray = NSArray(contentsOfFile: pathToFile) else { return }
-        for dictionary in dataArray {
-            
-            let dict = dictionary as! NSDictionary
-            
-            guard let name = dict["name"] as? String else {
-                fatalError("Invalid categories initial plist file")
-            }
-            
-            addCategory(name: name, direction: .cost, completion: nil)
-        }
+//        guard !UserDefaults.standard.bool(forKey: Keys.initialCategoriesWasLoaded) else {
+//            return
+//        }
+//                
+//        guard let pathToFile = Bundle.main.path(forResource: "categoriesInitial", ofType: "plist") else { return }
+//        
+//        guard let dataArray = NSArray(contentsOfFile: pathToFile) else { return }
+//        for dictionary in dataArray {
+//            
+//            let dict = dictionary as! NSDictionary
+//            
+//            guard let name = dict["name"] as? String else {
+//                fatalError("Invalid categories initial plist file")
+//            }
+//            
+//            addCategory(name: name, direction: .cost, completion: nil)
+//        }
         
     }
     
@@ -172,6 +170,22 @@ final class FirebaseStorage: StorageProvider {
             }
             
             completion?(.success(category))
+        }
+    }
+    
+    //MARK: Remove methods
+    
+    func remove(account: FAccount, transactions: [FTransaction], completion: ParameterClosure<RemoveAccountOutput>?) {
+        db.collection(FAccount.collectionKey).document(account.uid).delete { error in
+            if let error = error {
+                completion?(.failure(.removeDataError("Failed to remove account: \(error.localizedDescription)")))
+                return
+            }
+            
+            transactions.forEach {
+                self.db.collection(FTransaction.collectionKey).document($0.uid).delete()
+            }
+            completion?(.success(Void()))
         }
     }
 }
