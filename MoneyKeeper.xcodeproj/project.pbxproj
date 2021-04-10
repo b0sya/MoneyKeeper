@@ -10,6 +10,11 @@
 		060D0C182619CB2D00D4C0AA /* PieChart+Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */; };
 		065BC4DD261663330063BD0C /* CategoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BC4DC261663330063BD0C /* CategoryChartData.swift */; };
 		065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */; };
+		066D421F2621C2B700DCBBDE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D421E2621C2B700DCBBDE /* SettingsViewController.swift */; };
+		066D42222621C2C200DCBBDE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D42212621C2C200DCBBDE /* SettingsViewModel.swift */; };
+		066D42262621C2FB00DCBBDE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D42252621C2FB00DCBBDE /* SettingsView.swift */; };
+		066D42292621C44B00DCBBDE /* ModuleFactory+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D42282621C44B00DCBBDE /* ModuleFactory+Settings.swift */; };
+		066D422D2621C75100DCBBDE /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D422C2621C75100DCBBDE /* ErrorPresentable.swift */; };
 		0673C69A26208E750017AE45 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673C69926208E750017AE45 /* LoadingIndicator.swift */; };
 		0673C6A5262094170017AE45 /* LoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673C6A4262094170017AE45 /* LoadableViewController.swift */; };
 		067A34072619D46F005F1490 /* PercentageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A34062619D46F005F1490 /* PercentageFormatter.swift */; };
@@ -158,6 +163,11 @@
 		060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PieChart+Fabric.swift"; sourceTree = "<group>"; };
 		065BC4DC261663330063BD0C /* CategoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartData.swift; sourceTree = "<group>"; };
 		065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableBuilder.swift; sourceTree = "<group>"; };
+		066D421E2621C2B700DCBBDE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		066D42212621C2C200DCBBDE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		066D42252621C2FB00DCBBDE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		066D42282621C44B00DCBBDE /* ModuleFactory+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+Settings.swift"; sourceTree = "<group>"; };
+		066D422C2621C75100DCBBDE /* ErrorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentable.swift; sourceTree = "<group>"; };
 		0673C69926208E750017AE45 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		0673C6A4262094170017AE45 /* LoadableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewController.swift; sourceTree = "<group>"; };
 		067A34062619D46F005F1490 /* PercentageFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageFormatter.swift; sourceTree = "<group>"; };
@@ -323,6 +333,48 @@
 				060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		066D421A2621C14700DCBBDE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				066D421B2621C15300DCBBDE /* Assembly */,
+				066D421D2621C15D00DCBBDE /* View */,
+				066D421C2621C15900DCBBDE /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		066D421B2621C15300DCBBDE /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				066D42282621C44B00DCBBDE /* ModuleFactory+Settings.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		066D421C2621C15900DCBBDE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				066D42212621C2C200DCBBDE /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		066D421D2621C15D00DCBBDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				066D421E2621C2B700DCBBDE /* SettingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		066D42242621C2F000DCBBDE /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				066D42252621C2FB00DCBBDE /* SettingsView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		0673C69826208E5C0017AE45 /* LoadingIndicator */ = {
@@ -528,6 +580,7 @@
 		069079C125F65267008B38DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				066D42242621C2F000DCBBDE /* SettingsView */,
 				0673C69826208E5C0017AE45 /* LoadingIndicator */,
 				06E71ED9260D313200373B90 /* ReportCategoryView */,
 				068B88962604A9BF004E81F2 /* TableSectionHeader */,
@@ -635,6 +688,7 @@
 			children = (
 				06D922492610D6EB00D17F60 /* ChartPresentable.swift */,
 				067A341E2619FBED005F1490 /* LoadingPresentable.swift */,
+				066D422C2621C75100DCBBDE /* ErrorPresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -797,8 +851,9 @@
 		961B5E5025A890C500C7BADE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0673C6A3262094070017AE45 /* LoadableViewController */,
 				965990A625B44B46002A23BD /* BaseViewController.swift */,
+				066D421A2621C14700DCBBDE /* Settings */,
+				0673C6A3262094070017AE45 /* LoadableViewController */,
 				06D922402610D4B900D17F60 /* DetailedReport */,
 				06E71EC6260D2E9100373B90 /* Report */,
 				068B886925FE2C6B004E81F2 /* AccountInfo */,
@@ -1369,9 +1424,11 @@
 				961CF25225CD5D6100ED1BD3 /* MainCoordinator.swift in Sources */,
 				96F1974125CDA93100B0B634 /* ButtonCellVuiewModel.swift in Sources */,
 				96504A2725C5AC2300F4D960 /* TappableCellViewModel.swift in Sources */,
+				066D42222621C2C200DCBBDE /* SettingsViewModel.swift in Sources */,
 				0690796D25F4FA37008B38DB /* Category+CoreDataClass copy.swift in Sources */,
 				96F1973025CD829400B0B634 /* TextFieldCellViewModel.swift in Sources */,
 				9621808B25CDF6E4001A386D /* AddAccountCoordinator.swift in Sources */,
+				066D421F2621C2B700DCBBDE /* SettingsViewController.swift in Sources */,
 				06EAB26025E2872600E05FAB /* UIButton+BackgoundColorForState.swift in Sources */,
 				961C080925CEA0FD00C8E300 /* AccountCellView.swift in Sources */,
 				961C080C25CEA10B00C8E300 /* AccountCellViewModel.swift in Sources */,
@@ -1412,6 +1469,7 @@
 				06EAB27725E2944E00E05FAB /* ModuleFactory+DataList.swift in Sources */,
 				9699EDFF25CFFA7A00EF316E /* DatePickerCellViewModel.swift in Sources */,
 				0690793225EA84FF008B38DB /* SegmentedControlCellView.swift in Sources */,
+				066D42262621C2FB00DCBBDE /* SettingsView.swift in Sources */,
 				9699EDFB25CFFA6B00EF316E /* DatePickerCellView.swift in Sources */,
 				0698E97F25E26FFA000ED813 /* AddAccountFormValidator.swift in Sources */,
 				96F4B0DC25C41DCF00E8339E /* ContainerTableCell.swift in Sources */,
@@ -1426,6 +1484,7 @@
 				0690797525F4FACF008B38DB /* Transactions+DirectionType.swift in Sources */,
 				068B886E25FE2CAB004E81F2 /* ModuleFactory+AccountInfo.swift in Sources */,
 				06907A1725F65CE9008B38DB /* AuthCoordinator.swift in Sources */,
+				066D422D2621C75100DCBBDE /* ErrorPresentable.swift in Sources */,
 				96F4B0CF25C41A5B00E8339E /* DefaultCellViewModel.swift in Sources */,
 				96F1972C25CD801400B0B634 /* RoundedContainerCellView.swift in Sources */,
 				068E3FAB2610B91300B6B3E7 /* Report.swift in Sources */,
@@ -1434,6 +1493,7 @@
 				068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */,
 				06E71EE4260D35C100373B90 /* ReportCategoriesCellView.swift in Sources */,
 				961CF24E25CD5CEF00ED1BD3 /* Presentable.swift in Sources */,
+				066D42292621C44B00DCBBDE /* ModuleFactory+Settings.swift in Sources */,
 				06D9225D2610DDF700D17F60 /* ReportCoordinator.swift in Sources */,
 				961CF25925CD5F3900ED1BD3 /* CoordinatorFactory.swift in Sources */,
 				067A34072619D46F005F1490 /* PercentageFormatter.swift in Sources */,

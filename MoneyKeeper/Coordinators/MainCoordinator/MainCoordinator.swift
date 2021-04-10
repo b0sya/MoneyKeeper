@@ -16,7 +16,7 @@ extension CoordinatorFactory {
 }
 
 final class MainCoordinator: BaseCoordinator {
-    typealias MainCoordinatorModuleFactory = MainModuleFactory & AddTransactionModuleFactory & AccountInfoModuleFactory & ReportModuleFactory
+    typealias MainCoordinatorModuleFactory = MainModuleFactory & AddTransactionModuleFactory & AccountInfoModuleFactory & ReportModuleFactory & SettingsModuleFactory
     
     private let factory: MainCoordinatorModuleFactory
     private let router: Router
@@ -53,6 +53,10 @@ final class MainCoordinator: BaseCoordinator {
             }
         }
         
+        module.onSettingsTapped = { [weak self] in
+            self?.showSettings()
+        }
+        
         module.onReportTapped = { [weak self, weak module] in
             guard let module = module else { return }
             self?.runReportFlow(currentBalance: module.currentBalance) {
@@ -78,8 +82,24 @@ final class MainCoordinator: BaseCoordinator {
         bind(coordinator, completion: onFinish)
     }
     
+    private func runAuthFlow() {
+        let coordinator = coordinatorFactory.makeAuthCoordinator(router: router)
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
     private func showAccountInfo(for account: FAccount) {
         let module = factory.makeAccountInfoModule(account: account)
+        router.push(module)
+    }
+    
+    private func showSettings() {
+        let module = factory.makeSettingsModule()
+        
+        module.onLoggedOut = { [weak self] in
+            self?.runAuthFlow()
+        }
+        
         router.push(module)
     }
 }

@@ -159,4 +159,10 @@ extension String {
     
     /// Войти через Google / Sign in with Google
     static let signInWithGoogle = NSLocalizedString("signInWithGoogle", comment: "");
+    
+    /// Выйти из аккаунта / Log out
+    static let logOut = NSLocalizedString("logOut", comment: "");
+    
+    /// Настройки / Settings
+    static let settings = NSLocalizedString("settings", comment: "");
 }

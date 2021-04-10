@@ -64,3 +64,6 @@
 
 "loginPromoTitle" = "Пора организовать личный бюджет!";
 "signInWithGoogle" = "Войти через Google";
+
+"logOut" = "Выйти из аккаунта";
+"settings" = "Настройки";

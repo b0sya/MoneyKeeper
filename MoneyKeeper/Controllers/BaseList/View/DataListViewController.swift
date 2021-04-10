@@ -29,6 +29,8 @@ class BaseListViewController: BaseTableController<BaseListViewModel, BaseListBui
     }
     
     override func refreshData() {
+        super.refreshData()
+        
         viewModel.loadData()
     }
     

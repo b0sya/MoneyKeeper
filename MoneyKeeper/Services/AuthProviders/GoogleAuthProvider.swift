@@ -30,6 +30,15 @@ final class GoogleAuth: NSObject, AuthProvider {
         GIDSignIn.sharedInstance()?.presentingViewController = vc
         GIDSignIn.sharedInstance().signIn()
     }
+    
+    static func logOut(successCompletion: VoidClosure?, failureCompletion: ParameterClosure<Error>?) {
+        do {
+            try Auth.auth().signOut()
+            successCompletion?()
+        } catch let signOutError as NSError {
+            failureCompletion?(signOutError)
+        }
+    }
 }
 
 extension GoogleAuth: GIDSignInDelegate {
@@ -46,7 +55,7 @@ extension GoogleAuth: GIDSignInDelegate {
                                                        accessToken: authentication.accessToken)
         
         Auth.auth().signIn(with: credential) { result, error in
-            if let error = error {
+            if let _ = error {
                 self.failureCompletion?()
                 return
             }

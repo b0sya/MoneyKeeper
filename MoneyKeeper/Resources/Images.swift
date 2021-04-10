@@ -35,4 +35,8 @@ extension UIImage {
     static var calendarIcon: UIImage {
         return resourceImage(named: "calendar")
     }
+    
+    static var settings: UIImage {
+        return resourceImage(named: "settings")
+    }
 }

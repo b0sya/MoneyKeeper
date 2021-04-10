@@ -37,7 +37,7 @@ final class AuthCoordinator: BaseCoordinator {
             self?.runMainFlow()
         }
         
-        router.setRootModule(module, hideBar: true)
+        router.setRootModule(module, hideBar: true, animated: true)
     }
     
     private func runMainFlow() {

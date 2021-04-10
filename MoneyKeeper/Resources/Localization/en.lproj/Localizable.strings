@@ -63,3 +63,6 @@
 
 "loginPromoTitle" = "It's time to organize your personal budget!";
 "signInWithGoogle" = "Sign in with Google";
+
+"logOut" = "Log out";
+"settings" = "Settings";

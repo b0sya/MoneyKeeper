@@ -18,6 +18,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
 
     override func start() {
+        logOutIfNeeded()
         guard GoogleAuth.isAuthorized else {
             runAuthFlow()
             return
@@ -35,5 +36,13 @@ final class ApplicationCoordinator: BaseCoordinator {
         let coordinator = coordinatorFactory.makeAuthCoordinator(router: router)
         addDependency(coordinator)
         coordinator.start()
+    }
+    
+    private func logOutIfNeeded() {
+        let key = "isNotFirstStart"
+        if !UserDefaults.standard.bool(forKey: key) {
+            GoogleAuth.logOut(successCompletion: nil, failureCompletion: nil)
+            UserDefaults.standard.setValue(true, forKey: key)
+        }
     }
 }

@@ -14,6 +14,7 @@ protocol MainModule: Presentable {
     var onAddAccount: VoidClosure? { get set }
     var onAccountTap: ParameterClosure<FAccount>? { get set }
     var onAddTransaction: VoidClosure? { get set }
+    var onSettingsTapped: VoidClosure? { get set }
     var onReportTapped: VoidClosure? { get set }
 
     func refreshData()
@@ -28,6 +29,7 @@ final class MainViewController: BaseTableController<MainViewModel, MainBuilder>,
     var onAddAccount: VoidClosure?
     var onAccountTap: ParameterClosure<FAccount>?
     var onAddTransaction: VoidClosure?
+    var onSettingsTapped: VoidClosure?
     var onReportTapped: VoidClosure?
 
     override func buildSections() -> [TableSection] {
@@ -35,6 +37,8 @@ final class MainViewController: BaseTableController<MainViewModel, MainBuilder>,
     }
 
     override func refreshData() {
+        super.refreshData()
+        
         viewModel.loadAccounts()
     }
 
@@ -44,6 +48,11 @@ final class MainViewController: BaseTableController<MainViewModel, MainBuilder>,
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(addTransactionTapped))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: .settings,
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(settingsButtonTapped))
     }
 
     override func localize() {
@@ -54,5 +63,9 @@ final class MainViewController: BaseTableController<MainViewModel, MainBuilder>,
 
     @objc private func addTransactionTapped() {
         onAddTransaction?()
+    }
+    
+    @objc private func settingsButtonTapped() {
+        onSettingsTapped?()
     }
 }
