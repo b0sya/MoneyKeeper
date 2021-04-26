@@ -10,36 +10,75 @@ import UIKit
 final class DetailedReportViewModel {
     weak var view: DetailedReportModuleInput?
     
+    private let firebaseStorage = FirebaseStorage.instance
+    
     private let transactions: [FTransaction]
     private let totalValue: Double
     
-    private var groupedTransactions: [FCategory: [FTransaction]] = [:]
+    private var categories: [String: FCategory] = [:]
+    
     private var chartEntries: [ChartPresentable] = []
-    private var totalForGroups: [FCategory: Double] = [:]
+    private var totalForGroups: [String: Double] = [:]
+    
+    private let direction: DirectionType
+    
+    private var subcategoryMode = false
     
     init(transactions: [FTransaction], totalValue: Double) {
         self.transactions = transactions
         self.totalValue = totalValue
         
-        groupTransactions()
+        self.direction = DirectionType(rawValue: transactions.first?.relatedCategory.directonId ?? 0) ?? .cost
     }
     
-    private func groupTransactions() {
+    init(transactions: [FTransaction], categories: [String: FCategory], totalValue: Double) {
+        self.transactions = transactions
+        self.categories = categories
+        self.totalValue = totalValue
+        
+        self.direction = DirectionType(rawValue: transactions.first?.relatedCategory.directonId ?? 0) ?? .cost
+        
+        subcategoryMode = true
+        
+    }
+    
+    func loadCateegories() {
+        guard categories.isEmpty else {
+            groupTransactions()
+            return
+        }
+        
+        firebaseStorage.fetchCategories(direction: direction) { result in
+            switch result {
+            case .success(let data):
+                data.forEach {
+                    self.categories[$0.uid] = $0
+                }
+                self.groupTransactions()
+            case .failure(let error):
+                break
+            }
+        }
+    }
+    
+    private func groupTransactions() {        
         for transaction in transactions {
             let category = transaction.relatedCategory
             
-            if groupedTransactions[category] == nil {
-                groupedTransactions[category] = [transaction]
+            let id: String
+            if subcategoryMode {
+                id = category.uid
             } else {
-                groupedTransactions[category]?.append(transaction)
+                id = (category.parentCategoryId?.isEmpty ?? true) ? category.uid : category.parentCategoryId ?? ""
             }
-            if let value = totalForGroups[category] {
-                totalForGroups[category] = value + transaction.amount
-            }
-            else {
-                totalForGroups[category] = transaction.amount
+            
+            if let value = totalForGroups[id] {
+                totalForGroups[id] = value + transaction.amount
+            } else {
+                totalForGroups[id] = transaction.amount
             }
         }
+        view?.fillTable()
     }
     
     private func generateColor() -> UIColor {
@@ -53,18 +92,42 @@ final class DetailedReportViewModel {
 
 extension DetailedReportViewModel: DetailedReportBuilderDataSource {
     var categoriesCellsViewModels: [AccountCellViewModel] {
-        totalForGroups.map { key, value in
-            AccountCellViewModel(title: key.localizedName,
-                                 value: value,
-                                 icon: nil,
-                                 tapAction: nil)
+        totalForGroups.compactMap { key, value in
+            guard let category = categories[key] else {
+                return nil
+            }
+            guard !category.subcategoryIds.isEmpty else {
+                return AccountCellViewModel(title: category.localizedName,
+                                            value: value,
+                                            icon: nil,
+                                            tapAction: nil)
+            }
+            var categories: [String: FCategory] = [:]
+            
+            category.subcategoryIds.forEach {
+                categories[$0] = self.categories[$0]
+            }
+            
+            categories[category.uid] = category
+            
+            return AccountCellViewModel(title: category.localizedName,
+                                        value: value,
+                                        icon: nil) { [self] in
+                self.view?.onShowSubcategories?((self.transactions, categories, value))
+            }
+            
         }
     }
     
     var chartCellView: PieChartCellViewModel {
-        let chartData = totalForGroups.map { key, value in
-            CategoryChartData(value: ((value*100)/totalValue),
-                              title: key.localizedName,
+        let chartData = totalForGroups.compactMap { (key, value) -> CategoryChartData? in
+            
+            guard let categoryName = categories[key]?.localizedName else {
+                return nil
+            }
+            
+            return CategoryChartData(value: ((value*100)/totalValue),
+                              title: categoryName,
                               color: generateColor())
         }
         return .init(entries: chartData)

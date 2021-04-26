@@ -65,6 +65,10 @@ final class MainCoordinator: BaseCoordinator {
                 
             }
         }
+        
+        module.onAddCategoryTapped = { [weak self] in
+            self?.runAddCategorytFlow { }
+        }
 
         router.setRootModule(module, hideBar: false, animated: true)
     }
@@ -99,6 +103,11 @@ final class MainCoordinator: BaseCoordinator {
             
         }
         router.push(module)
+    }
+    
+    private func runAddCategorytFlow(onFinish: @escaping VoidClosure) {
+        let coordinator = coordinatorFactory.makeAddCategoryCoordinator(router: router)
+        bind(coordinator, completion: onFinish)
     }
     
     private func showSettings() {

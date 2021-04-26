@@ -33,8 +33,10 @@ struct DetailedReportBuilder: BaseTableBuilder {
     
     private func buildCategoriesSection(from dataSource: DetailedReportBuilderDataSource) -> TableSection {
         let rows: [Row] = dataSource.categoriesCellsViewModels
-            .compactMap {
-                TableRow<CategoryCell>(item: $0)
+            .compactMap { viewModel in
+                TableRow<CategoryCell>(item: viewModel).on(.click) { _ in
+                    viewModel.onTap?()
+                }
             }
         
         return .init(onlyRows: rows)

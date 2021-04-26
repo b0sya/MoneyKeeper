@@ -2,27 +2,40 @@
 //  CategoriesListViewController.swift
 //  MoneyKeeper
 //
-//  Created by Максим Шалашников on 07.03.2021.
+//  Created by Максим Шалашников on 18.04.2021.
 //
 
-import UIKit
+import Foundation
+import TableKit
 
-protocol CategoriesListModule: BaseListModule {
-    func addCategory(with name: String)
+typealias CategoriesListModuleInput = CategoriesListModule & CategoriesListInput
+
+protocol CategoriesListModule: Presentable {
+    var onCategorySelected: ParameterClosure<FCategory>? { get set }
+    var onSubcategoriesTapped: ParameterClosure<FCategory>? { get set }
 }
 
-final class CategoriesListViewController: BaseListViewController, CategoriesListModule {
+protocol CategoriesListInput: ErrorPresentable, LoadingPresentable, BaseContentInput {
     
+}
 
-    override func localize() {
-        title = .categories
-    }
-
-    func addCategory(with name: String) {
-        guard let viewModel = viewModel as? CategoriesListViewModel else {
-            return
-        }
+final class CategoriesListViewController: BaseTableController<CategoriesListViewModel, CategoriesListBuilder>, CategoriesListModuleInput {
+    var onSubcategoriesTapped: ParameterClosure<FCategory>?
+    var onCategorySelected: ParameterClosure<FCategory>?
+    
+    override func refreshData() {
+        super.refreshData()
         
-        viewModel.addNewCategory(with: name)
+        viewModel.loadCategories()
+    }
+    
+    override func buildSections() -> [TableSection] {
+        builder.buildSections(from: viewModel)
+    }
+    
+    override func localize() {
+        super.localize()
+        
+        title = "Категории"
     }
 }

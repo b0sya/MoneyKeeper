@@ -49,6 +49,16 @@ final class ReportCoordinator: BaseCoordinator {
     private func showCategoryReport(transactions: [FTransaction], totalValue: Double) {
         let module = factory.makeDetailedReportModule(for: transactions, totalValue: totalValue)
         
+        module.onShowSubcategories = { [weak self] in
+            self?.showSubcategoryReport(transactions: $0.transactions, subcategories: $0.categories, totalValue: $0.totalValue)
+        }
+        
+        router.push(module)
+    }
+    
+    private func showSubcategoryReport(transactions: [FTransaction], subcategories: [String: FCategory], totalValue: Double) {
+        let module = factory.makeDetailedReportModule(for: transactions, categories: subcategories, totalValue: totalValue)
+        
         router.push(module)
     }
 }

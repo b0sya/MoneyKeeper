@@ -47,7 +47,7 @@ final class SelectCellView: RoundedContainerCellView {
     }
     
     override func addTargets() {
-//        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(wasTapped)))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(wasTapped)))
     }
     
     override func configureAppearance() {

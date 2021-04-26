@@ -13,7 +13,7 @@ protocol SettingsModule: Presentable {
     var onLoggedOut: VoidClosure? { get set }
 }
 
-protocol SettingsInput: class, ErrorPresentable {
+protocol SettingsInput: ErrorPresentable {
 }
 
 final class SettingsViewController: BaseViewController<SettingsView, SettingsViewModel>, SettingsModuleInput {

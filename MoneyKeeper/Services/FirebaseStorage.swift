@@ -62,7 +62,9 @@ final class FirebaseStorage: StorageProvider {
     }
     
     func fetchCategories(direction: DirectionType, completion: ParameterClosure<FetchCategoriesOutput>?) {
-        let query = db.collection(FCategory.collectionKey).whereField(FCategory.Keys.directionId, in: [direction.rawValue])
+        let query = db.collection(FCategory.collectionKey)
+            .whereField(FCategory.Keys.directionId.rawValue,
+                        in: [direction.rawValue])
         
         query.getDocuments { snapshot, error in
             if let error = error {
@@ -97,11 +99,53 @@ final class FirebaseStorage: StorageProvider {
             
         }
     }
+    ///add fetch parent categories + fetch subcategories
+    
+    func fetchMainCategories(direction: DirectionType, completion: ParameterClosure<FetchCategoriesOutput>?) {
+        let query = db.collection(FCategory.collectionKey)
+            .whereField(FCategory.Keys.parentCategoryId.rawValue,
+                        isEqualTo: "")
+            .whereField(FCategory.Keys.directionId.rawValue,
+                        in: [direction.rawValue])
+        
+        query.getDocuments { snapshot, error in
+            if let error = error {
+                completion?(.failure(.fetchDataError("Fetch categories failed: \(error.localizedDescription)")))
+                return
+            }
+            
+            guard let accounts = snapshot?.documents.compactMap({ FCategory(from: $0.data()) }) else {
+                completion?(.failure(.parseDataError("Parse categories data failed")))
+                return
+            }
+            
+            completion?(.success(accounts))
+        }
+    }
+    
+    func fetchSubcategories(for category: FCategory, completion: ParameterClosure<FetchCategoriesOutput>?) {
+        db.collection(FCategory.collectionKey)
+            .whereField(FCategory.Keys.parentCategoryId.rawValue, isEqualTo: category.uid).getDocuments { snapshot, error in
+                if let error = error {
+                    completion?(.failure(.fetchDataError("Fetch categories failed: \(error.localizedDescription)")))
+                    return
+                }
+                
+                guard let accounts = snapshot?.documents.compactMap({ FCategory(from: $0.data()) }) else {
+                    completion?(.failure(.parseDataError("Parse categories data failed")))
+                    return
+                }
+                
+                completion?(.success(accounts))
+            }
+    }
     
     func fetchTransactions(for period: Period, completion: ParameterClosure<FetchTransactionsOutput>?) {
         let query = db.collection(FTransaction.collectionKey)
             .whereField(FTransaction.Keys.date, isGreaterThanOrEqualTo: period.start)
             .whereField(FTransaction.Keys.date, isLessThanOrEqualTo: period.end)
+        
+        db.collection(FTransaction.collectionKey)
         
         query.getDocuments { snapshot, error in
             if let error = error {
@@ -113,6 +157,29 @@ final class FirebaseStorage: StorageProvider {
                 completion?(.failure(.parseDataError("Parse transactions data failed")))
                 return
             }
+            
+//            guard let transactionsData = snapshot?.documents.compactMap({
+//                let trans = FTransaction(from: $0.data())
+//
+//                guard let parentId = trans?.relatedCategory.parentCategoryId, !parentId.isEmpty else {
+//                    return TransactionsData(transaction: trans, mainCategory: nil)
+//                }
+//
+//                db.collection(FCategory.collectionKey).document(parentId).getDocument { snapshot, error in
+//                    if let error = error {
+//                        return
+//                    }
+//
+//                    guard let data = snapshot?.data(), let category = FCategory(from: data) else {
+//                        return TransactionsData(transaction: trans, mainCategory: nil)
+//                    }
+//
+//                    return TransactionsData(transaction: trans, mainCategory: category)
+//                }
+//            }) else {
+//                completion?(.failure(.parseDataError("Parse transactions data failed")))
+//                return
+//            }
             
             completion?(.success(transactions))
         }
@@ -166,10 +233,17 @@ final class FirebaseStorage: StorageProvider {
         }
     }
     
-    func addCategory(name: String, direction: DirectionType, completion: ParameterClosure<SaveCategoryOutput>?) {
+    func addCategory(name: String, direction: DirectionType, parent: FCategory?, completion: ParameterClosure<SaveCategoryOutput>?) {
         let category = FCategory(uid: UUID().uuidString,
                                  name: name,
-                                 direction: direction)
+                                 direction: direction,
+                                 parentCategoryId: parent?.uid)
+        
+        if let parent = parent {
+            db.collection(FCategory.collectionKey).document(parent.uid).updateData([
+                FCategory.Keys.subcategoryIds.rawValue: FieldValue.arrayUnion([category.uid])
+            ])
+        }
         
         db.collection(FCategory.collectionKey).document(category.uid).setData(category.dictionaryRepresentation) { error in
             if let error = error {

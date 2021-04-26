@@ -10,7 +10,7 @@ import CoreData
 
 final class MainViewModel: MainBuilderDataSource {
 
-    weak var view: MainViewController?
+    weak var view: MainModuleInput?
 
     private var accounts: [FAccount]?
     private let firebaseStorage = FirebaseStorage.instance
@@ -63,11 +63,18 @@ extension MainViewModel {
         return viewModels ?? []
     }
     
-
+    
     var serviceCellsViewModel: [DefaultCellViewModel] {
-        [.init(title: .report, icon: nil, tapAction: { [weak self] in
-            self?.view?.onReportTapped?()
-        })]
+        [
+            .init(title: .report,
+                  icon: nil,
+                  tapAction: { [weak self] in
+                    self?.view?.onReportTapped?()
+                  }),
+            .init(title: "Добавить категорию", icon: nil, tapAction: { [weak self] in
+                self?.view?.onAddCategoryTapped?()
+            })
+        ]
     }
 
 

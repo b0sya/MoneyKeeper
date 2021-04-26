@@ -11,15 +11,14 @@ import os.log
 
 protocol AddTransactionModule: Presentable {
     var onFinish: VoidClosure? { get set }
-    var onCategoryTap: ParameterClosure<CategoryListInput>? { get set }
+    var onCategoryTap: ParameterClosure<CategoriesListInputData>? { get set }
     var onAccountTap: ParameterClosure<ParameterClosure<FAccount>>? { get set }
 }
 
 final class AddTransactionViewController: BaseTableController<AddTransactionViewModel, AddTransactionBuilder>, AddTransactionModule {
-    
+    var onCategoryTap: ParameterClosure<CategoriesListInputData>?
     var onFinish: VoidClosure?
-    var onCategoryTap: ParameterClosure<CategoryListInput>?
-    var onAccountTap: ParameterClosure<ParameterClosure<FAccount>>? 
+    var onAccountTap: ParameterClosure<ParameterClosure<FAccount>>?
 
     override func buildSections() -> [TableSection] {
         builder.buildSections(from: viewModel)

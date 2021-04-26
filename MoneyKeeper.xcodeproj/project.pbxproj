@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		060D0C182619CB2D00D4C0AA /* PieChart+Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */; };
+		065B80CC2628B5280065ABCB /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80CB2628B5280065ABCB /* CategoryCellView.swift */; };
+		065B80CF2628CAF40065ABCB /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80CE2628CAF40065ABCB /* CategoryCellViewModel.swift */; };
+		065B80DB262AD0820065ABCB /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80DA262AD0820065ABCB /* AddCategoryViewController.swift */; };
+		065B80DF262AD0A10065ABCB /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80DE262AD0A10065ABCB /* AddCategoryViewModel.swift */; };
+		065B80E2262AD0BF0065ABCB /* AddCategoryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80E1262AD0BF0065ABCB /* AddCategoryBuilder.swift */; };
+		065B80E5262AD2E40065ABCB /* ModuleFactory+AddCategoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80E4262AD2E40065ABCB /* ModuleFactory+AddCategoryModule.swift */; };
+		065B80E9262AD3F30065ABCB /* AddCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80E8262AD3F30065ABCB /* AddCategoryCoordinator.swift */; };
+		065B80ED262AD6AF0065ABCB /* AddCategoryFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80EC262AD6AF0065ABCB /* AddCategoryFormValidator.swift */; };
+		065B80FF262C65410065ABCB /* ModuleFactory+CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80FE262C65410065ABCB /* ModuleFactory+CategoriesList.swift */; };
+		065B8104262C65890065ABCB /* CategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B8103262C65890065ABCB /* CategoriesListViewController.swift */; };
+		065B8107262C65CD0065ABCB /* CategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B8106262C65CD0065ABCB /* CategoriesListViewModel.swift */; };
+		065B810A262C66020065ABCB /* CategoriesListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B8109262C66020065ABCB /* CategoriesListBuilder.swift */; };
+		065B810D262C74A00065ABCB /* CategoriesListInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B810C262C74A00065ABCB /* CategoriesListInput.swift */; };
 		065BC4DD261663330063BD0C /* CategoryChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BC4DC261663330063BD0C /* CategoryChartData.swift */; };
 		065F7FEC25E268C000597A94 /* BaseTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */; };
 		066D421F2621C2B700DCBBDE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D421E2621C2B700DCBBDE /* SettingsViewController.swift */; };
@@ -39,7 +52,6 @@
 		068B88942604A604004E81F2 /* Date+CompareDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88932604A604004E81F2 /* Date+CompareDates.swift */; };
 		068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */; };
 		068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */; };
-		068B88AC2606162A004E81F2 /* ModuleFactory+CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */; };
 		068E3FAB2610B91300B6B3E7 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E3FAA2610B91300B6B3E7 /* Report.swift */; };
 		068E3FAE2610BB2E00B6B3E7 /* Date+Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E3FAD2610BB2E00B6B3E7 /* Date+Periods.swift */; };
 		0690791225EA72FA008B38DB /* categoriesInitial.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0690791125EA72FA008B38DB /* categoriesInitial.plist */; };
@@ -58,11 +70,8 @@
 		0690797525F4FACF008B38DB /* Transactions+DirectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690797425F4FACF008B38DB /* Transactions+DirectionType.swift */; };
 		0690797C25F51553008B38DB /* DataListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690797B25F51553008B38DB /* DataListViewModel.swift */; };
 		0690798225F51647008B38DB /* AccountsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690798125F51647008B38DB /* AccountsListViewModel.swift */; };
-		0690798525F51734008B38DB /* CategoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690798425F51734008B38DB /* CategoriesListViewModel.swift */; };
-		0690798C25F53AEB008B38DB /* CategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */; };
 		0690799325F53B87008B38DB /* AccountsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690799225F53B87008B38DB /* AccountsListViewController.swift */; };
 		069079A225F62883008B38DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 069079A125F62883008B38DB /* GoogleService-Info.plist */; };
-		069079B425F64717008B38DB /* CategoryListInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079B325F64717008B38DB /* CategoryListInput.swift */; };
 		069079BB25F651F2008B38DB /* ModuleFactory+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079BA25F651F2008B38DB /* ModuleFactory+Login.swift */; };
 		069079BF25F6523A008B38DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079BE25F6523A008B38DB /* LoginViewController.swift */; };
 		069079C325F65274008B38DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069079C225F65274008B38DB /* LoginView.swift */; };
@@ -161,6 +170,19 @@
 /* Begin PBXFileReference section */
 		000B42E85F7F77B09B44A082 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PieChart+Fabric.swift"; sourceTree = "<group>"; };
+		065B80CB2628B5280065ABCB /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
+		065B80CE2628CAF40065ABCB /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
+		065B80DA262AD0820065ABCB /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		065B80DE262AD0A10065ABCB /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
+		065B80E1262AD0BF0065ABCB /* AddCategoryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryBuilder.swift; sourceTree = "<group>"; };
+		065B80E4262AD2E40065ABCB /* ModuleFactory+AddCategoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+AddCategoryModule.swift"; sourceTree = "<group>"; };
+		065B80E8262AD3F30065ABCB /* AddCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCoordinator.swift; sourceTree = "<group>"; };
+		065B80EC262AD6AF0065ABCB /* AddCategoryFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCategoryFormValidator.swift; sourceTree = "<group>"; };
+		065B80FE262C65410065ABCB /* ModuleFactory+CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+CategoriesList.swift"; sourceTree = "<group>"; };
+		065B8103262C65890065ABCB /* CategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewController.swift; sourceTree = "<group>"; };
+		065B8106262C65CD0065ABCB /* CategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewModel.swift; sourceTree = "<group>"; };
+		065B8109262C66020065ABCB /* CategoriesListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListBuilder.swift; sourceTree = "<group>"; };
+		065B810C262C74A00065ABCB /* CategoriesListInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListInput.swift; sourceTree = "<group>"; };
 		065BC4DC261663330063BD0C /* CategoryChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartData.swift; sourceTree = "<group>"; };
 		065F7FEB25E268C000597A94 /* BaseTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableBuilder.swift; sourceTree = "<group>"; };
 		066D421E2621C2B700DCBBDE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -192,7 +214,6 @@
 		068B88932604A604004E81F2 /* Date+CompareDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CompareDates.swift"; sourceTree = "<group>"; };
 		068B88982604A9DE004E81F2 /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 		068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+RUB.swift"; sourceTree = "<group>"; };
-		068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+CategoriesList.swift"; sourceTree = "<group>"; };
 		068E3FAA2610B91300B6B3E7 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		068E3FAD2610BB2E00B6B3E7 /* Date+Periods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Periods.swift"; sourceTree = "<group>"; };
 		0690791125EA72FA008B38DB /* categoriesInitial.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = categoriesInitial.plist; sourceTree = "<group>"; };
@@ -212,11 +233,8 @@
 		0690797425F4FACF008B38DB /* Transactions+DirectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+DirectionType.swift"; sourceTree = "<group>"; };
 		0690797B25F51553008B38DB /* DataListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListViewModel.swift; sourceTree = "<group>"; };
 		0690798125F51647008B38DB /* AccountsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsListViewModel.swift; sourceTree = "<group>"; };
-		0690798425F51734008B38DB /* CategoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewModel.swift; sourceTree = "<group>"; };
-		0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewController.swift; sourceTree = "<group>"; };
 		0690799225F53B87008B38DB /* AccountsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsListViewController.swift; sourceTree = "<group>"; };
 		069079A125F62883008B38DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		069079B325F64717008B38DB /* CategoryListInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListInput.swift; sourceTree = "<group>"; };
 		069079BA25F651F2008B38DB /* ModuleFactory+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+Login.swift"; sourceTree = "<group>"; };
 		069079BE25F6523A008B38DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		069079C225F65274008B38DB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -333,6 +351,95 @@
 				060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		065B80CA2628B50D0065ABCB /* CategoryCellView */ = {
+			isa = PBXGroup;
+			children = (
+				065B80CB2628B5280065ABCB /* CategoryCellView.swift */,
+				065B80CE2628CAF40065ABCB /* CategoryCellViewModel.swift */,
+			);
+			path = CategoryCellView;
+			sourceTree = "<group>";
+		};
+		065B80D6262AD0490065ABCB /* AddCategoryModule */ = {
+			isa = PBXGroup;
+			children = (
+				065B80D7262AD0570065ABCB /* Assembly */,
+				065B80D8262AD0630065ABCB /* View */,
+				065B80D9262AD0670065ABCB /* ViewModel */,
+			);
+			path = AddCategoryModule;
+			sourceTree = "<group>";
+		};
+		065B80D7262AD0570065ABCB /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				065B80E4262AD2E40065ABCB /* ModuleFactory+AddCategoryModule.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		065B80D8262AD0630065ABCB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				065B80DA262AD0820065ABCB /* AddCategoryViewController.swift */,
+				065B80E1262AD0BF0065ABCB /* AddCategoryBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		065B80D9262AD0670065ABCB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				065B80EC262AD6AF0065ABCB /* AddCategoryFormValidator.swift */,
+				065B80DE262AD0A10065ABCB /* AddCategoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		065B80E7262AD3D00065ABCB /* AddCategoryCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				065B80E8262AD3F30065ABCB /* AddCategoryCoordinator.swift */,
+			);
+			path = AddCategoryCoordinator;
+			sourceTree = "<group>";
+		};
+		065B80FA262C65190065ABCB /* CategoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				065B80FB262C65240065ABCB /* Assembly */,
+				065B80FC262C65280065ABCB /* View */,
+				065B80FD262C652C0065ABCB /* ViewModel */,
+			);
+			path = CategoriesList;
+			sourceTree = "<group>";
+		};
+		065B80FB262C65240065ABCB /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				065B80FE262C65410065ABCB /* ModuleFactory+CategoriesList.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		065B80FC262C65280065ABCB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				065B8103262C65890065ABCB /* CategoriesListViewController.swift */,
+				065B8109262C66020065ABCB /* CategoriesListBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		065B80FD262C652C0065ABCB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				065B8106262C65CD0065ABCB /* CategoriesListViewModel.swift */,
+				065B810C262C74A00065ABCB /* CategoriesListInput.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		066D421A2621C14700DCBBDE /* Settings */ = {
@@ -475,14 +582,6 @@
 			path = TableSectionHeader;
 			sourceTree = "<group>";
 		};
-		068B88A926061611004E81F2 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				068B88AB2606162A004E81F2 /* ModuleFactory+CategoriesList.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
 		0690793025EA84CE008B38DB /* SegmentedControllCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,16 +589,6 @@
 				0690793525EA85BD008B38DB /* SegmentedControllCellViewModel.swift */,
 			);
 			path = SegmentedControllCell;
-			sourceTree = "<group>";
-		};
-		0690798A25F53AAE008B38DB /* CategoriesList */ = {
-			isa = PBXGroup;
-			children = (
-				068B88A926061611004E81F2 /* Assembly */,
-				0690799F25F61416008B38DB /* View */,
-				0690799E25F6140F008B38DB /* ViewModel */,
-			);
-			path = CategoriesList;
 			sourceTree = "<group>";
 		};
 		0690799025F53B4C008B38DB /* AccountsList */ = {
@@ -525,22 +614,6 @@
 				0690798125F51647008B38DB /* AccountsListViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0690799E25F6140F008B38DB /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0690798425F51734008B38DB /* CategoriesListViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0690799F25F61416008B38DB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0690798B25F53AEB008B38DB /* CategoriesListViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		069079B625F651A5008B38DB /* Login */ = {
@@ -851,6 +924,8 @@
 		961B5E5025A890C500C7BADE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				065B80FA262C65190065ABCB /* CategoriesList */,
+				065B80D6262AD0490065ABCB /* AddCategoryModule */,
 				965990A625B44B46002A23BD /* BaseViewController.swift */,
 				066D421A2621C14700DCBBDE /* Settings */,
 				0673C6A3262094070017AE45 /* LoadableViewController */,
@@ -861,7 +936,6 @@
 				069079B625F651A5008B38DB /* Login */,
 				06EAB26225E2901C00E05FAB /* BaseList */,
 				0690799025F53B4C008B38DB /* AccountsList */,
-				0690798A25F53AAE008B38DB /* CategoriesList */,
 				961C080F25CEC76000C8E300 /* AddTransaction */,
 				961CF20F25CAA3A900ED1BD3 /* AddAccount */,
 				9659911E25B89753002A23BD /* Main */,
@@ -962,6 +1036,7 @@
 		961CF25025CD5D5700ED1BD3 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				065B80E7262AD3D00065ABCB /* AddCategoryCoordinator */,
 				06D9225B2610DDE000D17F60 /* ReportCoordinator */,
 				961CF26D25CD7A6A00ED1BD3 /* Base */,
 				06907A1425F65CD2008B38DB /* AuthCoordinator */,
@@ -1091,6 +1166,7 @@
 		9659920825BD836F002A23BD /* CellViews */ = {
 			isa = PBXGroup;
 			children = (
+				065B80CA2628B50D0065ABCB /* CategoryCellView */,
 				961C080725CEA0F000C8E300 /* AccountCellView */,
 				068B887625FE2D51004E81F2 /* AccountInfoCellView */,
 				96F1973A25CDA72800B0B634 /* ButtonCellView */,
@@ -1214,7 +1290,6 @@
 			isa = PBXGroup;
 			children = (
 				068E3FAA2610B91300B6B3E7 /* Report.swift */,
-				069079B325F64717008B38DB /* CategoryListInput.swift */,
 				068B884A25FCFA05004E81F2 /* Firestore */,
 				06907A3425FA9C51008B38DB /* Core Data */,
 				065BC4DC261663330063BD0C /* CategoryChartData.swift */,
@@ -1411,20 +1486,21 @@
 				9659920225BD80ED002A23BD /* MainViewController.swift in Sources */,
 				06907A2325F938C9008B38DB /* GoogleAuthProvider.swift in Sources */,
 				96504A2A25C5AD9200F4D960 /* Typealias.swift in Sources */,
-				0690798525F51734008B38DB /* CategoriesListViewModel.swift in Sources */,
 				06EAB26725E2904E00E05FAB /* DataListViewController.swift in Sources */,
 				961CF26525CD649100ED1BD3 /* RouterImp.swift in Sources */,
+				065B80CF2628CAF40065ABCB /* CategoryCellViewModel.swift in Sources */,
 				96F4B0E225C41E9100E8339E /* BaseTableViewCell.swift in Sources */,
-				068B88AC2606162A004E81F2 /* ModuleFactory+CategoriesList.swift in Sources */,
 				961C081C25CEC7AD00C8E300 /* AddTransactionViewModel.swift in Sources */,
 				961CF21C25CAAA7C00ED1BD3 /* AddAccountViewModel.swift in Sources */,
 				06EAB26D25E2909700E05FAB /* DataListBuilder.swift in Sources */,
+				065B8107262C65CD0065ABCB /* CategoriesListViewModel.swift in Sources */,
 				96504A2325C5A9BB00F4D960 /* CenterIconCellView.swift in Sources */,
 				0690793B25F4D098008B38DB /* AddTransactionFormValidator.swift in Sources */,
 				961CF25225CD5D6100ED1BD3 /* MainCoordinator.swift in Sources */,
 				96F1974125CDA93100B0B634 /* ButtonCellVuiewModel.swift in Sources */,
 				96504A2725C5AC2300F4D960 /* TappableCellViewModel.swift in Sources */,
 				066D42222621C2C200DCBBDE /* SettingsViewModel.swift in Sources */,
+				065B80FF262C65410065ABCB /* ModuleFactory+CategoriesList.swift in Sources */,
 				0690796D25F4FA37008B38DB /* Category+CoreDataClass copy.swift in Sources */,
 				96F1973025CD829400B0B634 /* TextFieldCellViewModel.swift in Sources */,
 				9621808B25CDF6E4001A386D /* AddAccountCoordinator.swift in Sources */,
@@ -1438,7 +1514,6 @@
 				965049D425C5960200F4D960 /* Images.swift in Sources */,
 				961C082325CEC9F700C8E300 /* SelectCellViewModel.swift in Sources */,
 				961CF21F25CAAAB000ED1BD3 /* AddAccountBuilder.swift in Sources */,
-				069079B425F64717008B38DB /* CategoryListInput.swift in Sources */,
 				068B888B25FE4D15004E81F2 /* CACornerMask+RoundedCorners.swift in Sources */,
 				961CF24B25CD5CDF00ED1BD3 /* Router.swift in Sources */,
 				068B885925FD010B004E81F2 /* FCategory.swift in Sources */,
@@ -1452,9 +1527,11 @@
 				06907A2D25FA860E008B38DB /* AuthProvider.swift in Sources */,
 				9699EE0725D0102E00EF316E /* UITextField+ToolBarDatePicker.swift in Sources */,
 				068B88A02605FA58004E81F2 /* NumberFormatter+RUB.swift in Sources */,
+				065B80E5262AD2E40065ABCB /* ModuleFactory+AddCategoryModule.swift in Sources */,
 				0673C6A5262094170017AE45 /* LoadableViewController.swift in Sources */,
 				96C5E41525A5BD6B00E374B7 /* AppDelegate.swift in Sources */,
 				06E71EC8260D2EBE00373B90 /* ModuleFactory+ReportModule.swift in Sources */,
+				065B810A262C66020065ABCB /* CategoriesListBuilder.swift in Sources */,
 				0690797C25F51553008B38DB /* DataListViewModel.swift in Sources */,
 				069079C625F652AA008B38DB /* LoginViewModel.swift in Sources */,
 				068B888825FE331E004E81F2 /* AccountInfoBuilder.swift in Sources */,
@@ -1462,7 +1539,6 @@
 				068B888525FE2FCD004E81F2 /* TransactionCellViewModel.swift in Sources */,
 				961CF21925CAA9CA00ED1BD3 /* AddAccountViewController.swift in Sources */,
 				965991FE25BD7F4A002A23BD /* BaseTableView.swift in Sources */,
-				0690798C25F53AEB008B38DB /* CategoriesListViewController.swift in Sources */,
 				9659920625BD8304002A23BD /* MainBuilder.swift in Sources */,
 				9659912625B898DC002A23BD /* ModuleFactory.swift in Sources */,
 				06EAB27425E2916A00E05FAB /* TitleCellViewModel.swift in Sources */,
@@ -1471,12 +1547,14 @@
 				0690793225EA84FF008B38DB /* SegmentedControlCellView.swift in Sources */,
 				066D42262621C2FB00DCBBDE /* SettingsView.swift in Sources */,
 				9699EDFB25CFFA6B00EF316E /* DatePickerCellView.swift in Sources */,
+				065B80E9262AD3F30065ABCB /* AddCategoryCoordinator.swift in Sources */,
 				0698E97F25E26FFA000ED813 /* AddAccountFormValidator.swift in Sources */,
 				96F4B0DC25C41DCF00E8339E /* ContainerTableCell.swift in Sources */,
 				069079BB25F651F2008B38DB /* ModuleFactory+Login.swift in Sources */,
 				069079C325F65274008B38DB /* LoginView.swift in Sources */,
 				961C081825CEC79800C8E300 /* AddTransactionBuilder.swift in Sources */,
 				961CF22225CAAD3F00ED1BD3 /* ModuleFactory+AddAccountModule.swift in Sources */,
+				065B80CC2628B5280065ABCB /* CategoryCellView.swift in Sources */,
 				0690792E25EA7F61008B38DB /* Keys.swift in Sources */,
 				965049E025C5999B00F4D960 /* Strings.swift in Sources */,
 				06E71EE9260D35D500373B90 /* ReportCategoriesCellViewModel.swift in Sources */,
@@ -1488,6 +1566,7 @@
 				96F4B0CF25C41A5B00E8339E /* DefaultCellViewModel.swift in Sources */,
 				96F1972C25CD801400B0B634 /* RoundedContainerCellView.swift in Sources */,
 				068E3FAB2610B91300B6B3E7 /* Report.swift in Sources */,
+				065B810D262C74A00065ABCB /* CategoriesListInput.swift in Sources */,
 				06D922532610D8D200D17F60 /* DetailedReportViewController.swift in Sources */,
 				96F4B0E725C420CC00E8339E /* DefaultCellContainer.swift in Sources */,
 				068B88992604A9DE004E81F2 /* TableSectionHeaderView.swift in Sources */,
@@ -1498,6 +1577,7 @@
 				961CF25925CD5F3900ED1BD3 /* CoordinatorFactory.swift in Sources */,
 				067A34072619D46F005F1490 /* PercentageFormatter.swift in Sources */,
 				067A34122619E154005F1490 /* DetailedReportViewModel.swift in Sources */,
+				065B80E2262AD0BF0065ABCB /* AddCategoryBuilder.swift in Sources */,
 				965049D925C5969500F4D960 /* Colors.swift in Sources */,
 				068B885325FCFB08004E81F2 /* FAccount.swift in Sources */,
 				96F1973725CD8B5300B0B634 /* CGFloat+IconSize.swift in Sources */,
@@ -1523,8 +1603,10 @@
 				961C082025CEC9EA00C8E300 /* SelectCellView.swift in Sources */,
 				961CF24325CD5B8400ED1BD3 /* Coordinator.swift in Sources */,
 				0690793625EA85BD008B38DB /* SegmentedControllCellViewModel.swift in Sources */,
+				065B80DF262AD0A10065ABCB /* AddCategoryViewModel.swift in Sources */,
 				06E71ED7260D2EF600373B90 /* ReportBuilder.swift in Sources */,
 				961C081525CEC78E00C8E300 /* AddTransactionViewController.swift in Sources */,
+				065B8104262C65890065ABCB /* CategoriesListViewController.swift in Sources */,
 				06E71EDF260D340E00373B90 /* ReportCategoryViewModel.swift in Sources */,
 				96F4B0D725C41C7600E8339E /* ConfigurableView.swift in Sources */,
 				9659920F25BD84AD002A23BD /* DefaultCellView.swift in Sources */,
@@ -1533,6 +1615,8 @@
 				961C082625CEDC4C00C8E300 /* ModuleFactory+AddTranaction.swift in Sources */,
 				068B88942604A604004E81F2 /* Date+CompareDates.swift in Sources */,
 				9699EE0425D009FB00EF316E /* DateFormatter+Extension.swift in Sources */,
+				065B80DB262AD0820065ABCB /* AddCategoryViewController.swift in Sources */,
+				065B80ED262AD6AF0065ABCB /* AddCategoryFormValidator.swift in Sources */,
 				06EAB27125E2910200E05FAB /* TitleCellView.swift in Sources */,
 				0690796E25F4FA37008B38DB /* Account+CoreDataProperties copy.swift in Sources */,
 				06E71EDB260D314D00373B90 /* ReportCategoryView.swift in Sources */,

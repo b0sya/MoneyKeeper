@@ -10,7 +10,7 @@
 "newAccount" = "New Account";
 "required" = "Required";
 "notRequired" = "Not required";
-"newTransaction" = "New transaction";
+"newTransaction" = "New operation";
 "cancel" = "Cancel";
 "done" = "Done";
 "error" = "Error";
@@ -49,9 +49,9 @@
 "incomes" = "Incomes";
 "costs" = "Costs";
 "periodBalance" = "Balance for the period";
-"weekPeriodOperationsTitle" = "All transactions for the current week";
-"monthPeriodOperationsTitle" = "All transactions for the current month";
-"yearPeriodOperationsTitle" = "All transactions for the current year";
+"weekPeriodOperationsTitle" = "All operaions for the current week";
+"monthPeriodOperationsTitle" = "All operaions for the current month";
+"yearPeriodOperationsTitle" = "All operaions for the current year";
 
 "report" = "Report";
 
@@ -63,6 +63,8 @@
 
 "loginPromoTitle" = "It's time to organize your personal budget!";
 "signInWithGoogle" = "Sign in with Google";
+
+"accountName" = "Account: %@";
 
 "logOut" = "Log out";
 "settings" = "Settings";

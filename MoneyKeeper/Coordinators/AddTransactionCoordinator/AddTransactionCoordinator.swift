@@ -40,38 +40,17 @@ final class AddTransactionCoordinator: BaseCoordinator {
             self?.onFinishSelf()
         }
         
-        module.onCategoryTap = { [weak self] in
-            self?.showCategoriesList(direction: $0.direction, onFinish: $0.completion)
-        }
-        
         module.onAccountTap = { [weak self] completion in
             self?.showAccountsList(onFinish: completion)
+        }
+        
+        module.onCategoryTap = { [weak self] in
+            self?.showCategoriesList(direction: $0.direction, onCategorySelected: $0.onCategorySelected)
         }
         
         router.push(module)
     }
     
-    private func showCategoriesList(direction: DirectionType, onFinish: @escaping ParameterClosure<FCategory>) {
-        let module = factory.makeCategoriesListModule(for: direction)
-        
-        module.onItemSelected = { [weak self] in
-            self?.router.popModule()
-            guard let category = $0 as? FCategory else { return }
-            onFinish(category)
-        }
-        
-        module.onAddTapped = { [weak self] in
-            self?.showAddAlert(with: "Новая категория", message: "Введите название новой категории", action: { [weak module] name in
-                guard let name = name else {
-                    return
-                }
-                module?.addCategory(with: name)
-            })
-            
-        }
-        
-        router.push(module)
-    }
     
     private func showAccountsList(onFinish: @escaping ParameterClosure<FAccount>) {
         let module = factory.makeAccountsListModule()
@@ -106,6 +85,35 @@ final class AddTransactionCoordinator: BaseCoordinator {
         }
         
         router.present(alertController)
+    }
+    
+    private func showCategoriesList(direction: DirectionType, onCategorySelected: ParameterClosure<FCategory>?) {
+        let module = factory.makeCategoriesListModule(direction: direction, showSubcategoriesButton: true)
+        
+        module.onCategorySelected = { [weak self] in
+            onCategorySelected?($0)
+            self?.router.popModule()
+        }
+        
+        module.onSubcategoriesTapped = { [weak self] in
+            self?.showSubcategories(mainCategory: $0, onCategorySelected: { [weak self] selected in
+                onCategorySelected?(selected)
+                self?.router.popModule()
+            })
+        }
+        
+        router.push(module)
+    }
+    
+    private func showSubcategories(mainCategory: FCategory, onCategorySelected: ParameterClosure<FCategory>?) {
+        let module = factory.makeCategoriesListModule(mainCategory: mainCategory)
+        
+        module.onCategorySelected = { [weak self] in
+            onCategorySelected?($0)
+            self?.router.popModule()
+        }
+        
+        router.push(module)
     }
     
     private func runAddAccountFlow(onFinish: @escaping VoidClosure) {

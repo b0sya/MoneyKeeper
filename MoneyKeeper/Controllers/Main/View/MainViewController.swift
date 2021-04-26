@@ -8,6 +8,8 @@
 import Foundation
 import TableKit
 
+typealias MainModuleInput = MainModule & MainInput
+
 protocol MainModule: Presentable {
     var currentBalance: Double { get }
     
@@ -16,11 +18,16 @@ protocol MainModule: Presentable {
     var onAddTransaction: VoidClosure? { get set }
     var onSettingsTapped: VoidClosure? { get set }
     var onReportTapped: VoidClosure? { get set }
+    var onAddCategoryTapped: VoidClosure? { get set }
 
     func refreshData()
 }
 
-final class MainViewController: BaseTableController<MainViewModel, MainBuilder>, MainModule {
+protocol MainInput: LoadingPresentable, BaseContentInput {
+    
+}
+
+final class MainViewController: BaseTableController<MainViewModel, MainBuilder>, MainModuleInput {
     
     var currentBalance: Double {
         viewModel.currentBalance
@@ -31,6 +38,7 @@ final class MainViewController: BaseTableController<MainViewModel, MainBuilder>,
     var onAddTransaction: VoidClosure?
     var onSettingsTapped: VoidClosure?
     var onReportTapped: VoidClosure?
+    var onAddCategoryTapped: VoidClosure?
 
     override func buildSections() -> [TableSection] {
         builder.buildSections(from: viewModel)

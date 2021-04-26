@@ -19,9 +19,7 @@ class BaseTableView: BaseView {
 
     override func configureLayout() {
         tableView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(snp.topMargin)
-            $0.bottom.equalTo(snp.bottomMargin)
+            $0.edges.equalTo(safeAreaLayoutGuide)
         }
     }
 
@@ -30,7 +28,7 @@ class BaseTableView: BaseView {
 
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
-        tableView.keyboardDismissMode = .interactive
+        tableView.keyboardDismissMode = .onDrag
 
         backgroundColor = .backgroundGray
     }

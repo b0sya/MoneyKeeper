@@ -27,12 +27,6 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
     let buttonCellViewModel = ButtonCellViewModel(buttonTitle: .done)
     let transactionTypeViewModel: SegmentedControlCellViewModel
     
-    var selectedCategory: Category? {
-        didSet {
-            categoryCellViewModel.value = selectedCategory?.name
-        }
-    }
-    
     init() {
         transactionTypeViewModel = .init(segmentTitles: transactionTypeTitles, selectedIndex: Int(validator.direction?.rawValue ?? 0))
         dateCellViewModel = .init(title: .date,
@@ -63,7 +57,7 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
         categoryCellViewModel.onTap = { [ weak self] in
             guard let direction = self?.validator.direction else { return }
 
-            let input = CategoryListInput(direction: direction) { [weak self] in
+            let input = CategoriesListInputData(direction: direction) { [weak self] in
                 self?.validator.category = $0
                 self?.categoryCellViewModel.value = $0.localizedName
             }

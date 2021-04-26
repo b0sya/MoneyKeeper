@@ -10,7 +10,7 @@
 "newAccount" = "Новый счет";
 "required" = "Обязательное";
 "notRequired" = "Необязательное";
-"newTransaction" = "Новая транзакция";
+"newTransaction" = "Новая операция";
 "cancel" = "Отмена";
 "done" = "Готово";
 "error" = "Ошибка";
