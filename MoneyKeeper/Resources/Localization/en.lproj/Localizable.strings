@@ -68,3 +68,7 @@
 
 "logOut" = "Log out";
 "settings" = "Settings";
+
+"newCategoryTitle" = "New category";
+"parent" = "Parent";
+"addCategoryTitle" = "Add new Category";

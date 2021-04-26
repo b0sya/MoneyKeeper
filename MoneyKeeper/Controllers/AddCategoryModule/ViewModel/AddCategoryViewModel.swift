@@ -16,7 +16,7 @@ final class AddCategoryViewModel: AddCategoryBuilderDataSource {
                                                    isNumericField: false,
                                                    onTextFieldEdited: nil)
     
-    let parentCategorySelectViewModel = SelectCellViewModel(title: "Родитель",
+    let parentCategorySelectViewModel = SelectCellViewModel(title: .parent,
                                                             value: nil,
                                                             isRequired: false)
     

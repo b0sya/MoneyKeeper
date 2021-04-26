@@ -71,7 +71,7 @@ extension MainViewModel {
                   tapAction: { [weak self] in
                     self?.view?.onReportTapped?()
                   }),
-            .init(title: "Добавить категорию", icon: nil, tapAction: { [weak self] in
+            .init(title: .addCategoryTitle, icon: nil, tapAction: { [weak self] in
                 self?.view?.onAddCategoryTapped?()
             })
         ]

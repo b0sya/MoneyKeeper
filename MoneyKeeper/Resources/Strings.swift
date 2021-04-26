@@ -165,4 +165,13 @@ extension String {
     
     /// Настройки / Settings
     static let settings = NSLocalizedString("settings", comment: "");
+    
+    /// Новая категория / New category
+    static let newCategory = NSLocalizedString("newCategory", comment: "");
+    
+    /// Родитель / Parent
+    static let parent = NSLocalizedString("parent", comment: "");
+    
+    /// Добавить новую категорию / Add new Category
+    static let addCategoryTitle = NSLocalizedString("addCategoryTitle", comment: "");
 }

@@ -36,6 +36,6 @@ final class CategoriesListViewController: BaseTableController<CategoriesListView
     override func localize() {
         super.localize()
         
-        title = "Категории"
+        title = .categories
     }
 }

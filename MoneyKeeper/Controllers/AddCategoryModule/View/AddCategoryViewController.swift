@@ -36,6 +36,6 @@ final class AddCategoryViewController: BaseTableController<AddCategoryViewModel,
     override func localize() {
         super.localize()
         
-        title = "Новая категория"
+        title = .newCategory
     }
 }
