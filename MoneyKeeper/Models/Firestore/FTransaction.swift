@@ -11,7 +11,9 @@ import FirebaseFirestore
 struct FTransaction: FirestoreModel {
     struct Keys {
         static let uid = "uid"
-        static let amount = "amount"
+        static let mainAmount = "mainAmount"
+        static let presentAmount = "presentAmount"
+        static let currency = "currency"
         static let date = "date"
         static let note = "note"
         static let direction = "direction"
@@ -23,7 +25,10 @@ struct FTransaction: FirestoreModel {
     static var collectionKey = "Transactions"
     
     let uid: String
-    let amount: Double
+    let mainAmount: Double
+    let presentAmount: Double
+    let currency: Currency
+    
     let date: Date
     let note: String?
     let direction: DirectionType
@@ -40,7 +45,9 @@ struct FTransaction: FirestoreModel {
     var dictionaryRepresentation: [String : Any] {
         var dict: [String : Any] = [
             Keys.uid: uid,
-            Keys.amount: amount,
+            Keys.mainAmount: mainAmount,
+            Keys.presentAmount: presentAmount,
+            Keys.currency: currency.rawValue,
             Keys.date: date,
             Keys.direction: direction.rawValue,
             Keys.relatedAccountId: relatedAccount.uid,
@@ -56,14 +63,18 @@ struct FTransaction: FirestoreModel {
     }
     
     init(uid: String,
-         amount: Double,
+         mainAmount: Double,
+         presentAmount: Double,
+         currency: Currency,
          date: Date,
          note: String?,
          direction: DirectionType,
          relatedAccount: FAccount,
          relatedCategory: FCategory) {
         self.uid = uid
-        self.amount = amount
+        self.mainAmount = mainAmount
+        self.presentAmount = presentAmount
+        self.currency = currency
         self.date = date
         self.note = note
         self.direction = direction
@@ -74,7 +85,9 @@ struct FTransaction: FirestoreModel {
     
     init?(from data: [String: Any]) {
         guard let uid = data[Keys.uid] as? String,
-              let amount = data[Keys.amount] as? Double,
+              let mainAmount = data[Keys.mainAmount] as? Double,
+              let presentAmount = data[Keys.presentAmount] as? Double,
+              let currency = Currency(rawValue: (data[Keys.currency] as? String) ?? ""),
               let date = data[Keys.date] as? Timestamp,
               let directionRawValue = data[Keys.direction] as? Int16,
               let direction = DirectionType(rawValue: directionRawValue),
@@ -86,7 +99,9 @@ struct FTransaction: FirestoreModel {
         }
         
         self.uid = uid
-        self.amount = amount
+        self.mainAmount = mainAmount
+        self.presentAmount = presentAmount
+        self.currency = currency
         self.date = date.dateValue()
         self.direction = direction
         self.relatedAccount = account

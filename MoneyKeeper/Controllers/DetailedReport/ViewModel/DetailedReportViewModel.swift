@@ -73,9 +73,9 @@ final class DetailedReportViewModel {
             }
             
             if let value = totalForGroups[id] {
-                totalForGroups[id] = value + transaction.amount
+                totalForGroups[id] = value + transaction.mainAmount
             } else {
-                totalForGroups[id] = transaction.amount
+                totalForGroups[id] = transaction.mainAmount
             }
         }
         view?.fillTable()

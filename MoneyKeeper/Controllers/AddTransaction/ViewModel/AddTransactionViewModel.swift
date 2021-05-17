@@ -12,9 +12,11 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
     
     private let validator = AddTransactionFormValidator()
     private let transactionTypeTitles: [String] = [.expense, .income]
+    private let currencies: [String] = Currency.stringArray
     private let firebaseStorage = FirebaseStorage.instance
+    private let currencyService = CurrencyConverterService()
     
-    let currencyCellViewModel: TextFieldCellViewModel = .value()
+    let amountCellViewModel: TextFieldCellViewModel = .value()
     let descriptionCellViewModel: TextFieldCellViewModel = .description()
     let categoryCellViewModel: SelectCellViewModel = .init(title: .category,
                                                            value: nil,
@@ -26,9 +28,13 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
     
     let buttonCellViewModel = ButtonCellViewModel(buttonTitle: .done)
     let transactionTypeViewModel: SegmentedControlCellViewModel
+    let currencyCellViewModel: SegmentedControlCellViewModel
     
     init() {
         transactionTypeViewModel = .init(segmentTitles: transactionTypeTitles, selectedIndex: Int(validator.direction?.rawValue ?? 0))
+        
+        currencyCellViewModel = .init(segmentTitles: currencies, selectedIndex: 0)
+        
         dateCellViewModel = .init(title: .date,
                                   value: DateFormatter.dayMonthWordYearTimeFormatter.string(from: validator.date),
                                   isRequired: true,
@@ -46,8 +52,13 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
             self?.validator.category = nil
             self?.categoryCellViewModel.value = nil
         }
-        currencyCellViewModel.onTextFieldEdited = { [weak validator] string in
+        amountCellViewModel.onTextFieldEdited = { [weak validator] string in
             validator?.amount = Double(string ?? "")
+        }
+        
+        currencyCellViewModel.onChangedSegmentedIndex = { [weak self] in
+            guard let self = self else { return }
+            self.validator.currency = Currency(rawValue: self.currencies[$0])
         }
         
         descriptionCellViewModel.onTextFieldEdited = { [weak validator] string in
@@ -76,15 +87,35 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
         }
         
         buttonCellViewModel.buttonAction = { [weak self] in
-            self?.saveTransaction()
+            self?.doneButtonTapped()
             
         }
     }
     
-    private func saveTransaction() {
-        guard let data = validator.cleanData else {
+    private func doneButtonTapped() {
+        guard var data = validator.cleanData else {
             return
         }
+        
+        if data.currency != .RUB {
+            view?.showActivityIndicator()
+            currencyService.exchangeRateToRubFor(currency: data.currency) { [weak self] (res) in
+                self?.view?.hideActivityIndicator()
+                switch res {
+                case .success(let responce):
+                    data.mainAmount *= responce.conversion_rates.RUB ?? 1
+                    self?.saveTransaction(data: data)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        else {
+            saveTransaction(data: data)
+        }
+    }
+    
+    private func saveTransaction(data: AddTransactionFormData) {
         view?.showActivityIndicator()
         firebaseStorage.addTransaction(data: data) { [weak self] result in
             self?.view?.hideActivityIndicator()
@@ -96,6 +127,8 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
             }
         }
     }
+    
+    
 }
 
 extension AddTransactionViewModel: FormValidatorDelegate {

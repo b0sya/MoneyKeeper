@@ -207,7 +207,9 @@ final class FirebaseStorage: StorageProvider {
     func addTransaction(data: AddTransactionFormData, completion: ParameterClosure<SaveTransactionOutput>?) {
 
         let transaction = FTransaction(uid: data.uid,
-                                       amount: data.amount,
+                                       mainAmount: data.mainAmount,
+                                       presentAmount: data.presentedAmount,
+                                       currency: data.currency,
                                        date: data.date,
                                        note: data.description,
                                        direction: data.direction,
@@ -223,10 +225,10 @@ final class FirebaseStorage: StorageProvider {
             let reference = self.db.collection(FAccount.collectionKey).document(data.account.uid)
             
             if transaction.direction == .cost {
-                reference.updateData([FAccount.Keys.balance: FieldValue.increment(-transaction.amount)])
+                reference.updateData([FAccount.Keys.balance: FieldValue.increment(-transaction.mainAmount)])
             }
             else {
-                reference.updateData([FAccount.Keys.balance: FieldValue.increment(transaction.amount)])
+                reference.updateData([FAccount.Keys.balance: FieldValue.increment(transaction.mainAmount)])
             }
                         
             completion?(.success(transaction))

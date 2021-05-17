@@ -19,7 +19,7 @@ final class TransactionCellViewModel: AccountCellViewModel {
          cornerMask: CACornerMask? = nil,
          tapAction: VoidClosure?) {
         let time = DateFormatter.timeFormatter.string(from: transaction.date)
-        let amountString = NumberFormatter.rub.string(from: NSNumber(value: transaction.amount)) ?? "!ERROR!"
+        let amountString = transaction.presentAmount.formatAsCurrency(currencyCode: transaction.currency.bankCode) ?? ""
         let amountColor = transaction.isCostOperation ? UIColor.red : UIColor.MKGreen
         
         let amount = transaction.isCostOperation ? "-\(amountString)" : "+\(amountString)"

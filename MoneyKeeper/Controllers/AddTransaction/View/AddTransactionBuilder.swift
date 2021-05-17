@@ -9,9 +9,12 @@ import TableKit
 
 protocol AddTransactionBuilderDataSource {
     var transactionTypeViewModel: SegmentedControlCellViewModel { get }
-    var currencyCellViewModel: TextFieldCellViewModel { get }
+    var amountCellViewModel: TextFieldCellViewModel { get }
     var descriptionCellViewModel: TextFieldCellViewModel { get }
     var categoryCellViewModel: SelectCellViewModel { get }
+    
+    var currencyCellViewModel: SegmentedControlCellViewModel { get }
+    
     var accountCellViewModel: SelectCellViewModel { get }
     var dateCellViewModel: DatePickerCellViewModel { get }
     
@@ -38,8 +41,9 @@ struct AddTransactionBuilder: BaseTableBuilder {
     }
 
     private func buildCurrencySection(from dataSource: AddTransactionBuilderDataSource) -> TableSection {
-        let row = TableRow<TextFieldCell>(item: dataSource.currencyCellViewModel)
-        return TableSection(withEmptyHeader: [row])
+        let row = TableRow<TextFieldCell>(item: dataSource.amountCellViewModel)
+        let currencyRow = TableRow<SegmentedControlCell>(item: dataSource.currencyCellViewModel)
+        return TableSection(withEmptyHeader: [row, currencyRow])
     }
 
     private func buildTransactionInfoSection(form dataSource: AddTransactionBuilderDataSource) -> TableSection {

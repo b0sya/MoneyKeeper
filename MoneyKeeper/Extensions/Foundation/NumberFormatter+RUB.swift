@@ -8,13 +8,21 @@
 import Foundation
 
 extension NumberFormatter {
-    static let rub: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.locale = Locale(identifier: "ru_RU")
-        formatter.numberStyle = .currency
-        
-        return formatter
-    }()
+//    static let rub: NumberFormatter = {
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale(identifier: "ru_RU")
+//        formatter.numberStyle = .currency
+//        
+//        return formatter
+//    }()
+//    
+//    static let eur: NumberFormatter = {
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale(identifier: "ru_RU")
+//        formatter.numberStyle = .currency
+//        
+//        return formatter
+//    }()
     
     static let perscntage: NumberFormatter = {
         let formatter = NumberFormatter()

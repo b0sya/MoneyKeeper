@@ -93,7 +93,7 @@ final class AccountInfoViewModel {
 
 extension AccountInfoViewModel: AccountInfoBuilderInput {
     var accountInfoCellViewModel: AccountInfoCellViewModel {
-        guard let balance = NumberFormatter.rub.string(from: NSNumber(value: account.balance)) else  {
+        guard let balance = account.balance.formatAsCurrency(currencyCode: Currency.RUB.bankCode) else  {
             return .init(titleLabelText: .currentBalance, valueLabelText: "!ERROR!")
 
         }

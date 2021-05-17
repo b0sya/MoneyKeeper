@@ -16,5 +16,6 @@ target 'MoneyKeeper' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'Charts'
+  pod 'Alamofire', '~> 5.2'
 
 end

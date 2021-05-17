@@ -92,11 +92,11 @@ final class ReportViewModel {
             sections[dateString] = group
             
             if $0.direction == .cost {
-                costs += $0.amount
+                costs += $0.mainAmount
                 costTransactions.append($0)
             }
             else {
-                incomes += $0.amount
+                incomes += $0.mainAmount
                 incomeTransactions.append($0)
             }
         }

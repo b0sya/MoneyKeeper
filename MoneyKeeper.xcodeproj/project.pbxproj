@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		060D0C182619CB2D00D4C0AA /* PieChart+Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */; };
+		063A87D926440F1100E3225E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A87D826440F1100E3225E /* Currency.swift */; };
+		063A87DC264414F100E3225E /* CyrencyConverterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A87DB264414F100E3225E /* CyrencyConverterService.swift */; };
+		063A881E264436C400E3225E /* Double+CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A881D264436C400E3225E /* Double+CurrencyFormatter.swift */; };
 		065B80CC2628B5280065ABCB /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80CB2628B5280065ABCB /* CategoryCellView.swift */; };
 		065B80CF2628CAF40065ABCB /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80CE2628CAF40065ABCB /* CategoryCellViewModel.swift */; };
 		065B80DB262AD0820065ABCB /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065B80DA262AD0820065ABCB /* AddCategoryViewController.swift */; };
@@ -170,6 +173,9 @@
 /* Begin PBXFileReference section */
 		000B42E85F7F77B09B44A082 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		060D0C172619CB2D00D4C0AA /* PieChart+Fabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PieChart+Fabric.swift"; sourceTree = "<group>"; };
+		063A87D826440F1100E3225E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		063A87DB264414F100E3225E /* CyrencyConverterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyrencyConverterService.swift; sourceTree = "<group>"; };
+		063A881D264436C400E3225E /* Double+CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyFormatter.swift"; sourceTree = "<group>"; };
 		065B80CB2628B5280065ABCB /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
 		065B80CE2628CAF40065ABCB /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
 		065B80DA262AD0820065ABCB /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
@@ -570,6 +576,7 @@
 				068B88932604A604004E81F2 /* Date+CompareDates.swift */,
 				068B889F2605FA57004E81F2 /* NumberFormatter+RUB.swift */,
 				068E3FAD2610BB2E00B6B3E7 /* Date+Periods.swift */,
+				063A881D264436C400E3225E /* Double+CurrencyFormatter.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -679,6 +686,7 @@
 				0698E98125E27093000ED813 /* BaseFormValidator */,
 				068B885D25FD0335004E81F2 /* FirebaseStorage.swift */,
 				068B886125FD0357004E81F2 /* StorageProvider.swift */,
+				063A87DB264414F100E3225E /* CyrencyConverterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1293,6 +1301,7 @@
 				068B884A25FCFA05004E81F2 /* Firestore */,
 				06907A3425FA9C51008B38DB /* Core Data */,
 				065BC4DC261663330063BD0C /* CategoryChartData.swift */,
+				063A87D826440F1100E3225E /* Currency.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1549,6 +1558,7 @@
 				9699EDFB25CFFA6B00EF316E /* DatePickerCellView.swift in Sources */,
 				065B80E9262AD3F30065ABCB /* AddCategoryCoordinator.swift in Sources */,
 				0698E97F25E26FFA000ED813 /* AddAccountFormValidator.swift in Sources */,
+				063A87DC264414F100E3225E /* CyrencyConverterService.swift in Sources */,
 				96F4B0DC25C41DCF00E8339E /* ContainerTableCell.swift in Sources */,
 				069079BB25F651F2008B38DB /* ModuleFactory+Login.swift in Sources */,
 				069079C325F65274008B38DB /* LoginView.swift in Sources */,
@@ -1596,6 +1606,7 @@
 				06D922502610D8BE00D17F60 /* ModuleFactory+CategoryReport.swift in Sources */,
 				06E71ED0260D2EE100373B90 /* ReportViewModel.swift in Sources */,
 				060D0C182619CB2D00D4C0AA /* PieChart+Fabric.swift in Sources */,
+				063A881E264436C400E3225E /* Double+CurrencyFormatter.swift in Sources */,
 				961CF26825CD698B00ED1BD3 /* ApplicationCoordinator.swift in Sources */,
 				068B887425FE2CCD004E81F2 /* AccountInfoViewController.swift in Sources */,
 				068B887B25FE2F12004E81F2 /* AccountInfoCellViewModel.swift in Sources */,
@@ -1617,6 +1628,7 @@
 				9699EE0425D009FB00EF316E /* DateFormatter+Extension.swift in Sources */,
 				065B80DB262AD0820065ABCB /* AddCategoryViewController.swift in Sources */,
 				065B80ED262AD6AF0065ABCB /* AddCategoryFormValidator.swift in Sources */,
+				063A87D926440F1100E3225E /* Currency.swift in Sources */,
 				06EAB27125E2910200E05FAB /* TitleCellView.swift in Sources */,
 				0690796E25F4FA37008B38DB /* Account+CoreDataProperties copy.swift in Sources */,
 				06E71EDB260D314D00373B90 /* ReportCategoryView.swift in Sources */,

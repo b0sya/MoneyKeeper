@@ -15,7 +15,7 @@ class AccountCellViewModel: DefaultCellViewModel {
          icon: UIImage?,
          tapAction: VoidClosure?
     ) {
-        if let formattedTipAmount = NumberFormatter.rub.string(from: NSNumber(value: value)) {
+        if let formattedTipAmount = value.formatAsCurrency(currencyCode: Currency.RUB.bankCode) {
             currencyValue = NSAttributedString(string: formattedTipAmount)
         }
         else {

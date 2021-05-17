@@ -21,7 +21,7 @@ struct ReportCategoryViewModel {
     }
     
     init(title: String, amount: Double, tapAction: VoidClosure? = nil) {
-        let value = NumberFormatter.rub.string(from: NSNumber(value: amount)) ?? "!ERROR!"
+        let value = amount.formatAsCurrency(currencyCode: Currency.RUB.bankCode) ?? "!ERROR!"
         
         self.init(title: title, value: value, tapAction: tapAction)
     }

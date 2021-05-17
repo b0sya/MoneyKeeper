@@ -42,7 +42,8 @@ extension MainViewModel {
             res + acc.balance
         }
         
-        return .init(titleLabelText: .generalBalance, valueLabelText: NumberFormatter.rub.string(from: NSNumber(value: currentBalance)) ?? "")
+        return .init(titleLabelText: .generalBalance,
+                     valueLabelText: currentBalance.formatAsCurrency(currencyCode: Currency.RUB.bankCode) ?? "")
     }
     
     var addAccountViewModel: TappableCellViewModel {
