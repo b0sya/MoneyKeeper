@@ -15,7 +15,7 @@ protocol AddTransactionModule: Presentable {
     var onAccountTap: ParameterClosure<ParameterClosure<FAccount>>? { get set }
 }
 
-final class AddTransactionViewController: BaseTableController<AddTransactionViewModel, AddTransactionBuilder>, AddTransactionModule {
+final class AddTransactionViewController: BaseTableController<AddTransactionViewModel, AddTransactionBuilder>, AddTransactionModule, ErrorPresentable {
     var onCategoryTap: ParameterClosure<CategoriesListInputData>?
     var onFinish: VoidClosure?
     var onAccountTap: ParameterClosure<ParameterClosure<FAccount>>?

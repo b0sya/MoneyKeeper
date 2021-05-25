@@ -12,9 +12,18 @@ import GoogleSignIn
 final class GoogleAuth: NSObject, AuthProvider {
     private var successCompletion: VoidClosure?
     private var failureCompletion: VoidClosure?
-    
+        
     static var isAuthorized: Bool {
         Auth.auth().currentUser != nil
+    }
+    
+    static var uid: String {
+        get {
+            UserDefaults.standard.string(forKey: Keys.userId) ?? ""
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: Keys.userId)
+        }
     }
         
     override init() {
@@ -59,6 +68,11 @@ extension GoogleAuth: GIDSignInDelegate {
                 self.failureCompletion?()
                 return
             }
+            guard let id = result?.user.uid else {
+                self.failureCompletion?()
+                return
+            }
+            GoogleAuth.uid = id
             self.successCompletion?()
         }
     }

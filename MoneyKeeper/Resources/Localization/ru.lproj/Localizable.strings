@@ -68,6 +68,6 @@
 "logOut" = "Выйти из аккаунта";
 "settings" = "Настройки";
 
-"newCategoryTitle" = "Новая категория";
+"newCategory" = "Новая категория";
 "parent" = "Родитель";
 "addCategoryTitle" = "Добавить новую категорию";

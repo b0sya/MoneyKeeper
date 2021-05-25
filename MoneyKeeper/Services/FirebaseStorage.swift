@@ -13,6 +13,10 @@ final class FirebaseStorage: StorageProvider {
     
     private let db: Firestore
     
+    private var currentUserPath: DocumentReference {
+        db.collection("Users").document(GoogleAuth.uid)
+    }
+    
     private init() {
         let settings = FirestoreSettings()
         settings.isPersistenceEnabled = true
@@ -47,7 +51,7 @@ final class FirebaseStorage: StorageProvider {
     
     //MARK: Fetch methods
     func fetchAccounts(completion: ParameterClosure<FetchAccountsOutput>?) {
-        db.collection(FAccount.collectionKey).getDocuments { snapshot, error in
+        currentUserPath.collection(FAccount.collectionKey).getDocuments { snapshot, error in
             if let error = error {
                 completion?(.failure(.fetchDataError("Fetch accounts failed: \(error.localizedDescription)")))
                 return
@@ -62,7 +66,7 @@ final class FirebaseStorage: StorageProvider {
     }
     
     func fetchCategories(direction: DirectionType, completion: ParameterClosure<FetchCategoriesOutput>?) {
-        let query = db.collection(FCategory.collectionKey)
+        let query = currentUserPath.collection(FCategory.collectionKey)
             .whereField(FCategory.Keys.directionId.rawValue,
                         in: [direction.rawValue])
         
@@ -82,7 +86,7 @@ final class FirebaseStorage: StorageProvider {
     }
     
     func fetchTransactions(for account: FAccount, completion: ParameterClosure<FetchTransactionsOutput>?) {
-        let query = db.collection(FTransaction.collectionKey).whereField(FTransaction.Keys.relatedAccountId, in: [account.uid])
+        let query = currentUserPath.collection(FTransaction.collectionKey).whereField(FTransaction.Keys.relatedAccountId, in: [account.uid])
         
         query.getDocuments { (snapshot, error) in
             if let error = error {
@@ -102,7 +106,7 @@ final class FirebaseStorage: StorageProvider {
     ///add fetch parent categories + fetch subcategories
     
     func fetchMainCategories(direction: DirectionType, completion: ParameterClosure<FetchCategoriesOutput>?) {
-        let query = db.collection(FCategory.collectionKey)
+        let query = currentUserPath.collection(FCategory.collectionKey)
             .whereField(FCategory.Keys.parentCategoryId.rawValue,
                         isEqualTo: "")
             .whereField(FCategory.Keys.directionId.rawValue,
@@ -124,7 +128,7 @@ final class FirebaseStorage: StorageProvider {
     }
     
     func fetchSubcategories(for category: FCategory, completion: ParameterClosure<FetchCategoriesOutput>?) {
-        db.collection(FCategory.collectionKey)
+        currentUserPath.collection(FCategory.collectionKey)
             .whereField(FCategory.Keys.parentCategoryId.rawValue, isEqualTo: category.uid).getDocuments { snapshot, error in
                 if let error = error {
                     completion?(.failure(.fetchDataError("Fetch categories failed: \(error.localizedDescription)")))
@@ -141,11 +145,11 @@ final class FirebaseStorage: StorageProvider {
     }
     
     func fetchTransactions(for period: Period, completion: ParameterClosure<FetchTransactionsOutput>?) {
-        let query = db.collection(FTransaction.collectionKey)
+        let query = currentUserPath.collection(FTransaction.collectionKey)
             .whereField(FTransaction.Keys.date, isGreaterThanOrEqualTo: period.start)
             .whereField(FTransaction.Keys.date, isLessThanOrEqualTo: period.end)
         
-        db.collection(FTransaction.collectionKey)
+        currentUserPath.collection(FTransaction.collectionKey)
         
         query.getDocuments { snapshot, error in
             if let error = error {
@@ -165,7 +169,7 @@ final class FirebaseStorage: StorageProvider {
 //                    return TransactionsData(transaction: trans, mainCategory: nil)
 //                }
 //
-//                db.collection(FCategory.collectionKey).document(parentId).getDocument { snapshot, error in
+//                currentUserPath.collection(FCategory.collectionKey).document(parentId).getDocument { snapshot, error in
 //                    if let error = error {
 //                        return
 //                    }
@@ -185,7 +189,6 @@ final class FirebaseStorage: StorageProvider {
         }
     }
     
-    //MARK: Save methods
     func addAccount(
         uid: String,
         name: String,
@@ -194,7 +197,7 @@ final class FirebaseStorage: StorageProvider {
     ) {
         let newAccount = FAccount(uid: uid, name: name, balance: balance)
         
-        db.collection(FAccount.collectionKey).document(newAccount.uid).setData(newAccount.dictionaryRepresentation) { error in
+        currentUserPath.collection(FAccount.collectionKey).document(newAccount.uid).setData(newAccount.dictionaryRepresentation) { error in
             if let error = error {
                 completion?(.failure(.saveDataError("Failed to add new account: \(error.localizedDescription)")))
                 return
@@ -216,13 +219,13 @@ final class FirebaseStorage: StorageProvider {
                                        relatedAccount: data.account,
                                        relatedCategory: data.category)
         
-        db.collection(FTransaction.collectionKey).document(transaction.uid).setData(transaction.dictionaryRepresentation) { error in
+        currentUserPath.collection(FTransaction.collectionKey).document(transaction.uid).setData(transaction.dictionaryRepresentation) { error in
             if let error = error {
                 completion?(.failure(.saveDataError("Faild to add new transaction: \(error.localizedDescription)")))
                 return
             }
             
-            let reference = self.db.collection(FAccount.collectionKey).document(data.account.uid)
+            let reference = self.currentUserPath.collection(FAccount.collectionKey).document(data.account.uid)
             
             if transaction.direction == .cost {
                 reference.updateData([FAccount.Keys.balance: FieldValue.increment(-transaction.mainAmount)])
@@ -242,12 +245,12 @@ final class FirebaseStorage: StorageProvider {
                                  parentCategoryId: parent?.uid)
         
         if let parent = parent {
-            db.collection(FCategory.collectionKey).document(parent.uid).updateData([
+            currentUserPath.collection(FCategory.collectionKey).document(parent.uid).updateData([
                 FCategory.Keys.subcategoryIds.rawValue: FieldValue.arrayUnion([category.uid])
             ])
         }
         
-        db.collection(FCategory.collectionKey).document(category.uid).setData(category.dictionaryRepresentation) { error in
+        currentUserPath.collection(FCategory.collectionKey).document(category.uid).setData(category.dictionaryRepresentation) { error in
             if let error = error {
                 completion?(.failure(.saveDataError("Faild to add new category: \(error.localizedDescription)")))
             }
@@ -259,14 +262,14 @@ final class FirebaseStorage: StorageProvider {
     //MARK: Remove methods
     
     func remove(account: FAccount, transactions: [FTransaction], completion: ParameterClosure<RemoveAccountOutput>?) {
-        db.collection(FAccount.collectionKey).document(account.uid).delete { error in
+        currentUserPath.collection(FAccount.collectionKey).document(account.uid).delete { error in
             if let error = error {
                 completion?(.failure(.removeDataError("Failed to remove account: \(error.localizedDescription)")))
                 return
             }
             
             transactions.forEach {
-                self.db.collection(FTransaction.collectionKey).document($0.uid).delete()
+                self.currentUserPath.collection(FTransaction.collectionKey).document($0.uid).delete()
             }
             completion?(.success(Void()))
         }

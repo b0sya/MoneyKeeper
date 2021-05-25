@@ -106,7 +106,7 @@ final class AddTransactionViewModel: AddTransactionBuilderDataSource {
                     data.mainAmount *= responce.conversion_rates.RUB ?? 1
                     self?.saveTransaction(data: data)
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    self?.view?.showError(message: error.localizedDescription)
                 }
             }
         }
