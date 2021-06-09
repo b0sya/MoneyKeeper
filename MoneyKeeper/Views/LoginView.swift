@@ -45,7 +45,7 @@ final class LoginView: BaseView {
         stackView.axis = .vertical
         stackView.spacing = 8
         
-        backgroundColor = .MKGreen
+        backgroundColor = .backgroundGray
         
         titleLabel.text = .loginPromoTitle
         titleLabel.font = UIFont.systemFont(ofSize: 40)
@@ -58,6 +58,8 @@ final class LoginView: BaseView {
         googleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 19)
         googleButton.setTitleColor(.black, for: .normal)
         googleButton.layer.cornerRadius = CGFloat.buttonCornerRadius
+        googleButton.layer.borderColor = UIColor.black.cgColor
+        googleButton.layer.borderWidth = 0.5
         googleButton.setImage(.googleLogo, for: .normal)
     }
     

@@ -40,6 +40,7 @@ final class ReportViewController: BaseTableController<ReportViewModel, ReportBui
     }
     
     @objc private func calendarButtonTapped() {
+        print(String.selectPeriod)
         let alert = UIAlertController(title: .period, message: .selectPeriod, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: .week, style: .default, handler: { _ in
             self.viewModel.selectedPeriod = Date.currentWeekPeriod
